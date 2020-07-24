@@ -15,18 +15,18 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
-            $table->string('provider_id');
-            $table->string('name');
-            $table->string('email')->nulllable();
-            $table->string('mobile');
-            $table->text('service_name')->nulllable();
-            $table->string('service_charge')->nulllable();
-            $table->string('area')->nulllable();
-            $table->text('address');
-            $table->string('landmark')->nulllable();
-            $table->string('pin')->nulllable();
-            $table->string('description');
+            $table->string('category_id');
+            $table->string('subcategory_id');
+            $table->string('product_id');
+            $table->string('country_id');
+            $table->string('state_id');
+            $table->string('district_id');
+            $table->string('area_id');   
+            $table->string('currency');         
+            $table->string('price');          
+            $table->string('desc');
+            $table->string('type');
+            $table->string('is_price_show');
             $table->timestamps();
         });
     }
