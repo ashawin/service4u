@@ -59,11 +59,17 @@
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
+                                    <a href="{{route('admin-transaction')}}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-server-fill"></em></span>
+                                        <span class="nk-menu-text">Wallet</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+                                 <li class="nk-menu-item">
                                     <a href="html/ecommerce/integration.html" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-server-fill"></em></span>
                                         <span class="nk-menu-text">Integration</span>
                                     </a>
-                                </li><!-- .nk-menu-item -->
+                                </li>
                                 <li class="nk-menu-heading">
                                     <h6 class="overline-title text-primary-alt">Return to</h6>
                                 </li><!-- .nk-menu-item -->

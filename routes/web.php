@@ -46,12 +46,20 @@ Route::group([ 'prefix' => 'admin' ,'middleware' => ['auth']], function () {
       Route::get('service/add', 'admin\serviceController@add')->name('admin-service-add');
       Route::post('service/save', 'admin\serviceController@save')->name('admin-service-save');
 
+
+      //Wallet
+        Route::get('transaction/details', 'admin\walletController@index')->name('admin-transaction');
+        Route::post('add/amount/{id}', 'admin\walletController@addBalnce')->name('admin-add-balance');
+
       //Ajax
       Route::post('ajax/states', 'admin\ajaxController@getStates')->name('admin-ajax-state');
        Route::post('ajax/districts', 'admin\ajaxController@getDistricts')->name('admin-ajax-district');
       Route::post('ajax/subcategory', 'admin\ajaxController@getSubCategory')->name('admin-ajax-subcat');
       Route::post('ajax/products', 'admin\ajaxController@getProduct')->name('admin-ajax-product');
       Route::post('ajax/areas', 'admin\ajaxController@getArea')->name('admin-ajax-area');
+
+      
+
       
       
 

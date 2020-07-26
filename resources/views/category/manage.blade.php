@@ -1,5 +1,6 @@
 @extends('app.app')
 @section('content')
+ <div class="nk-content ">
  <div class="nk-main ">
 <div class="nk-wrap ">
  <div class="nk-block nk-block-lg">
@@ -426,6 +427,6 @@
 							    </div>
 							     
 							  
-							   
+							 <div class="nk-content ">   
 							   
 @endsection

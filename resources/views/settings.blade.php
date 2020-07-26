@@ -1,10 +1,11 @@
 @extends('app.app')
 @section('content')
+ <div class="nk-content ">
 <div class="nk-block nk-block-lg">
     <div class="nk-block-head">
         <div class="nk-block-head-content">
-            <h4 class="title nk-block-title">Header and footer</h4>
-            <p>Add an optional header and/or footer within a card.</p>
+            <h4 class="title nk-block-title">Manage Details</h4>
+            
         </div>
     </div>
     <div class="card card-preview">
@@ -34,6 +35,7 @@
             </div>
         </div>
     </div><!-- .card-preview -->
+</div>
 </div>
 
 @endsection

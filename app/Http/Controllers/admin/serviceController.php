@@ -15,8 +15,18 @@ class serviceController extends Controller
     public function index()
     {
 
+       $services=Service::join('countries','countries.id','=','services.country_id')   
+       ->join('districts','districts.id','services.district_id')
+       ->join('states','states.id','=','services.state_id')
+       ->join('areas','areas.id','=','services.area_id')
+       ->join('products','products.id','=','services.product_id')
+       ->join('categories','categories.id','services.category_id')
+       ->join('sub_categories','sub_categories.id','services.subcategory_id')
+       ->select('countries.country','states.state','districts.district','products.product','areas.area','categories.category','sub_categories.subcategory','services.id as service_id','services.price','services.type','services.desc','services.is_price_show','services.currency')
+       ->get();
+       
 
-    	return view('services');
+    	return view('service.manage',['services'=>$services]);
     }
     public function add()
     {
