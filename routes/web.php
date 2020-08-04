@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+  Route::get('', 'user\HomeController@index')->name('user-dashboard');
 
 Auth::routes();
 Route::group([ 'prefix' => 'vendor' ,'middleware' => ['App\Http\Middleware\VendorMiddleware']], function () {

@@ -38,7 +38,7 @@ class serviceController extends Controller
     }
 
     public function save(Request $request){
-    	$this->validate($request,['product_id'=>'required','price'=>'required','area_id'=>'required','type'=>'required','desc'=>'required','is_price_show'=>'required','currency'=>'required','country_id'=>'required','state_id'=>'required','district_id'=>'required','category_id'=>'required','subcategory_id'=>'required']);
+    	$this->validate($request,['product_id'=>'required','price'=>'required','area_id'=>'required','type'=>'required','desc'=>'required','currency'=>'required','country_id'=>'required','state_id'=>'required','district_id'=>'required','category_id'=>'required','subcategory_id'=>'required']);
     	Service::create( array('product_id' =>$request->product_id ,'price'=>$request->price,'area_id'=>$request->area_id ,'type'=>$request->type,'desc'=>$request->desc,'is_price_show'=>$request->is_price_show,'currency'=>$request->currency,'country_id'=>$request->country_id,'state_id'=>$request->state_id,'district_id'=>$request->district_id,'category_id'=>$request->category_id,'subcategory_id'=>$request->subcategory_id));
     	session()->flash('msg','Successfully Added');
     	return redirect()->route('admin-service-add');
