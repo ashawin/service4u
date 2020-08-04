@@ -43,7 +43,7 @@
                                                         @foreach($transactions as $item)
                                                         <div class="nk-tb-item">
                                                             <div class="nk-tb-col">
-                                                                <span class="tb-lead"><a href="#">#{{$item->uuid}}</a></span>
+                                                                <span class="tb-lead"><a href="#">#{{$item->id}}</a></span>
                                                             </div>
                                                             <div class="nk-tb-col tb-col-sm">
                                                                 <div class="user-card">

@@ -16,8 +16,22 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
-Route::group([ 'prefix' => 'admin' ,'middleware' => ['auth']], function () {
-   Route::get('', 'admin\dashboardController@index')->name('admin-dashboard');
+Route::group([ 'prefix' => 'vendor' ,'middleware' => ['App\Http\Middleware\VendorMiddleware']], function () {
+  Route::get('dashboard', 'vendor\dashboardController@index')->name('vendor-dashboard');
+
+  //Wallet
+
+  Route::get('wallet/request', 'vendor\walletController@request')->name('vendor-wallet-request');
+  Route::get('wallet/request/save', 'vendor\walletController@saveRequest')->name('vendor-wallet-request-save');
+
+  //Services
+  Route::get('/services', 'vendor\serviceController@index')->name('vendor-service');
+   Route::post('/service/request', 'vendor\serviceController@requestService')->name('vendor-service-request');
+
+});
+
+Route::group([ 'prefix' => 'admin' ,'middleware' => ['App\Http\Middleware\AdminMiddleware']], function () {
+   Route::get('dashboard', 'admin\dashboardController@index')->name('admin-dashboard');
    Route::get('profile', 'admin\profileController@index')->name('admin-profile');
    Route::get('customers', 'admin\customerController@index')->name('admin-customer');
    Route::get('providers', 'admin\providerController@index')->name('admin-provider');
@@ -43,13 +57,16 @@ Route::group([ 'prefix' => 'admin' ,'middleware' => ['auth']], function () {
 
      //services
       Route::get('services', 'admin\serviceController@index')->name('admin-service');
+      Route::get('service/requests', 'admin\serviceController@serviceRequest')->name('admin-service-request');
       Route::get('service/add', 'admin\serviceController@add')->name('admin-service-add');
       Route::post('service/save', 'admin\serviceController@save')->name('admin-service-save');
 
 
       //Wallet
         Route::get('transaction/details', 'admin\walletController@index')->name('admin-transaction');
-        Route::post('add/amount/{id}', 'admin\walletController@addBalnce')->name('admin-add-balance');
+        Route::get('wallet/balance/request', 'admin\walletController@walletRequest')->name('admin-wallet-request');
+        Route::post('add/amount/{id}/{balance}', 'admin\walletController@transferBalance')->name('admin-transfer-balance');
+        Route::post('add/admin/balance', 'admin\walletController@addBalance')->name('admin-add-balance');
 
       //Ajax
       Route::post('ajax/states', 'admin\ajaxController@getStates')->name('admin-ajax-state');

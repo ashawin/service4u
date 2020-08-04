@@ -29,7 +29,9 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+
+
+
 
     /**
      * Create a new controller instance.
@@ -39,6 +41,29 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+
+
+      public function redirectTo()
+    {
+        switch(Auth::user()->role){
+            case 1:
+            $this->redirectTo = '/admin/dashboard';
+            return $this->redirectTo;
+                break;
+            case 2:
+                    $this->redirectTo = '/vendor/dashboard';
+                return $this->redirectTo;
+                break;
+            case 2:
+                $this->redirectTo = '/';
+                return $this->redirectTo;
+                break;
+            default:
+                $this->redirectTo = '/login';
+                return $this->redirectTo;
+        }
     }
 
     /**

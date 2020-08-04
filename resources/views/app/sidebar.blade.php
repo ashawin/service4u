@@ -28,6 +28,13 @@
                                         <span class="nk-menu-text">Services</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
+                                 <li class="nk-menu-item">
+                                    <a href="{{route('admin-service-request')}}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-bag-fill"></em></span>
+                                        <span class="nk-menu-text">Service Requests</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+                               
                                 <li class="nk-menu-item">
                                     <a href="{{route('admin-product')}}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-bag-fill"></em></span>
@@ -64,10 +71,24 @@
                                         <span class="nk-menu-text">Wallet</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
+                                  <li class="nk-menu-item">
+                                    <a href="{{route('admin-wallet-request')}}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-server-fill"></em></span>
+                                        <span class="nk-menu-text">Wallet Request</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
                                  <li class="nk-menu-item">
                                     <a href="html/ecommerce/integration.html" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-server-fill"></em></span>
                                         <span class="nk-menu-text">Integration</span>
+                                    </a>
+                                </li>
+                                 <li class="nk-menu-item">
+                                    <a href="html/components.html" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-layers-fill"></em></span>
+                                        <span class="nk-menu-text"><form method="post" action="{{route('logout')}}">
+                                                        @csrf
+                                                        <button type="submit"><em class="icon ni ni-signout"></em><span>Sign out</span></button></form><</span>
                                     </a>
                                 </li>
                                 <li class="nk-menu-heading">
@@ -85,6 +106,7 @@
                                         <span class="nk-menu-text">All Components</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
+                                <!-- .nk-menu-item -->
                             </ul><!-- .nk-menu -->
                         </div><!-- .nk-sidebar-menu -->
                     </div><!-- .nk-sidebar-content -->

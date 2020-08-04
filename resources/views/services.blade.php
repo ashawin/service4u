@@ -9,6 +9,7 @@
                                         <div class="nk-block-head-content">
                                             <h3 class="nk-block-title page-title">Orders</h3>
                                         </div><!-- .nk-block-head-content -->
+
                                         <div class="nk-block-head-content">
                                             <div class="toggle-wrap nk-block-tools-toggle">
                                                 <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-more-v"></em></a>
@@ -44,6 +45,20 @@
                                         </div><!-- .nk-block-head-content -->
                                     </div><!-- .nk-block-between -->
                                 </div><!-- .nk-block-head -->
+                                 <ul class="nk-nav nav nav-tabs">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="html/subscription/profile.html">Personal</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="html/subscription/profile-billing.html">Billing</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="html/subscription/profile-setting.html">Settings</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="html/subscription/profile-notify.html">Notifications</a>
+                                        </li>
+                                    </ul><!-- nav-tabs -->
                                 <div class="nk-block">
                                     <div class="nk-tb-list is-separate is-medium mb-3">
                                         <div class="nk-tb-item nk-tb-head">
