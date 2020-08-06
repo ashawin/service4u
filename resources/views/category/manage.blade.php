@@ -66,8 +66,9 @@
                                                             </div>
                                                         </li>
                                                         <li class="nk-block-tools-opt">
-                                                            <a href="#" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
-                                                            <a href="#" class="btn btn-primary d-none d-md-inline-flex" data-toggle="modal" data-target="#categoryForm"><em class="icon ni ni-plus" ></em><span>Add</span></a>
+                                                           
+                                                              <button  class="btn btn-icon btn-primary d-md-none" data-toggle="modal" data-target="#categoryForm"><em class="icon ni ni-plus" ></em><span>Add</span></button>
+                                                            <button  class="btn btn-primary d-none d-md-inline-flex" data-toggle="modal" data-target="#categoryForm"><em class="icon ni ni-plus" ></em><span>Add</span></button>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -225,7 +226,8 @@
 									                                                            </div>
 									                                                        </li>
 									                                                        <li class="nk-block-tools-opt">
-									                                                            <a href="#" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
+									                                                        
+                                                                                                 <a href="#" class="btn btn-icon btn-primary d-md-none" data-toggle="modal" data-target="#subcatForm" data-toggle="modal" data-target="#categoryForm"><em class="icon ni ni-plus"></em><span>Add </span></a>
 									                                                            <a href="#" class="btn btn-primary d-none d-md-inline-flex" data-toggle="modal" data-target="#subcatForm" data-toggle="modal" data-target="#categoryForm"><em class="icon ni ni-plus"></em><span>Add </span></a>
 									                                                        </li>
 									                                                    </ul>

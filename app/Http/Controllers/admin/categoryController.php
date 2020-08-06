@@ -10,12 +10,14 @@ use App\Models\SubCategory;
 class categoryController extends Controller
 {
     public function index(){
-    	$category=Category::all();
+        
+    	$categories=Category::with('subcategories')->get();
+
     	$subcategory= SubCategory::join('categories', 'categories.id', '=', 'sub_categories.category_id')
             ->select('categories.*','sub_categories.id as sub_id','sub_categories.subcategory')
             ->get();
            
-    	return view('category.manage',['categories'=>$category,'subcategory'=>$subcategory]);
+    	return view('category.manage',['categories'=>$categories,'subcategory'=>$subcategory]);
     }
 
 

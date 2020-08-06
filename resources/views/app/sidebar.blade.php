@@ -77,12 +77,12 @@
                                         <span class="nk-menu-text">Wallet Request</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
-                                 <li class="nk-menu-item">
+                             <!--     <li class="nk-menu-item">
                                     <a href="html/ecommerce/integration.html" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-server-fill"></em></span>
                                         <span class="nk-menu-text">Integration</span>
                                     </a>
-                                </li>
+                                </li> -->
                                  <li class="nk-menu-item">
                                     <a href="html/components.html" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-layers-fill"></em></span>

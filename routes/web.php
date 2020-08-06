@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 
   Route::get('', 'user\HomeController@index')->name('user-dashboard');
+  Route::post('services', 'user\HomeController@search')->name('user-search');
+  Route::get('book/{slug}', 'user\bookController@index')->name('user-book-service');
+   Route::get('category/subcategory/{slug}', 'user\HomeController@productDetails')->name('user-product-details');
 
 Auth::routes();
 Route::group([ 'prefix' => 'vendor' ,'middleware' => ['App\Http\Middleware\VendorMiddleware']], function () {

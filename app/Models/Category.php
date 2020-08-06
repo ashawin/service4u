@@ -13,4 +13,14 @@ class Category extends Model
      public function subcategories(){
         return $this->hasMany(SubCategory::class, 'category_id', 'id');
     }
+
+
+    public function products(){
+    	return $this->hasMany(Service::class, 'category_id', 'id');
+    }
+
+    public function searchproducts()
+	{
+	    return $this->hasManyThrough(Service::class, self::class, 'id', 'category_id');
+	}
 }
