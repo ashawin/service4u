@@ -15,6 +15,8 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
+              $table->string('slug');
+              $table->string('provider_id')->nullable();
             $table->string('category_id');
             $table->string('subcategory_id');
             $table->string('product_id');
@@ -26,7 +28,8 @@ class CreateServicesTable extends Migration
             $table->string('price');          
             $table->string('desc');
             $table->string('type');
-            $table->string('is_price_show');
+            $table->string('is_price_show')->nullable;
+            $table->string('status');
             $table->timestamps();
         });
     }

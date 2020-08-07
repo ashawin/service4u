@@ -3,7 +3,7 @@
                 <div class="container hidden-md-down">
                     <div class="row">
 
-                        <!-- ============================================================= Header Logo ============================================================= -->
+                       
                         <div class="header-logo">
                             <a href="home.html" class="header-logo-link">
                                 <svg version="1.1" x="0px" y="0px" width="175.748px"

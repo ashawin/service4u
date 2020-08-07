@@ -5,12 +5,7 @@
 <div class="nk-wrap ">
  <div class="nk-block nk-block-lg">
                                         <div class="nk-block-head">
-                                            <div class="nk-block-head-content">
-                                                <h4 class="title nk-block-title">With Icon</h4>
-                                                <div class="nk-block-des">
-                                                    <p>You can simply activate a tab or pill navigation without writing any JavaScript by simply specifying <code>data-toggle="tab"</code> or <code>data-toggle="pill"</code></p>
-                                                </div>
-                                            </div>
+                                           
                                         </div>
                                         <div class="card card-preview">
                                         	@if(session()->has('msg'))

@@ -19,9 +19,15 @@
                                             </a>
                                         </li>
                                          <li class="nk-menu-item">
+                                            <a href="{{route('vendor-service-orders')}}" class="nk-menu-link">
+                                                <span class="nk-menu-icon"><em class="icon ni ni-file-text"></em></span>
+                                                <span class="nk-menu-text">Services Orders</span>
+                                            </a>
+                                        </li>
+                                         <li class="nk-menu-item">
                                             <a href="{{route('vendor-service')}}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-file-text"></em></span>
-                                                <span class="nk-menu-text">Services</span>
+                                                <span class="nk-menu-text">Services Request</span>
                                             </a>
                                         </li>
                                         <li class="nk-menu-item">
@@ -37,7 +43,7 @@
                                                 <span class="nk-menu-text">Account Setting</span>
                                             </a>
                                         </li>
-                                        <li class="nk-menu-heading">
+                                    <!--     <li class="nk-menu-heading">
                                             <h6 class="overline-title">See Others</h6>
                                         </li>
                                         <li class="nk-menu-item">
@@ -57,9 +63,9 @@
                                                 <li class="nk-menu-item"><a href="html/subscription/subscriptions-detail.html" class="nk-menu-link"><span class="nk-menu-text">Subscription Details</span></a></li>
                                             </ul>
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                     <!-- Menu -->
-                                    <ul class="nk-menu nk-menu-sm">
+                                  <!--   <ul class="nk-menu nk-menu-sm">
                                         <!-- Menu -->
                                         <li class="nk-menu-heading">
                                             <span>Help Center</span>
@@ -79,7 +85,7 @@
                                                 <span class="nk-menu-text">Support</span>
                                             </a>
                                         </li>
-                                    </ul>
+                                    <!-- </ul> --> 
                                 </div><!-- .nk-sidebar-menu -->
                                 <div class="nk-aside-close">
                                     <a href="#" class="toggle" data-target="sideNav"><em class="icon ni ni-cross"></em></a>

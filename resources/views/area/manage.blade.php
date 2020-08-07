@@ -819,10 +819,11 @@
 							                <div class="modal-body">
 							                    <form action="{{route('admin-save-district')}}" class="form-validate is-alter" method="post">
 							                    	@csrf
-							                       <label class="form-label">Country</label>
+							                    
+                                                              <label class="form-label">Country</label>
                                                             <div class="form-control-wrap">
-                                                                <select class="form-select form-control form-control-lg"  required name="country_id" id="country_id_value" data-search="on">
-                                                                    <option value="" seleted>Select Country</option>
+                                                                <select class="form-select form-control form-control-lg" data-search="on" required name="country_id">
+                                                                      <option value="" seleted>Select Country</option>
                                                                     @foreach($country as $item)
                                                                     <option value="{{$item->id}}">{{$item->country}}</option>
                                                                     @endforeach
@@ -832,7 +833,7 @@
 							                        <label class="form-label">State</label>
                                                             <div class="form-control-wrap">
                                                                 <select class="form-select form-control form-control-lg" data-search="on" required name="state_id">
-                                                                    <option value="" seleted>Select Country</option>
+                                                                    <option value="" seleted>Select State</option>
                                                                     @foreach($states as $state)
                                                                     <option value="{{$state->id}}">{{$state->state}}</option>
                                                                     @endforeach
@@ -904,7 +905,7 @@
                                                           <label class="form-label" for="phone-no">Area</label>
 							                              <div class="form-control-wrap">
                                                                <textarea class="form-control" name="area"></textarea>
-                                                          </div>							                       
+                                                          </div><br>							                       
 							                      
 							                        <div class="form-group">
 							                            <button type="submit" class="btn btn-lg btn-primary">Save </button>

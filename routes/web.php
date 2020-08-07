@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 
   Route::get('', 'user\HomeController@index')->name('user-dashboard');
+  Route::get('category/subcategory/{slug}', 'user\HomeController@productDetails')->name('user-product-details');
   Route::post('services', 'user\HomeController@search')->name('user-search');
   Route::get('book/{slug}', 'user\bookController@index')->name('user-book-service');
-   Route::get('category/subcategory/{slug}', 'user\HomeController@productDetails')->name('user-product-details');
+  Route::post('book/save', 'user\bookController@save')->name('user-book-service-save');
+ 
 
 Auth::routes();
 Route::group([ 'prefix' => 'vendor' ,'middleware' => ['App\Http\Middleware\VendorMiddleware']], function () {
@@ -31,6 +33,8 @@ Route::group([ 'prefix' => 'vendor' ,'middleware' => ['App\Http\Middleware\Vendo
   //Services
   Route::get('/services', 'vendor\serviceController@index')->name('vendor-service');
    Route::post('/service/request', 'vendor\serviceController@requestService')->name('vendor-service-request');
+   Route::get('/services/orders', 'vendor\serviceController@orderService')->name('vendor-service-orders');
+   Route::post('/services/orders/confirm', 'vendor\serviceController@confirmOrder')->name('vendor-service-orders-confirm');
 
 });
 
@@ -62,6 +66,7 @@ Route::group([ 'prefix' => 'admin' ,'middleware' => ['App\Http\Middleware\AdminM
      //services
       Route::get('services', 'admin\serviceController@index')->name('admin-service');
       Route::get('service/requests', 'admin\serviceController@serviceRequest')->name('admin-service-request');
+        Route::post('service/requests/confirm', 'admin\serviceController@confirmRequest')->name('admin-service-request-confirm');
       Route::get('service/add', 'admin\serviceController@add')->name('admin-service-add');
       Route::post('service/save', 'admin\serviceController@save')->name('admin-service-save');
 

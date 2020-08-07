@@ -16,19 +16,18 @@
                                     <p class="alert alert-success">{{session()->get('msg')}}</p>
                                     @endif
                                      <ul class="nk-nav nav nav-tabs">
+                                        
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="#services" data-toggle="tab" >Services</a>
+                                            <a class="nav-link active " href="#services" data-toggle="tab" >Services</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#pending" data-toggle="tab">Pending Service</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#myservice" data-toggle="tab">My Service</a>
-                                        </li>
+                                      
                                       
                                     </ul><!-- nav-tabs -->
                                     <div class="tab-content">
-                                        <div class="tab-pane active "id="services">
+                                        <div class="tab-pane active  "id="services">
                                             <table class="table table-tickets">
                                                 <thead class="tb-ticket-head">
                                                     <tr class="tb-ticket-title">
@@ -129,52 +128,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="tab-pane" id="myservice">
-                                            <table class="table table-tickets">
-                                                <thead class="tb-ticket-head">
-                                                    <tr class="tb-ticket-title">
-                                                        <th class="tb-ticket-id"><span>Id</span></th>
-                                                        <th class="tb-ticket-desc">
-                                                            <span>Category</span>
-                                                        </th>
-                                                        <th class="tb-ticket-date tb-col-md">
-                                                            <span>SubCategory</span>
-                                                        </th>
-                                                        <th class="tb-ticket-seen tb-col-md">
-                                                            <span>Product</span>
-                                                        </th>
-                                                        <th class="tb-ticket-status">
-                                                            <span>Area</span>
-                                                        </th>
-                                                        
-                                                       
-                                                    </tr><!-- .tb-ticket-title -->
-                                                </thead>
-                                                <tbody class="tb-ticket-body">
-                                                    @foreach($myservices as $service)
-                                                    <tr class="tb-ticket-item ">
-                                                        <td class="tb-ticket-id"><a href="html/subscription/ticket-details.html">{{$service->service_id}}</a></td>
-                                                        <td class="tb-ticket-desc">
-                                                            <a href="html/subscription/ticket-details.html"><span class="title">{{$service->category}}</span></a>
-                                                        </td>
-                                                        <td class="tb-ticket-date tb-col-md">
-                                                            <span class="date">{{$service->subcategory}}</span>
-                                                        </td>
-                                                        <td class="tb-ticket-seen tb-col-md">
-                                                            <span class="date-last">{{$service->product}}</span>
-                                                        </td>
-                                                        <td class="tb-ticket-status">
-                                                            <span class="badge badge-success">{{$service->country}},{{$service->state}},{{$service->district}}, {{$service->area}}</span>
-                                                        </td>
-
-                                                      
-
-                                                    </tr><!-- .tb-ticket-item -->
-                                                    @endforeach
-                                                
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                       
                                     </div><!-- .nk-block -->
                                  
                                 </div>

@@ -15,6 +15,7 @@ class CreateAreasTable extends Migration
     {
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
+              $table->string('slug');
             $table->string('country_id');
             $table->string('state_id');
             $table->string('district_id');

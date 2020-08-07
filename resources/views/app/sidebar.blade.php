@@ -53,12 +53,12 @@
                                         <span class="nk-menu-text">Customers</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item">
+                                <!-- <li class="nk-menu-item">
                                     <a href="html/ecommerce/supports.html" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-chat-fill"></em></span>
                                         <span class="nk-menu-text">Supports</span>
                                     </a>
-                                </li><!-- .nk-menu-item -->
+                                </li><!-- .nk-menu-item  -->
                                 <li class="nk-menu-item">
                                     <a href="{{route('admin-setting')}}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-opt-alt-fill"></em></span>
@@ -88,7 +88,7 @@
                                         <span class="nk-menu-icon"><em class="icon ni ni-layers-fill"></em></span>
                                         <span class="nk-menu-text"><form method="post" action="{{route('logout')}}">
                                                         @csrf
-                                                        <button type="submit"><em class="icon ni ni-signout"></em><span>Sign out</span></button></form><</span>
+                                                        <button type="submit"><em class="icon ni ni-signout"></em><span>Sign out</span></button></form></span>
                                     </a>
                                 </li>
                                 <li class="nk-menu-heading">

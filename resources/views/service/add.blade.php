@@ -276,8 +276,8 @@
 
             });
               $("#subcategory").on('change', function(){
-              var category=  $(this).val();
-              var subcategory=  $('#category').val();
+              var category=  $('#category').val();
+              var subcategory=  $(this).val();
               var html='';
                $.ajax({
                	dataType: "json",

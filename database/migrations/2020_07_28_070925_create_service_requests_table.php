@@ -15,6 +15,7 @@ class CreateServiceRequestsTable extends Migration
     {
         Schema::create('service_requests', function (Blueprint $table) {
             $table->id();
+            $table->string('slug');
             $table->string('provider_id');
             $table->string('service_id');
             $table->string('slug')->nullable();

@@ -8,4 +8,8 @@ class ServiceRequest extends Model
 {
     protected $table="service_requests";
    protected  $fillable=['service_id','desc','provider_id','slug','status'];
+
+    public function myservice(){
+    	return $this->hasMany(Orders::class,'service_id','service_id');
+    }
 };

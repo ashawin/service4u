@@ -1,6 +1,6 @@
 @extends('user.layout.app1')
 @section('content')
-<body class="left-sidebar">
+<body class="single-product full-width">
         <div id="page" class="hfeed site">
             <a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
             <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
@@ -588,7 +588,7 @@
 
                     <div id="primary" class="content-area">
                         <main id="main" class="site-main">
-    <?php
+                                          <?php
                                                 $images= array();
                                                 $images=explode('|',$service->images);
 
@@ -604,7 +604,7 @@
                                             <div class="thumbnails-single owl-carousel">
                                                 @foreach($images as $image)
 
-                                                <a href="{{asset('products/images/'.$image)}}" class="zoom" title="" data-rel="prettyPhoto[product-gallery]"><img src="{{asset('products/images/'.$image)}}" data-echo="{{asset('/products/images/'.$image)}}" class="wp-post-image" alt="no image"></a>
+                                                <a href="{{asset('products/images/'.$image)}}" class="zoom" title="" data-rel="prettyPhoto[product-gallery]"><img src="file:///home/abhishek/websites/detail/transvelo.github.io/electro-html/assets/images/single-product/s1-1.jpg" data-echo="file:///home/abhishek/websites/detail/transvelo.github.io/electro-html/assets/images/single-product/s1-1.jpg" class="wp-post-image" alt="no image"></a>
                                                 @endforeach
 
                                                
@@ -719,7 +719,7 @@
                                                         <label>Quantity:</label>
                                                         <input type="number" name="quantity" value="1" title="Qty" class="input-text qty text"/>
                                                     </div> -->
-                                                    <a href="{{url('book/'.$service->pro_slug" type="submit" class="single_add_to_cart_button button">Book Now</a>
+                                                    <a href="{{url('book/'.$service->pro_slug)}}"  class="single_add_to_cart_button button">Book Now</a>
                                                     <input type="hidden" name="add-to-cart" value="2452" />
                                                     <input type="hidden" name="product_id" value="2452" />
                                                     <input type="hidden" name="variation_id" class="variation_id" value="0" />
@@ -1400,6 +1400,7 @@
                 </div><!-- /.container -->
             </div><!-- /.site-content -->
 
+
             <section class="brands-carousel">
                 <h2 class="sr-only">Brands Carousel</h2>
                 <div class="container">
@@ -2001,4 +2002,3 @@
 
     </body>
 @endsection
- -->

@@ -9,6 +9,9 @@
                                         <div class="nk-block-head-content">
                                             <h3 class="nk-block-title page-title">Service Requests</h3>
                                         </div><!-- .nk-block-head-content -->
+                                        @if(session()->has('msg'))
+                                        <h3 class="alert alert-success">Sucessfully Assigned</h3>
+                                        @endif
                                         <div class="nk-block-head-content">
                                             <div class="toggle-wrap nk-block-tools-toggle">
                                                 <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-more-v"></em></a>
@@ -89,7 +92,7 @@
                                             </div>
                                              <div class="nk-tb-col">
                                                  <a href="#" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
-                                                 <form method="post" action="">
+                                                 <form method="post" action="{{route('admin-service-request-confirm')}}">
                                                     @csrf
                                                     <input type="hidden" name="service_id" value="{{$service->service_id}}">
                                                      <input type="hidden" name="user_id" value="{{$service->user_id}}">

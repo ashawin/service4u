@@ -6,7 +6,7 @@
                                             <div class="nk-block-head-content">
                                                 <h2 class="nk-block-title fw-normal">Welcome,{{auth()->user()->name}}</h2>
                                                 <div class="nk-block-des">
-                                                    <p>Welcome to our dashboard. Manage your account and your subscriptions.</p>
+                                                   
                                                 </div>
                                             </div>
                                         </div>
@@ -42,7 +42,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="nk-wg1-action">
-                                                            <a href="html/subscription/profile.html" class="link"><span>Manage Your Account</span> <em class="icon ni ni-chevron-right"></em></a>
+                                                            <a href="{{route('vendor-wallet-request')}}" class="link"><span>Manage Wallet</span> <em class="icon ni ni-chevron-right"></em></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -66,12 +66,12 @@
                                                                     <polyline points="77.75 16.61 77.75 20.61 73.75 20.61" fill="none" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></svg>
                                                             </div>
                                                             <div class="nk-wg1-text">
-                                                                <h5 class="title">Security Setting</h5>
+                                                                <h5 class="title">Service Orders</h5>
                                                                 <p>You have full control to manage your own account and keep account fully secure.</p>
                                                             </div>
                                                         </div>
                                                         <div class="nk-wg1-action">
-                                                            <a href="html/subscription/profile-setting.html" class="link"><span>Account Setting</span> <em class="icon ni ni-chevron-right"></em></a>
+                                                            <a href="{{route('vendor-service-orders')}}" class="link"><span>Manage Orders</span> <em class="icon ni ni-chevron-right"></em></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -95,7 +95,7 @@
                                                                     <line x1="35" y1="69" x2="51" y2="69" fill="none" stroke="#c4cefe" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><text transform="translate(34.54 43.18) scale(0.99 1)" font-size="9.31" fill="#6576ff" font-family="Nunito-Black, Nunito Black">$</text></svg>
                                                             </div>
                                                             <div class="nk-wg1-text">
-                                                                <h5 class="title">Billing History</h5>
+                                                                <h5 class="title">Payment History</h5>
                                                                 <p>Check out all your payment history. You can also download or print your invoice.</p>
                                                             </div>
                                                         </div>
@@ -126,12 +126,12 @@
                                                                     <polyline points="25 56 35 56 40.14 49" fill="none" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></svg>
                                                             </div>
                                                             <div class="nk-wg1-text">
-                                                                <h5 class="title">Account Reports</h5>
-                                                                <p>Check your reports of uses and manage your packages or subscriptions that you have.</p>
+                                                                <h5 class="title">Service Requests</h5>
+                                                                <p>Request for upcoming Services</p>
                                                             </div>
                                                         </div>
                                                         <div class="nk-wg1-action">
-                                                            <a href="html/subscription/subscriptions.html" class="link"><span>Manage Subscription</span> <em class="icon ni ni-chevron-right"></em></a>
+                                                            <a href="{{route('vendor-service')}}" class="link"><span>Manage Services</span> <em class="icon ni ni-chevron-right"></em></a>
                                                         </div>
                                                     </div>
                                                 </div>

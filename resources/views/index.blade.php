@@ -26,16 +26,10 @@
                                                             </div>
                                                         </div>
                                                         <div class="data">
-                                                            <div class="amount">$74,958.49</div>
-                                                            <div class="info"><strong>$7,395.37</strong> in last month</div>
+                                                            <div class="amount">{{count(App\Models\Service::all())}}</div>
+                                                           
                                                         </div>
-                                                        <div class="data">
-                                                            <h6 class="sub-title">This week so far</h6>
-                                                            <div class="data-group">
-                                                                <div class="amount">$1,338.72</div>
-                                                                <div class="info text-right"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.63%</span><br><span>vs. last week</span></div>
-                                                            </div>
-                                                        </div>
+                                                        
                                                     </div><!-- .card-inner -->
                                                     <div class="nk-ecwg1-ck">
                                                         <canvas class="ecommerce-line-chart-s1" id="totalSales"></canvas>
@@ -66,8 +60,8 @@
                                                         </div>
                                                         <div class="data">
                                                             <div class="data-group">
-                                                                <div class="amount">$463.35</div>
-                                                                <div class="info text-right"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.63%</span><br><span>vs. last week</span></div>
+                                                                <div class="amount">{{App\Models\ServiceRequest::where('status','=',0)->count()}}</div>
+                                                               </div>
                                                             </div>
                                                         </div>
                                                         <h6 class="sub-title">View Pending Services</h6>
@@ -91,8 +85,8 @@
                                                                 </div>
                                                                 <div class="data">
                                                                     <div class="data-group">
-                                                                        <div class="amount">329</div>
-                                                                        <div class="info text-right"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.63%</span><br><span>vs. last week</span></div>
+                                                                        <div class="amount">{{App\User::where('role','=',2)->count()}}</div>
+                                                                        <div class="info text-right"></div>
                                                                     </div>
                                                                 </div>
                                                             </div><!-- .card-inner -->
@@ -113,8 +107,8 @@
                                                                 </div>
                                                                 <div class="data">
                                                                     <div class="data-group">
-                                                                        <div class="amount">194</div>
-                                                                        <div class="info text-right"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.63%</span><br><span>vs. last week</span></div>
+                                                                        <div class="amount">{{App\User::where('role','=',3)->count()}}</div>
+                                                                        <div class="info text-right"></div>
                                                                     </div>
                                                                 </div>
                                                             </div><!-- .card-inner -->

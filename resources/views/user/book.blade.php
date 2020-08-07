@@ -582,59 +582,46 @@
                             <article class="page type-page status-publish hentry">
                                 <header class="entry-header"><h1 itemprop="name" class="entry-title">Book Service</h1></header><!-- .entry-header -->
 
-                                <form enctype="multipart/form-data" action="#" class="checkout woocommerce-checkout" method="post" name="checkout">
+                                <form enctype="multipart/form-data" action="{{route('user-book-service-save')}}" class="checkout woocommerce-checkout" method="post" name="checkout">
+                                	@csrf
+                                	<input type="hidden" value="{{$service->id}}" name="service">
                                     <div id="customer_details" class="col2-set">
                                         <div class="col-1">
                                             <div class="woocommerce-billing-fields">
 
-                                                <h3>Billing Details</h3>
+                                                
 
-                                                <p id="billing_first_name_field" class="form-row form-row form-row-first validate-required"><label class="" for="billing_first_name">First Name <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_first_name" name="billing_first_name" class="input-text "></p>
+                                            
 
-                                                <p id="billing_last_name_field" class="form-row form-row form-row-last validate-required"><label class="" for="billing_last_name">Last Name <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_last_name" name="billing_last_name" class="input-text "></p><div class="clear"></div>
+                                                <p id="billing_last_name_field" class="form-row form-row form-row-wide validate-required"><label class="" for="billing_last_name"> Name <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_last_name" name="name" class="input-text " required></p><div class="clear"></div>
 
-                                                <p id="billing_company_field" class="form-row form-row form-row-wide"><label class="" for="billing_company">Company Name</label><input type="text" value="" placeholder="" id="billing_company" name="billing_company" class="input-text "></p>
+                                              
 
-                                                <p id="billing_email_field" class="form-row form-row form-row-first validate-required validate-email"><label class="" for="billing_email">Email Address <abbr title="required" class="required">*</abbr></label><input type="email" value="" placeholder="" id="billing_email" name="billing_email" class="input-text "></p>
+                                                <p id="billing_email_field" class="form-row form-row form-row-first validate-required validate-email"><label class="" for="billing_email">Email Address <abbr title="required" class="required">*</abbr></label><input type="email" value="" placeholder="" id="billing_email" name="email" class="input-text " required></p>
 
-                                                <p id="billing_phone_field" class="form-row form-row form-row-last validate-required validate-phone"><label class="" for="billing_phone">Phone <abbr title="required" class="required">*</abbr></label><input type="tel" value="" placeholder="" id="billing_phone" name="billing_phone" class="input-text "></p><div class="clear"></div>
+                                                <p id="billing_phone_field" class="form-row form-row form-row-last validate-required validate-phone"><label class="" for="billing_phone">Phone <abbr title="required" class="required">*</abbr></label><input type="tel" value="" placeholder="" id="billing_phone" name="mobile" class="input-text "required></p><div class="clear"></div>
 
-                                                <p id="billing_country_field" class="form-row form-row form-row-wide validate-required validate-email"><label class="" for="billing_country">Country <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_country" name="billing_phone" class="input-text "></p><div class="clear"></div>
+                                                <p id="billing_country_field" class="form-row form-row form-row-wide validate-required validate-email"><label class="" for="billing_country">Country <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="country" name="country" class="input-text " required></p><div class="clear"></div>
 
-                                                <p id="billing_address_1_field" class="form-row form-row form-row-wide address-field validate-required"><label class="" for="billing_address_1">Address <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="Street address" id="billing_address_1" name="billing_address_1" class="input-text "></p>
+                                                <p id="billing_address_1_field" class="form-row form-row form-row-wide address-field validate-required"><label class="" for="billing_address_1">Address <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="Street address" id="billing_address_1" name="address" class="input-text " required></p>
+                                                <p id="billing_address_1_field" class="form-row form-row form-row-wide address-field validate-required"><label class="" for="billing_address_1">Address 1 </label><input type="text" value="" placeholder="Street address1" id="billing_address_1" name="address1" class="input-text " ></p>
 
-                                                <p id="billing_address_2_field" class="form-row form-row form-row-wide address-field"><input type="text" value="" placeholder="Apartment, suite, unit etc. (optional)" id="billing_address_2" name="billing_address_2" class="input-text "></p>
+                                                
 
-                                                <p id="billing_city_field" class="form-row form-row form-row-wide address-field validate-required" data-o_class="form-row form-row form-row-wide address-field validate-required"><label class="" for="billing_city">Town / City <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_city" name="billing_city" class="input-text "></p>
+                                                <p id="billing_city_field" class="form-row form-row form-row-wide address-field validate-required" data-o_class="form-row form-row form-row-wide address-field validate-required"><label class="" for="billing_city"> District <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="city" name="district" class="input-text " required></p>
 
-                                                <p id="billing_state_field" class="form-row form-row form-row-first validate-required validate-email"><label class="" for="billing_state">State / County <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_state" name="billing_phone" class="input-text "></p>
+                                                <p id="billing_state_field" class="form-row form-row form-row-first validate-required validate-email"><label class="" for="billing_state">State  <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_state" name="state" class="input-text " required></p>
 
-                                                <p id="billing_postcode_field" class="form-row form-row form-row-last address-field validate-postcode validate-required" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode"><label class="" for="billing_postcode">Postcode / ZIP <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_postcode" name="billing_postcode" class="input-text "></p>
+                                                <p id="billing_postcode_field" class="form-row form-row form-row-last address-field validate-postcode validate-required" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode"><label class="" for="billing_postcode">Postcode / ZIP <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_postcode" name="pin" class="input-text " required></p>
 
                                                 <div class="clear"></div>
 
-                                                <p class="form-row form-row-wide create-account"><input type="checkbox" value="1" name="createaccount" id="createaccount" class="input-checkbox"> <label class="checkbox" for="createaccount">Create an account?</label></p>
+                                                <p class="form-row form-row-wide create-account"><input type="checkbox" value="1" name="account" id="createaccount" class="input-checkbox"> <label class="checkbox" for="createaccount">Create an account?</label></p>
 
                                             </div>
                                         </div>
-
-                                        <div class="col-2">
-                                            <h3>Shipping Details</h3>
-                                            <div class="woocommerce-shipping-fields">
-                                                <h3 id="ship-to-different-address">
-                                                    <label class="checkbox" for="ship-to-different-address-checkbox">Ship to a different address?</label>
-                                                    <input type="checkbox" value="1" name="ship_to_different_address" class="input-checkbox" id="ship-to-different-address-checkbox">
-                                                </h3>
-                                         
-                                                <p id="order_comments_field" class="form-row form-row notes"><label class="" for="order_comments">Order Notes</label><textarea cols="5" rows="2" placeholder="Notes about your order, e.g. special notes for delivery." id="order_comments" class="input-text " name="order_comments"></textarea></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <h3 id="order_review_heading">Your order</h3>
-
-                                    <div class="woocommerce-checkout-review-order" id="order_review">
-                                        <table class="shop_table woocommerce-checkout-review-order-table">
+                                         <div class="woocommerce-checkout-review-order col-2" id="order_review">
+                                      <!--   <table class="shop_table woocommerce-checkout-review-order-table">
                                             <thead>
                                                 <tr>
                                                     <th class="product-name">Product</th>
@@ -678,26 +665,15 @@
                                                     <td><strong><span class="amount">$3,599.00</span></strong> </td>
                                                 </tr>
                                             </tfoot>
-                                        </table>
+                                        </table> -->
 
                                         <div class="woocommerce-checkout-payment" id="payment">
                                             <ul class="wc_payment_methods payment_methods methods">
-                                                <li class="wc_payment_method payment_method_bacs">
-                                                    <input type="radio" data-order_button_text="" checked="checked" value="bacs" name="payment_method" class="input-radio" id="payment_method_bacs">
-                                                    <label for="payment_method_bacs">Direct Bank Transfer</label>
-                                                    <div class="payment_box payment_method_bacs">
-                                                        <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-                                                    </div>
-                                                </li>
-                                                <li class="wc_payment_method payment_method_cheque">
-                                                    <input type="radio" data-order_button_text="" value="cheque" name="payment_method" class="input-radio" id="payment_method_cheque">
-                                                    <label for="payment_method_cheque">Cheque Payment   </label>
-                                                    <div style="display:none;" class="payment_box payment_method_cheque">
-                                                        <p>Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
-                                                    </div>
-                                                </li>
+                                            
+                                            
+                                             
                                                 <li class="wc_payment_method payment_method_cod">
-                                                    <input type="radio" data-order_button_text="" value="cod" name="payment_method" class="input-radio" id="payment_method_cod">
+                                                    <input type="radio" data-order_button_text="" value="1" name="payment_method" class="input-radio" id="payment_method_cod" required>
 
                                                     <label for="payment_method_cod">Cash on Delivery</label>
                                                     <div style="display:none;" class="payment_box payment_method_cod">
@@ -705,26 +681,23 @@
                                                     </div>
                                                 </li>
                                                 <li class="wc_payment_method payment_method_paypal">
-                                                    <input type="radio" data-order_button_text="Proceed to PayPal" value="paypal" name="payment_method" class="input-radio" id="payment_method_paypal">
+                                                    <input type="radio" data-order_button_text="Proceed to PayPal" value="2" name="payment_method" class="input-radio" id="payment_method_paypal" required>
 
-                                                    <label for="payment_method_paypal">PayPal <img alt="PayPal Acceptance Mark" src="../../www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg"><a title="What is PayPal?" onclick="javascript:window.open('https://www.paypal.com/us/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;" class="about_paypal" href="https://www.paypal.com/us/webapps/mpp/paypal-popup">What is PayPal?</a></label>
-                                                    <div style="display:none;" class="payment_box payment_method_paypal">
-                                                        <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
+                                                    <label for="payment_method_paypal">Online <img alt="PayPal Acceptance Mark" src="../../www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg">
                                                     </div>
                                                 </li>
                                             </ul>
-                                            <div class="form-row place-order">
-
-                                                <p class="form-row terms wc-terms-and-conditions">
-                                                    <input type="checkbox" id="terms" name="terms" class="input-checkbox">
-                                                    <label class="checkbox" for="terms">I’ve read and accept the <a target="_blank" href="terms-and-conditions.html">terms &amp; conditions</a> <span class="required">*</span></label>
-                                                    <input type="hidden" value="1" name="terms-field">
-                                                </p>
-
-                                                <input type="submit" data-value="Place order" value="Place order" class="button alt">
-                                            </div>
+                                          
                                         </div>
                                     </div>
+
+                                        
+                                                <input type="submit" data-value="Place order" value="Place order" class="button alt">
+                                    </div>
+
+                                 
+
+                                   
                                 </form>
                             </article>
                         </main><!-- #main -->
@@ -1120,24 +1093,7 @@
                                     </aside>
                                 </div><!-- /.columns -->
 
-                                <div class="columns">
-                                    <aside id="nav_menu-4" class="widget clearfix widget_nav_menu">
-                                        <div class="body">
-                                            <h4 class="widget-title">Customer Care</h4>
-                                            <div class="menu-footer-menu-3-container">
-                                                <ul id="menu-footer-menu-3" class="menu">
-                                                    <li class="menu-item"><a href="single-product.html">My Account</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Track your Order</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Wishlist</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Customer Service</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Returns/Exchange</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">FAQs</a></li>
-                                                    <li class="menu-item"><a href="hsingle-product.html">Product Support</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </aside>
-                                </div><!-- /.columns -->
+                           
 
                             </div><!-- /.col -->
 
@@ -1240,122 +1196,7 @@
         </div><!-- #page -->
 
         <!-- For demo purposes – can be removed on production -->
-        <div id="config" class="config">
-            <div id="config_wrapper">
-
-
-
-                                <div id="config_container">
-<div class="style-main-title">Style Selector</div>
-                    <div class="box-title">Choose Home &#038; Static Pages</div>
-                    <div class="input-box">
-                        <div class="input">
-                            <select id="home-pages" name="home_page">
-                                <option value="">Choose</option>
-                                <option value="home.html">Home v1</option>
-                                <option value="home-v2.html">Home v2</option>
-                                <option value="home-v3.html">Home v3</option>
-                                <option value="home-v3-full-color.html">Home v3 Full Color</option>
-                                <option value="about.html">About</option>
-                                <option value="cart.html">Cart</option>
-                                <option value="contact-v1.html">contact-v1</option>
-                                <option value="contact-v2.html">contact-v2</option>
-                                <option value="faq.html">FAQ</option>
-                                <option value="store-directory.html">Store Directory</option>
-                                <option value="terms-and-conditions.html">Terms and Conditions</option>
-                                <option value="404.html">404</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="box-title">Choose Ecommerce Page</div>
-                    <div class="input-box">
-                        <div class="input">
-                            <select id="demo-pages" name="demo-shop">
-                                <option value="">Choose</option>
-                                <option value="shop.html">Shop</option>
-                                <option value="cart.html">Cart</option>
-                                <option value="checkout.html">Checkout</option>
-                                <option value="my-account.html">My Account</option>
-                                <option value="compare.html">Compare</option>
-                                <option value="wishlist.html">Wishlist</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="box-title">Choose Blog Style</div>
-                    <div class="input-box">
-                        <div class="input">
-                            <select id="header-style" name="header">
-                                <option value="">Choose</option>
-                                <option value="blog-v1.html">Blog v1</option>
-                                <option value="blog-v2.html">Blog v2</option>
-                                <option value="blog-v3.html">Blog v3</option>
-                                <option value="blog-single.html">Blog Single Post</option>
-                                <option value="blog-fw.html">Blog Full Width</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="box-title">Choose Shop Pages</div>
-                    <div class="input-box">
-                        <div class="input">
-                            <select id="shop-style" name="shop-style">
-                                <option value="">Choose</option>
-                                <option value="shop.html">Shop Grid</option>
-                                <option value="shop.html#grid-extended">Shop Extended</option>
-                                <option value="shop.html#list-view">Shop List View</option>
-                                <option value="shop.html#list-view-small">Shop List View Small</option>
-                                <option value="shop-fw.html">Shop Full Width</option>
-                                <option value="shop-right-side-bar.html">Shop Right Sidebar</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="box-title">Choose Single Product Pages</div>
-                    <div class="input-box">
-                        <div class="input">
-                            <select id="single-products" name="single-product">
-                                <option value="">Choose</option>
-                                <option value="single-product.html">Single Product</option>
-                                <option value="single-product-extended.html">Single Product Extended</option>
-                                <option value="single-product-sidebar.html">Single Product Sidebar</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="box-title">Choose Product Category </div>
-                    <div class="input-box">
-                        <div class="input">
-                            <select id="product-category-col" name="product-category">
-                                <option value="">Choose</option>
-                                <option value="cat-3-col.html">3 Column Sidebar</option>
-                                <option value="cat-4-col.html">4 Column Sidebar</option>
-                                <option value="cat-4-fw.html">4 Column Full width</option>
-                                <option value="product-category-6-column.html">6 Columns Full width</option>
-                                <option value="shop-fw.html">Shop Full Width</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="box-title">Colors</div>
-                    <div id="colors" class="colors">
-                        <a class="changecolor green" href="#" title="Green color">Green</a>
-                        <a class="changecolor pink" href="#" title="Pink color">Pink</a>
-                        <a class="changecolor black" href="#" title="Black color">Black</a>
-                        <a class="changecolor gold" href="#" title="Gold color">Gold</a>
-                        <a class="changecolor yellow" href="#" title="Yellow color">Yellow</a>
-                        <a class="changecolor blue" href="#" title="Blue color">Blue</a>
-                        <a class="changecolor red" href="#" title="Red color">Red</a>
-                        <a class="changecolor orange" href="#" title="Orange color">Orange</a>
-                        <a class="changecolor flat-blue" href="#" title="Flat Blue color">Flat Blue</a>
-                    </div>
-                    <div class="box-title-text"><strong>Tons</strong> of customization you can do through Sass...</div>
-                </div>
-            </div>
-
-            <div class="style-toggle open"><i class="fa fa-wrench"></i></div>
-        </div>
+     
         <!-- For demo purposes – can be removed on production : End -->
 
      <script type="text/javascript" src="{{asset('users/assets1/js/jquery.min.js')}}"></script>

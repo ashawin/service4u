@@ -15,19 +15,19 @@
                     <div class="card">
                         <div class="card-header border-bottom">Manage Area</div>
                         <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <h5 class="card-title">Manage Area Details....</h5>
+                            <p class="card-text">Manage area like country ,state , distrcit etc.</p>
                             <a href="{{route('admin-area')}}" class="btn btn-primary">Manage</a>
                         </div>
-                        <div class="card-footer border-top text-muted">2 days ago</div>
+                       
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-header border-bottom">Manage Category</div>
                         <div class="card-inner">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <h5 class="card-title">Manage Category Details...</h5>
+                            <p class="card-text">Manage Category and SubCategory</p>
                             <a href="{{route('admin-category')}}" class="btn btn-primary">Manage</a>
                         </div>
                     </div>
