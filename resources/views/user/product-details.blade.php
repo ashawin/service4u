@@ -15,14 +15,14 @@
 
                     <nav>
                         <ul id="menu-top-bar-right" class="nav nav-inline pull-right animate-dropdown flip">
-                            <li class="menu-item animate-dropdown"><a title="Store Locator" href="#"><i class="ec ec-map-pointer"></i>Store Locator</a></li>
+                            
                             <li class="menu-item animate-dropdown"><a title="Track Your Order" href="track-your-order.html"><i class="ec ec-transport"></i>Track Your Order</a></li>
-                            <li class="menu-item animate-dropdown"><a title="Shop" href="shop.html"><i class="ec ec-shopping-bag"></i>Shop</a></li>
+                           
                             <li class="menu-item animate-dropdown"><a title="My Account" href="my-account.html"><i class="ec ec-user"></i>My Account</a></li>
                         </ul>
                     </nav>
                 </div>
-            </div><!-- /.top-bar
+            </div>
 
           
             <header id="masthead" class="site-header header-v2">
@@ -31,7 +31,7 @@
 
                         <!-- ============================================================= Header Logo ============================================================= -->
                         <div class="header-logo">
-                            <a href="home.html" class="header-logo-link">
+                            <a href="{{url('/')}}" class="header-logo-link">
                                 <svg version="1.1" x="0px" y="0px" width="175.748px"
                                     height="42.52px" viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52">
                                     <ellipse class="ellipse-bg" fill-rule="evenodd" clip-rule="evenodd" fill="#FDD700" cx="170.05" cy="36.341" rx="5.32" ry="5.367"/>
@@ -603,33 +603,15 @@
 
                                             <div class="thumbnails-single owl-carousel">
                                                 @foreach($images as $image)
-
-                                                <a href="{{asset('products/images/'.$image)}}" class="zoom" title="" data-rel="prettyPhoto[product-gallery]"><img src="file:///home/abhishek/websites/detail/transvelo.github.io/electro-html/assets/images/single-product/s1-1.jpg" data-echo="file:///home/abhishek/websites/detail/transvelo.github.io/electro-html/assets/images/single-product/s1-1.jpg" class="wp-post-image" alt="no image"></a>
+                                               <a href="{{asset('products/images/'.$image)}}" class="zoom" title="" data-rel="prettyPhoto[product-gallery]"><img src="{{asset('products/images/'.$image)}}" data-echo="{{asset('products/images/'.$image)}}" class="wp-post-image" alt="no image"></a>
                                                 @endforeach
-
-                                               
-
-                                                <a href="assets/images/single-product/s2.jpg" class="zoom" title="" data-rel="prettyPhoto[product-gallery]"><img src="assets/images/blank.gif" data-echo="assets/images/single-product/s2.jpg" class="wp-post-image" alt=""></a>
-
-                                                <a href="assets/images/single-product/s3.jpg" class="zoom" title="" data-rel="prettyPhoto[product-gallery]"><img src="assets/images/blank.gif" data-echo="assets/images/single-product/s3.jpg" class="wp-post-image" alt=""></a>
-
-                                                <a href="assets/images/single-product/s4.jpg" class="zoom" title="" data-rel="prettyPhoto[product-gallery]"><img src="assets/images/blank.gif" data-echo="assets/images/single-product/s4.jpg" class="wp-post-image" alt=""></a>
-
-                                                <a href="assets/images/single-product/s5.jpg" class="zoom" title="" data-rel="prettyPhoto[product-gallery]"><img src="{{asset('users/assets/images/blank.gif')}}" data-echo="{{asset('users/assets/images/blank.gif')}}" class="wp-post-image" alt=""></a>
                                             </div><!-- .thumbnails-single -->
 
                                             <div class="thumbnails-all columns-5 owl-carousel">
-                                                <a href="assets/images/single-product/single-thumb1.jpg" class="first" title=""><img src="{{asset('products/images/'.$image)}}" data-echo="{asset('products/images/'.$image)}}" class="wp-post-image" alt=""></a>
+                                                 @foreach($images as $image)
+                                                <a href="assets/images/single-product/single-thumb1.jpg" class="first" title=""><img src="{{asset('products/images/'.$image)}}" data-echo="{{asset('products/images/'.$image)}}" class="wp-post-image" alt=""></a>
+                                                @endforeach
 
-                                                <a href="assets/images/single-product/single-thumb2.jpg" class="" title=""><img src="assets/images/blank.gif" data-echo="assets/images/single-product/single-thumb2.jpg" class="wp-post-image" alt=""></a>
-
-                                                <a href="assets/images/single-product/single-thumb3.jpg" class="" title=""><img src="assets/images/blank.gif" data-echo="assets/images/single-product/single-thumb3.jpg" class="wp-post-image" alt=""></a>
-
-                                                <a href="assets/images/single-product/single-thumb4.jpg" class="" title=""><img src="assets/images/blank.gif" data-echo="assets/images/single-product/single-thumb4.jpg" class="wp-post-image" alt=""></a>
-
-                                                <a href="assets/images/single-product/single-thumb5.jpg" class="last" title=""><img src="assets/images/blank.gif" data-echo="assets/images/single-product/single-thumb5.jpg" class="wp-post-image" alt=""></a>
-
-                                                <a href="assets/images/single-product/single-thumb6.jpg" class="first" title=""><img src="assets/images/blank.gif" data-echo="assets/images/single-product/single-thumb6.jpg" class="wp-post-image" alt=""></a>
                                             </div><!-- .thumbnails-all -->
                                         </div><!-- .electro-gallery -->
                                     </div><!-- /.product-images-wrapper -->
@@ -1890,7 +1872,7 @@
 
                 <div class="copyright-bar">
                     <div class="container">
-                        <div class="pull-left flip copyright">&copy; <a href="http://demo2.transvelo.in/html/electro/">Electro</a> - All Rights Reserved</div>
+                        <div class="pull-left flip copyright">&copy; <a href="http://demo2.transvelo.in/html/electro/">ServiceCenter4u</a> - All Rights Reserved</div>
                         <div class="pull-right flip payment">
                             <div class="footer-payment-logo">
                                 <ul class="cash-card card-inline">
@@ -1922,11 +1904,11 @@
         <script type="text/javascript" src="{{asset('users/assets1/js/wow.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('users/assets1/js/jquery.easing.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('users/assets1/js/jquery.waypoints.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/assets/js/electro.js')}}"></script>
+        <script type="text/javascript" src="{{asset('users/assets1/js/electro.js')}}"></script>
 
         <!-- For demo purposes – can be removed on production -->
 
-        <script src="switchstylesheet/switchstylesheet.js"></script>
+        <script src="{{asset('users/switchstylesheet/switchstylesheet.js')}}"></script>
 
            <script>
            (function($) {

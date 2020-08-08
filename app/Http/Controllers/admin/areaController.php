@@ -97,6 +97,32 @@ class areaController extends Controller
     }
 
 
+    public function deleteCountry($id){
+         Country::find($id)->delete();
+         session()->flash('msg','Sucessfully Deleted');
+         return redirect()->route('admin-area');
+
+    }
+        public function deleteState($id){
+         State::find($id)->delete();
+         session()->flash('msg','Sucessfully Deleted');
+         return redirect()->route('admin-area');
+
+    }
+        public function deleteDistrict($id){
+         District::find($id)->delete();
+         session()->flash('msg','Sucessfully Deleted');
+         return redirect()->route('admin-area');
+
+    }
+        public function deleteArea($id){
+         Area::find($id)->delete();
+         session()->flash('msg','Sucessfully Deleted');
+         return redirect()->route('admin-area');
+
+    }
+
+
 
 
 

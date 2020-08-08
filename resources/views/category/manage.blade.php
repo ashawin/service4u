@@ -53,7 +53,7 @@
                                                                 <a href="#" class="dropdown-toggle dropdown-indicator btn btn-outline-light btn-white" data-toggle="dropdown">Status</a>
                                                                 <div class="dropdown-menu dropdown-menu-right">
                                                                     <ul class="link-list-opt no-bdr">
-                                                                        <li><a href="#"><span>Actived</span></a></li>
+                                                                        <li><a href="{{url('categoryController')}}"><span>Delete</span></a></li>
                                                                         <li><a href="#"><span>Inactived</span></a></li>
                                                                         <li><a href="#"><span>Blocked</span></a></li>
                                                                     </ul>
@@ -81,25 +81,10 @@
                                                 </div>
                                             </div>
                                             <div class="nk-tb-col"><span class="sub-text">Id</span></div>
-                                            <div class="nk-tb-col tb-col-mb"><span class="sub-text">Category</span></div>
+                                            <div class="nk-tb-col "><span class="sub-text">Category</span></div>
+                                             <div class="nk-tb-col "><span class="sub-text">Action</span></div>
                                            
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-1 my-n1">
-                                                    <li>
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger mr-n1" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email to All</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-na"></em><span>Suspend Selected</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-trash"></em><span>Remove Seleted</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-shield-star"></em><span>Reset Password</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            
                                         </div>
                                         @foreach($categories as $cat)
                                         <div class="nk-tb-item">
@@ -120,8 +105,11 @@
                                                     </div>
                                                 </a>
                                             </div>
-                                            <div class="nk-tb-col tb-col-mb">
+                                            <div class="nk-tb-col">
                                                 <span class="tb-amount"> <span class="currency">{{$cat->category}}</span></span>
+                                            </div>
+                                             <div class="nk-tb-col ">
+                                               <a href="{{url('admin/category/delete/'.$cat->id)}}"> <button class="btn btn-danger">Delete</button></a>
                                             </div>
                                            
                                         </div><!-- .nk-tb-item -->
@@ -241,10 +229,10 @@
 									                                                </div>
 									                                            </div>
 									                                            <div class="nk-tb-col"><span>Id</span></div>
-									                                            <div class="nk-tb-col tb-col-md"><span>Category</span></div>
+									                                            <div class="nk-tb-col "><span>Category</span></div>
 									                                           
-									                                            <div class="nk-tb-col tb-col-sm"><span>Subcategory</span></div>
-									                                            
+									                                            <div class="nk-tb-col"><span>Subcategory</span></div>
+									                                             <div class="nk-tb-col "><span>Action</span></div>
 									                                            
 									                                        </div><!-- .nk-tb-item -->
 									                                       @foreach($subcategory as $subcat)
@@ -261,34 +249,15 @@
 									                                            <div class="nk-tb-col">
 									                                                <span class="tb-lead"><a href="#">{{$subcat->category}}</a></span>
 									                                            </div>
-									                                            <div class="nk-tb-col tb-col-md">
+									                                            <div class="nk-tb-col">
 									                                                <span class="tb-sub">{{$subcat->subcategory}}</span>
 									                                            </div>
 									                                         
-									                                          
+									                                           <div class="nk-tb-col ">
+                                               <a href="{{url('admin/subcategory/delete/'.$subcat->sub_id)}}"> <button class="btn btn-danger">Delete</button></a>
+                                            </div>
 									                                            
-									                                            <div class="nk-tb-col nk-tb-col-tools">
-									                                                <ul class="nk-tb-actions gx-1">
-									                                                    <li class="nk-tb-action-hidden"><a href="#" class="btn btn-icon btn-trigger btn-tooltip" title="Mark as Delivered" data-toggle="dropdown">
-									                                                            <em class="icon ni ni-truck"></em></a></li>
-									                                                    <li class="nk-tb-action-hidden"><a href="#" class="btn btn-icon btn-trigger btn-tooltip" title="View Order" data-toggle="dropdown">
-									                                                            <em class="icon ni ni-eye"></em></a></li>
-									                                                    <li>
-									                                                        <div class="drodown mr-n1">
-									                                                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-									                                                            <div class="dropdown-menu dropdown-menu-right">
-									                                                                <ul class="link-list-opt no-bdr">
-									                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>Order Details</span></a></li>
-									                                                                    <li><a href="#"><em class="icon ni ni-truck"></em><span>Mark as Delivered</span></a></li>
-									                                                                    <li><a href="#"><em class="icon ni ni-money"></em><span>Mark as Paid</span></a></li>
-									                                                                    <li><a href="#"><em class="icon ni ni-report-profit"></em><span>Send Invoice</span></a></li>
-									                                                                    <li><a href="#"><em class="icon ni ni-trash"></em><span>Remove Order</span></a></li>
-									                                                                </ul>
-									                                                            </div>
-									                                                        </div>
-									                                                    </li>
-									                                                </ul>
-									                                            </div>
+									                                          
 									                                        </div><!-- .nk-tb-item -->
 									                                        @endforeach
 									                                        

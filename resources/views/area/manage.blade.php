@@ -71,7 +71,9 @@
 									                                                            </div>
 									                                                        </li>
 									                                                        <li class="nk-block-tools-opt">
-									                                                            <a href="#" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
+									                                                            
+									                                                           
+									                                                             <a href="#" class="btn btn-icon btn-primary d-md-none" data-toggle="modal" data-target="#countryForm"><em class="icon ni ni-plus"></em><span>Add </span></a>
 									                                                            <a href="#" class="btn btn-primary d-none d-md-inline-flex" data-toggle="modal" data-target="#countryForm"><em class="icon ni ni-plus"></em><span>Add </span></a>
 									                                                        </li>
 									                                                    </ul>
@@ -92,9 +94,9 @@
 									                                            <div class="nk-tb-col"><span>Id</span></div>
 									                                            <div class="nk-tb-col tb-col-md"><span>Name</span></div>
 									                                            
-									                                           
+									                                            <div class="nk-tb-col tb-col-md"><span>Action</span></div>
 									                                       
-									                                            <div class="nk-tb-col nk-tb-col-tools">
+									                                           <!--  <div class="nk-tb-col nk-tb-col-tools">
 									                                                <ul class="nk-tb-actions gx-1 my-n1">
 									                                                    <li>
 									                                                        <div class="drodown">
@@ -104,14 +106,14 @@
 									                                                                    <li><a href="#"><em class="icon ni ni-edit"></em><span>Update Status</span></a></li>
 									                                                                    <li><a href="#"><em class="icon ni ni-truck"></em><span>Mark as Delivered</span></a></li>
 									                                                                    <li><a href="#"><em class="icon ni ni-money"></em><span>Mark as Paid</span></a></li>
-									                                                                    <li><a href="#"><em class="icon ni ni-report-profit"></em><span>Send Invoice</span></a></li>
+									                                                                    <li></li>
 									                                                                    <li><a href="#"><em class="icon ni ni-trash"></em><span>Remove Orders</span></a></li>
 									                                                                </ul>
 									                                                            </div>
 									                                                        </div>
 									                                                    </li>
 									                                                </ul>
-									                                            </div>
+									                                            </div> -->
 									                                        </div><!-- .nk-tb-item -->
 									                                        @foreach($country as $item)
 									                                        <div class="nk-tb-item">
@@ -128,10 +130,12 @@
 									                                                <span class="tb-lead"><a href="#">{{$item->country}}</a></span>
 									                                            </div>
 									                                          
-									                                           
+									                                             <div class="nk-tb-col ">
+                                               <a href="{{url('admin/country/delete/'.$item->id)}}"> <button class="btn btn-danger">Delete</button></a>
+                                            </div>
 									                                          
 									                                           
-									                                            <div class="nk-tb-col nk-tb-col-tools">
+									                                         <!--    <div class="nk-tb-col nk-tb-col-tools">
 									                                                <ul class="nk-tb-actions gx-1">
 									                                                    <li class="nk-tb-action-hidden"><a href="#" class="btn btn-icon btn-trigger btn-tooltip" title="Mark as Delivered" data-toggle="dropdown">
 									                                                            <em class="icon ni ni-truck"></em></a></li>
@@ -152,7 +156,7 @@
 									                                                        </div>
 									                                                    </li>
 									                                                </ul>
-									                                            </div>
+									                                            </div> -->
 									                                        </div><!-- .nk-tb-item -->
 									                                        @endforeach
 									                                       
@@ -245,7 +249,8 @@
 									                                                            </div>
 									                                                        </li>
 									                                                        <li class="nk-block-tools-opt">
-									                                                            <a href="#" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
+									                                                           
+									                                                             <a href="#" class="btn btn-icon btn-primary d-md-none" data-toggle="modal" data-target="#stateForm"><em class="icon ni ni-plus"></em><span>Add </span></a> 
 									                                                            <a href="#" class="btn btn-primary d-none d-md-inline-flex" data-toggle="modal" data-target="#stateForm"><em class="icon ni ni-plus"></em><span>Add </span></a>
 									                                                        </li>
 									                                                    </ul>
@@ -264,10 +269,10 @@
 									                                                </div>
 									                                            </div>
 									                                            <div class="nk-tb-col"><span>Id</span></div>
-									                                            <div class="nk-tb-col tb-col-md"><span>Country</span></div>
+									                                            <div class="nk-tb-col "><span>Country</span></div>
 									                                           
-									                                            <div class="nk-tb-col tb-col-sm"><span>State</span></div>
-									                                            
+									                                            <div class="nk-tb-col "><span>State</span></div>
+									                                            <div class="nk-tb-col "><span>Action</span></div>
 									                                            
 									                                        </div><!-- .nk-tb-item -->
 									                                        @foreach($states as $item)
@@ -288,9 +293,13 @@
 									                                                <span class="dot bg-warning d-mb-none"></span>
 									                                                <span class="badge badge-sm badge-dot has-bg badge-warning d-none d-mb-inline-flex">{{$item->state}}</span>
 									                                            </div>
+
+									                                            <div class="nk-tb-col ">
+                                               <a href="{{url('admin/state/delete/'.$item->id)}}"> <button class="btn btn-danger">Delete</button></a>
+                                           </div>
 									                                          
 									                                            
-									                                            <div class="nk-tb-col nk-tb-col-tools">
+									                                          <!--   <div class="nk-tb-col nk-tb-col-tools">
 									                                                <ul class="nk-tb-actions gx-1">
 									                                                    <li class="nk-tb-action-hidden"><a href="#" class="btn btn-icon btn-trigger btn-tooltip" title="Mark as Delivered" data-toggle="dropdown">
 									                                                            <em class="icon ni ni-truck"></em></a></li>
@@ -311,7 +320,7 @@
 									                                                        </div>
 									                                                    </li>
 									                                                </ul>
-									                                            </div>
+									                                            </div> -->
 									                                        </div><!-- .nk-tb-item -->
 									                                        @endforeach
 									                                     
@@ -404,7 +413,8 @@
 									                                                            </div>
 									                                                        </li>
 									                                                        <li class="nk-block-tools-opt">
-									                                                            <a href="#" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
+									                                                         
+									                                                            <a href="#" class="btn btn-icon btn-primary d-md-none" data-toggle="modal" data-target="#areaForm"><em class="icon ni ni-plus"></em><span>Add </span></a>
 									                                                            <a href="#" class="btn btn-primary d-none d-md-inline-flex" data-toggle="modal" data-target="#areaForm"><em class="icon ni ni-plus"></em><span>Add </span></a>
 									                                                        </li>
 									                                                    </ul>
@@ -427,6 +437,9 @@
 									                                            <div class="nk-tb-col"><span class="d-none d-mb-block">State</span></div>
 									                                              <div class="nk-tb-col"><span class="d-none d-mb-block">District</span></div>
 									                                                <div class="nk-tb-col"><span class="d-none d-mb-block">Area</span></div>
+									                                                 <div class="nk-tb-col"><span class="d-none d-mb-block">Action</span></div>
+
+									                                               
 									                                           
 									                                            
 									                                            <div class="nk-tb-col nk-tb-col-tools">
@@ -471,8 +484,10 @@
 									                                            <div class="nk-tb-col tb-col-md">
 									                                                <span class="tb-sub">{{$area->area}}</span>
 									                                            </div>
-									                                           
-									                                            <div class="nk-tb-col nk-tb-col-tools">
+									                                             <div class="nk-tb-col ">
+									                                               <a href="{{url('admin/area/delete/'.$area->area_id)}}"> <button class="btn btn-danger">Delete</button></a>
+									                                           </div>
+									                                           <!--  <div class="nk-tb-col nk-tb-col-tools">
 									                                                <ul class="nk-tb-actions gx-1">
 									                                                    <li class="nk-tb-action-hidden"><a href="#" class="btn btn-icon btn-trigger btn-tooltip" title="Mark as Delivered" data-toggle="dropdown">
 									                                                            <em class="icon ni ni-truck"></em></a></li>
@@ -493,7 +508,7 @@
 									                                                        </div>
 									                                                    </li>
 									                                                </ul>
-									                                            </div>
+									                                            </div> -->
 									                                        </div><!-- .nk-tb-item -->
 									                                        @endforeach
 									                                      
@@ -588,7 +603,9 @@
 									                                                            </div>
 									                                                        </li>
 									                                                        <li class="nk-block-tools-opt">
-									                                                            <a href="#" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-p lus"></em></a>
+									                                                            
+
+									                                                            <a href="#" class="btn btn-icon btn-primary d-md-none" data-toggle="modal" data-target="#districtForm"><em class="icon ni ni-plus"></em><span>Add </span></a>
 									                                                            <a href="#" class="btn btn-primary d-none d-md-inline-flex" data-toggle="modal" data-target="#districtForm"><em class="icon ni ni-plus"></em><span>Add </span></a>
 									                                                        </li>
 									                                                    </ul>
@@ -607,12 +624,14 @@
 									                                                </div>
 									                                            </div>
 									                                            <div class="nk-tb-col"><span>Id</span></div>
-									                                            <div class="nk-tb-col tb-col-md"><span>Country</span></div>
+									                                            <div class="nk-tb-col "><span>Country</span></div>
 									                                            <div class="nk-tb-col"><span class="d-none d-mb-block">State</span></div>
 									                                            <div class="nk-tb-col"><span class="d-none d-mb-block">District</span></div>
+
+									                                             <div class="nk-tb-col"><span class="d-none d-mb-block">Action</span></div>
 									                                            
 									                                            
-									                                            <div class="nk-tb-col nk-tb-col-tools">
+									                                           <!--  <div class="nk-tb-col nk-tb-col-tools">
 									                                                <ul class="nk-tb-actions gx-1 my-n1">
 									                                                    <li>
 									                                                        <div class="drodown">
@@ -629,7 +648,7 @@
 									                                                        </div>
 									                                                    </li>
 									                                                </ul>
-									                                            </div>
+									                                            </div> -->
 									                                        </div><!-- .nk-tb-item -->
 									                                      
 									                                      
@@ -653,9 +672,13 @@
 									                                            <div class="nk-tb-col tb-col-md">
 									                                                <span class="tb-sub">{{$item->district}}</span>
 									                                            </div>
+
+									                                             <div class="nk-tb-col ">
+									                                               <a href="{{url('admin/district/delete/'.$item->dis_id)}}"> <button class="btn btn-danger">Delete</button></a>
+									                                           </div>
 									                                           
 									                                         
-									                                            <div class="nk-tb-col nk-tb-col-tools">
+									                                       <!--      <div class="nk-tb-col nk-tb-col-tools">
 									                                                <ul class="nk-tb-actions gx-1">
 									                                                    <li class="nk-tb-action-hidden"><a href="#" class="btn btn-icon btn-trigger btn-tooltip" title="Mark as Delivered" data-toggle="dropdown">
 									                                                            <em class="icon ni ni-truck"></em></a></li>
@@ -677,7 +700,7 @@
 									                                                        </div>
 									                                                    </li>
 									                                                </ul>
-									                                            </div>
+									                                            </div> -->
 									                                        </div><!-- .nk-tb-item -->
 									                                        @endforeach
 									                                       
@@ -782,7 +805,7 @@
 							                        <div class="form-group">
                                                             <label class="form-label">Country</label>
                                                             <div class="form-control-wrap">
-                                                                <select class="form-select form-control form-control-lg" data-search="on" required name="country_id">
+                                                                <select class="form-select form-control form-control-lg" data-search="on" required name="country_id" >
                                                                     <option value="" seleted>Select Country</option>
                                                                     @foreach($country as $item)
                                                                     <option value="{{$item->id}}">{{$item->country}}</option>
@@ -817,12 +840,12 @@
 							                    </a>
 							                </div>
 							                <div class="modal-body">
-							                    <form action="{{route('admin-save-district')}}" class="form-validate is-alter" method="post">
+							                    <form action="{{route('admin-save-district')}}" class="" method="post">
 							                    	@csrf
 							                    
                                                               <label class="form-label">Country</label>
                                                             <div class="form-control-wrap">
-                                                                <select class="form-select form-control form-control-lg" data-search="on" required name="country_id">
+                                                                <select class="form-select form-control " data-search="on" required name="country_id" id="country">
                                                                       <option value="" seleted>Select Country</option>
                                                                     @foreach($country as $item)
                                                                     <option value="{{$item->id}}">{{$item->country}}</option>
@@ -832,11 +855,11 @@
                                                             </div>
 							                        <label class="form-label">State</label>
                                                             <div class="form-control-wrap">
-                                                                <select class="form-select form-control form-control-lg" data-search="on" required name="state_id">
+                                                                <select class="form-select form-control form-control-lg" data-search="on" required name="state_id" id="state">
                                                                     <option value="" seleted>Select State</option>
-                                                                    @foreach($states as $state)
+                                                                   <!--  @foreach($states as $state)
                                                                     <option value="{{$state->id}}">{{$state->state}}</option>
-                                                                    @endforeach
+                                                                    @endforeach -->
                                                                    
                                                                 </select>
                                                             </div>
@@ -918,6 +941,40 @@
 							        </div>
 							    </div>
 							  
-						 <div class="nk-content ">	   
-							   
+						</div>
+						</div>  
+						  
 @endsection
+
+@section('script')
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+<script>
+
+  $("#country").on('change', function(){
+  alert('h');
+              var val=  $(this).val();
+              var html='';
+
+               $.ajax({
+               	dataType: "json",
+                   type:'POST',
+                   url:'admin/ajax/states',
+                   data:{"_token": "{{ csrf_token() }}",id:val},
+                   success:function(data) {
+		                for(var key in data) {		                
+		                	html+='<option value="'+data[key]['id']+'">'+data[key]['state']+'</option>'
+		                		               
+		            }
+		             $('#state').append(html);
+                  
+                    
+                   }
+                });
+
+            });
+        </script>
+@endsecion

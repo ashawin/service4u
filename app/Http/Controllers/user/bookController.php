@@ -12,7 +12,17 @@ use App\Models\Orders;
 class bookController extends Controller
 {
     public  function index($slug){
-    	$service=Product::where('slug','=',$slug)->first();
+    	$service=Service::join('countries','countries.id','=','services.country_id')   
+       ->join('districts','districts.id','services.district_id')
+       ->join('states','states.id','=','services.state_id')
+       ->join('areas','areas.id','=','services.area_id')
+       ->join('products','products.id','=','services.product_id')
+       ->join('categories','categories.id','services.category_id')
+       ->join('sub_categories','sub_categories.id','services.subcategory_id')
+       ->where('products.slug',$slug)    
+       ->select('products.product','countries.country','states.state','areas.area','districts.district','categories.category','sub_categories.subcategory','services.id as service_id','services.price','services.type','services.desc','services.is_price_show','services.currency')
+       ->first();
+      
     $categories=Category::with('subcategories')->get();
       return  view('user.book',['categories'=>$categories,'service'=>$service]);
     }

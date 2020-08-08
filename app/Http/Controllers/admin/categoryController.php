@@ -31,6 +31,12 @@ class categoryController extends Controller
 
     }
 
+    public function deleteCategory($id){
+         Category::find($id)->delete();
+         session()->flash('msg','Sucessfully Deleted');
+         return redirect()->route('admin-category');
+    }
+
 
     public function addsubcategory(Request $request)
     {
@@ -38,5 +44,11 @@ class categoryController extends Controller
     	SubCategory::create(array('category_id' => $request->category_id,'subcategory'=>$request->subcategory));
     	Session()->flash('msg','Successfully Added');
     	return redirect()->route('admin-category');
+    }
+
+    public function deletesubCategory($id){
+         SubCategory::find($id)->delete();
+         session()->flash('msg','Sucessfully Deleted');
+         return redirect()->route('admin-category');
     }
 }

@@ -1,7 +1,7 @@
 @extends('app.app')
 @section('content')
    <div class="nk-content ">
-                                            <div class="card card-full">
+                                            <div class="container-fluid">
                                                 <div class="card-inner">
                                                     <div class="card-title-group">
                                                         <div class="card-title">
@@ -11,11 +11,14 @@
                                                           	
                                                           	<ul>
                                                           	 <li class="nk-block-tools-opt">
-                                                            <a href="#" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
+                                                          
+                                                               <a href="#" class="btn btn-icon btn-primary d-md-none" data-toggle="modal" data-target="#categoryForm"><em class="icon ni ni-plus"></em><span>Wallet Rs.{{auth()->user()->balance}}</span></a>
                                                             <a href="#" class="btn btn-primary d-none d-md-inline-flex" data-toggle="modal" data-target="#categoryForm"><em class="icon ni ni-plus"></em><span>Wallet Rs.{{auth()->user()->balance}}</span></a>
                                                         </li>
                                                     </ul>
+                                                      &nbsp;&nbsp;
                                                           </div>
+
                                                         <div class="card-tools">
                                                             <ul class="card-tools-nav">
                                                                 <li><a href="#"><span>Paid</span></a></li>
@@ -55,41 +58,28 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="nk-tb-col tb-col-md">
+                                                            <div class="nk-tb-col ">
                                                                 <span class="tb-sub">{{$item->mobile}}</span>
                                                             </div>
-                                                            <div class="nk-tb-col tb-col-lg">
+                                                            <div class="nk-tb-col ">
                                                                 <span class="tb-sub text-primary">{{$item->created_at}}</span>
                                                             </div>
                                                             <div class="nk-tb-col">
                                                                 <span class="tb-sub tb-amount">{{$item->amount}} <span>Rs</span></span>
                                                             </div>
                                                             <div class="nk-tb-col">
-                                                                <span class="badge badge-dot badge-dot-xs badge-success">{{$item->type}}</span>
+                                                                <span class="badge badge-dot  badge-success">{{$item->type}}</span>
                                                             </div>
                                                             <div class="nk-tb-col">
-                                                                <span class="badge badge-dot badge-dot-xs badge-success">{{$item->confirmed}}</span>
+                                                                <span class="badge badge-dot  badge-success">{{$item->confirmed}}</span>
                                                             </div>
-                                                            <div class="nk-tb-col nk-tb-col-action">
-                                                                <div class="dropdown">
-                                                                    <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-xs">
-                                                                        <ul class="link-list-plain">
-                                                                            <li><a href="#">View</a></li>
-                                                                            <li><a href="#">Invoice</a></li>
-                                                                            <li><a href="#">Print</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                           
                                                         </div>
                                                         @endforeach
                                                      
                                                     </div>
                                                 </div>
-                                                <div class="card-inner-sm border-top text-center d-sm-none">
-                                                    <a href="#" class="btn btn-link btn-block">See History</a>
-                                                </div>
+                                               
                                             </div><!-- .card -->
 
                                         </div>

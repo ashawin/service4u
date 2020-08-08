@@ -35,7 +35,8 @@
                                                             </div>
                                                         </li>
                                                         <li class="nk-block-tools-opt">
-                                                            <a href="#" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
+                                                          
+                                                            <a href="{{route('admin-service-add')}}" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em><span>Add </span></a>
                                                             <a href="{{route('admin-service-add')}}" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add </span></a>
                                                         </li>
                                                     </ul>
@@ -54,15 +55,15 @@
                                                 </div>
                                             </div>
                                             <div class="nk-tb-col"><span>Id</span></div>
-                                            <div class="nk-tb-col tb-col-md"><span>Category</span></div>
-                                            <div class="nk-tb-col"><span class="d-none d-mb-block">SubCategory</span></div>
-                                            <div class="nk-tb-col tb-col-sm"><span>Product</span></div>
-                                            <div class="nk-tb-col tb-col-md"><span>Area</span></div>
+                                            <div class="nk-tb-col "><span>Category</span></div>
+                                            <div class="nk-tb-col"><span class=" d-mb-block">SubCategory</span></div>
+                                            <div class="nk-tb-col "><span>Product</span></div>
+                                            <div class="nk-tb-col "><span>Area</span></div>
                                             <div class="nk-tb-col"><span>Type</span></div>
                                             <div class="nk-tb-col"><span>Price</span></div>
                                             <div class="nk-tb-col"><span>Action</span></div>
                                             
-                                                <
+                                                
                                         </div><!-- .nk-tb-item -->
                                        
                                         @foreach($services as $service)
@@ -76,13 +77,13 @@
                                             <div class="nk-tb-col">
                                                 <span class="tb-lead"><a href="#">{{$service->service_id}}</a></span>
                                             </div>
-                                            <div class="nk-tb-col tb-col-md">
+                                            <div class="nk-tb-col ">
                                                 <span class="tb-sub">{{$service->category}}</span>
                                             </div>
-                                            <div class="nk-tb-col tb-col-md">
+                                            <div class="nk-tb-col ">
                                                 <span class="tb-sub">{{$service->subcategory}}</span>
                                             </div>
-                                            <div class="nk-tb-col tb-col-md">
+                                            <div class="nk-tb-col ">
                                                 <span class="tb-sub">{{$service->product}}</span>
                                             </div>
 
@@ -90,7 +91,7 @@
                                                 <span class="dot bg-success d-mb-none"></span>
                                                 <span class="badge badge-sm badge-dot has-bg badge-success d-none d-mb-inline-flex">{{$service->area}},{{$service->district}},{{$service->state}},{{$service->country}}</span>
                                             </div>
-                                            <div class="nk-tb-col tb-col-sm">
+                                            <div class="nk-tb-col ">
                                                 <?php
                                                 $type= $service->type=='1'?'Comercial':'Private';
                                                 ?>
@@ -100,7 +101,13 @@
                                             <div class="nk-tb-col">
                                                 <span class="tb-lead">{{$service->currency}} {{$service->price}}</span>
                                             </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
+                                             <div class="nk-tb-col ">
+                                               <a href="{{url('admin/service/edit/'.$service->service_id)}}"> <button class="btn btn-primary">Edit</button></a>
+                                            </div>
+                                             <div class="nk-tb-col ">
+                                               <a href="{{url('admin/service/delete/'.$service->service_id)}}"> <button class="btn btn-danger">Delete</button></a>
+                                            </div>
+                                          <!--   <div class="nk-tb-col ">
                                                 <ul class="nk-tb-actions gx-1">
                                                     <li class="nk-tb-action-hidden"><a href="#" class="btn btn-icon btn-trigger btn-tooltip" title="Mark as Delivered" data-toggle="dropdown">
                                                             <em class="icon ni ni-truck"></em></a></li>
@@ -122,7 +129,7 @@
                                                         </div>
                                                     </li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div><!-- .nk-tb-item -->
                                        @endforeach
                                     </div><!-- .nk-tb-list -->

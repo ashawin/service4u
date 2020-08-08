@@ -53,29 +53,13 @@
                                                     <label class="custom-control-label" for="uid"></label>
                                                 </div>
                                             </div>
-                                            <div class="nk-tb-col tb-col-sm"><span>Name</span></div>
-                                            <div class="nk-tb-col tb-col-md"><span>Category</span></div>
-                                            <div class="nk-tb-col tb-col-md"><span>SubCategory</span></div>
+                                            <div class="nk-tb-col "><span>Name</span></div>
+                                            <div class="nk-tb-col "><span>Category</span></div>
+                                            <div class="nk-tb-col "><span>SubCategory</span></div>
                                             <div class="nk-tb-col"><span>Description</span></div>
-                                          
+                                            <div class="nk-tb-col"><span>Action</span></div>
                                             
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-1 my-n1">
-                                                    <li class="mr-n1">
-                                                        <div class="dropdown">
-                                                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="#"><em class="icon ni ni-edit"></em><span>Edit Selected</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-trash"></em><span>Remove Selected</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-bar-c"></em><span>Update Stock</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-invest"></em><span>Update Price</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
+                                            
                                         </div><!-- .nk-tb-item -->
                                         @foreach($products as $item)
                                         <div class="nk-tb-item">
@@ -85,7 +69,7 @@
                                                     <label class="custom-control-label" for="uid1"></label>
                                                 </div>
                                             </div>
-                                            <div class="nk-tb-col tb-col-sm">
+                                            <div class="nk-tb-col">
                                                 <?php
                                                 $images= array();
                                                 $images=explode('|',$item->images);
@@ -102,27 +86,28 @@
                                                 <span class="tb-lead">{{$item->subcategory}}</span>
                                             </div>
                                             
-                                            <div class="nk-tb-col tb-col-md">
+                                           
+                                            <div class="nk-tb-col ">
                                                 <span class="tb-sub">{{$item->desc}}</span>
                                             </div>
                                             
-                                            <div class="nk-tb-col nk-tb-col-tools">
+                                             <div class="nk-tb-col ">
+                                               <a href="{{route('admin-product-edit',['id'=>$item->pro_id])}}"> <button class="btn btn-primary">Edit</button></a>
+                                            </div>
+                                             <div class="nk-tb-col ">
+                                               <a href="{{url('admin/product/delete/'.$item->pro_id)}}"> <button class="btn btn-danger">Delete</button></a>
+                                            </div>
+                                            
+                                          <!--   <div class="nk-tb-col ">
                                                 <ul class="nk-tb-actions gx-1 my-n1">
                                                     <li class="mr-n1">
                                                         <div class="dropdown">
                                                             <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="#"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Product Orders</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-trash"></em><span>Remove Product</span></a></li>
-                                                                </ul>
-                                                            </div>
+                                                            
                                                         </div>
                                                     </li>
                                                 </ul>
-                                            </div>
+                                            </div> -->
                                         </div><!-- .nk-tb-item -->
                                         @endforeach
                                         

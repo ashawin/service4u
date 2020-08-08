@@ -15,6 +15,9 @@
                                     @if(session()->has('msg'))
                                     <p class="alert alert-success">{{session()->get('msg')}}</p>
                                     @endif
+                                     @if(session()->has('errormsg'))
+                                    <p class="alert alert-danger">{{session()->get('errormsg')}}</p>
+                                    @endif
                                      <ul class="nk-nav nav nav-tabs">
                                          <li class="nav-item">
                                             <a class="nav-link active" href="#myservice" data-toggle="tab">My Orders</a>
@@ -43,6 +46,12 @@
                                                         <th class="tb-ticket-seen tb-col-md">
                                                             <span>Product</span>
                                                         </th>
+                                                          <th class="tb-ticket-seen tb-col-md">
+                                                            <span> Price</span>
+                                                        </th>
+                                                         <th class="tb-ticket-seen tb-col-md">
+                                                            <span>Customer Name</span>
+                                                        </th>
                                                         <th class="tb-ticket-status">
                                                             <span>Area</span>
                                                         </th>
@@ -66,6 +75,12 @@
                                                         <td class="tb-ticket-seen tb-col-md">
                                                             <span class="date-last">{{$service->product}}</span>
                                                         </td>
+                                                         <td class="tb-ticket-seen tb-col-md">
+                                                            <span class="date-last">{{$service->price}}</span>
+                                                        </td>
+                                                        <td class="tb-ticket-seen tb-col-md">
+                                                            <span class="date-last">{{$service->name}}</span>
+                                                        </td>
                                                         <td class="tb-ticket-status">
                                                             <span class="badge badge-success">{{$service->country}},{{$service->state}},{{$service->district}}, {{$service->area}}</span>
                                                         </td>
@@ -73,6 +88,7 @@
                                                             <form method="post" action="{{route('vendor-service-orders-confirm')}}">
                                                                 @csrf
                                                                 <input type="hidden" name="order_id" value="{{$service->order_id}}">
+                                                                <input type="hidden" name="price" value="{{$service->price}}">
 
                                                             <button  class="btn btn-success ">
                                                                 Confirm
@@ -105,6 +121,18 @@
                                                         <th class="tb-ticket-seen tb-col-md">
                                                             <span>Product</span>
                                                         </th>
+                                                           <th class="tb-ticket-seen tb-col-md">
+                                                            <span> Price</span>
+                                                        </th>
+                                                         <th class="tb-ticket-seen tb-col-md">
+                                                            <span>Customer Name</span>
+                                                        </th>
+                                                           <th class="tb-ticket-seen tb-col-md">
+                                                            <span> Mobile</span>
+                                                        </th>
+                                                         <th class="tb-ticket-seen tb-col-md">
+                                                            <span>Email</span>
+                                                        </th>
                                                         <th class="tb-ticket-status">
                                                             <span>Area</span>
                                                         </th>
@@ -128,6 +156,18 @@
                                                         </td>
                                                         <td class="tb-ticket-seen tb-col-md">
                                                             <span class="date-last">{{$service->product}}</span>
+                                                        </td>
+                                                        <td class="tb-ticket-seen tb-col-md">
+                                                            <span class="date-last">{{$service->price}}</span>
+                                                        </td>
+                                                        <td class="tb-ticket-seen tb-col-md">
+                                                            <span class="date-last">{{$service->name}}</span>
+                                                        </td>
+                                                        <td class="tb-ticket-seen tb-col-md">
+                                                            <span class="date-last">{{$service->mobile}}</span>
+                                                        </td>
+                                                        <td class="tb-ticket-seen tb-col-md">
+                                                            <span class="date-last">{{$service->email}}</span>
                                                         </td>
                                                         <td class="tb-ticket-status">
                                                             <span class="badge badge-success">{{$service->country}},{{$service->state}},{{$service->district}}, {{$service->area}}</span>

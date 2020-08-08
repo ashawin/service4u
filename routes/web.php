@@ -46,22 +46,36 @@ Route::group([ 'prefix' => 'admin' ,'middleware' => ['App\Http\Middleware\AdminM
    Route::get('services', 'admin\serviceController@index')->name('admin-service');
     Route::get('setting', 'admin\settingController@index')->name('admin-setting');
     Route::get('manage/area', 'admin\areaController@index')->name('admin-area');
+     
+   
     Route::post('save/country', 'admin\areaController@addcountry')->name('admin-country-save');
+    Route::get('country/delete/{id}', 'admin\areaController@deleteCountry')->name('admin-country-delete');
     Route::post('save/state', 'admin\areaController@addstate')->name('admin-state-save');
+     Route::get('state/delete/{id}', 'admin\areaController@deleteState')->name('admin-state-delete');
     Route::post('get/all/area', 'admin\areaController@getall')->name('admin-all-area');
-     Route::post('save/district', 'admin\areaController@adddistrict')->name('admin-save-district');
+    Route::post('save/district', 'admin\areaController@adddistrict')->name('admin-save-district');
+    Route::get('district/delete/{id}', 'admin\areaController@deleteDistrict')->name('admin-district-delete');
+   
      Route::post('save/area', 'admin\areaController@addarea')->name('admin-save-area');
+     Route::get('area/delete/{id}', 'admin\areaController@deleteArea')->name('admin-area-delete');
 
      //category
      Route::get('manage/category', 'admin\categoryController@index')->name('admin-category');
      Route::post('save/category', 'admin\categoryController@addcategory')->name('admin-category-save');
+     Route::get('category/delete/{id}', 'admin\categoryController@deleteCategory');
+
+
 
      //subcategory
+     Route::get('subcategory/delete/{id}', 'admin\categoryController@deletesubCategory');
      Route::post('save/subcategory', 'admin\categoryController@addsubcategory')->name('admin-subcategory-save');
 
      //product
      Route::get('products', 'admin\productController@index')->name('admin-product');
      Route::post('product/save', 'admin\productController@save')->name('admin-product-save');
+     Route::get('product/delete/{id}', 'admin\productController@delete')->name('admin-product-delete');
+      Route::get('product/edit/{id}', 'admin\productController@edit')->name('admin-product-edit');
+      Route::post('product/edit/save', 'admin\productController@editsave')->name('admin-product-edit-save');
 
      //services
       Route::get('services', 'admin\serviceController@index')->name('admin-service');
@@ -69,7 +83,9 @@ Route::group([ 'prefix' => 'admin' ,'middleware' => ['App\Http\Middleware\AdminM
         Route::post('service/requests/confirm', 'admin\serviceController@confirmRequest')->name('admin-service-request-confirm');
       Route::get('service/add', 'admin\serviceController@add')->name('admin-service-add');
       Route::post('service/save', 'admin\serviceController@save')->name('admin-service-save');
-
+    Route::get('service/delete/{id}', 'admin\serviceController@delete')->name('admin-service-delete');
+      Route::get('service/edit/{id}', 'admin\serviceController@edit')->name('admin-service-edit');
+      Route::post('service/edit/save', 'admin\serviceController@editsave')->name('admin-service-edit-save');
 
       //Wallet
         Route::get('transaction/details', 'admin\walletController@index')->name('admin-transaction');

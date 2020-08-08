@@ -50,9 +50,9 @@
                                            
                                             <div class="nk-tb-col"><span>Id</span></div>
                                             <div class="nk-tb-col tb-col-md"><span>Category</span></div>
-                                            <div class="nk-tb-col"><span class="d-none d-mb-block">SubCategory</span></div>
-                                            <div class="nk-tb-col tb-col-sm"><span>Product</span></div>
-                                            <div class="nk-tb-col tb-col-md"><span>Area</span></div>
+                                            <div class="nk-tb-col"><span class=" d-mb-block">SubCategory</span></div>
+                                            <div class="nk-tb-col "><span>Product</span></div>
+                                            <div class="nk-tb-col "><span>Area</span></div>
                                             <div class="nk-tb-col"><span>User</span></div>
                                             <div class="nk-tb-col"><span>Price</span></div>
                                             <div class="nk-tb-col"><span>Action</span></div>
@@ -66,13 +66,13 @@
                                             <div class="nk-tb-col">
                                                 <span class="tb-lead"><a href="#">{{$service->service_id}}</a></span>
                                             </div>
-                                            <div class="nk-tb-col tb-col-md">
+                                            <div class="nk-tb-col">
                                                 <span class="tb-sub">{{$service->category}}</span>
                                             </div>
-                                            <div class="nk-tb-col tb-col-md">
+                                            <div class="nk-tb-col ">
                                                 <span class="tb-sub">{{$service->subcategory}}</span>
                                             </div>
-                                            <div class="nk-tb-col tb-col-md">
+                                            <div class="nk-tb-col ">
                                                 <span class="tb-sub">{{$service->product}}</span>
                                             </div>
 
@@ -80,7 +80,7 @@
                                                 <span class="dot bg-success d-mb-none"></span>
                                                 <span class="badge badge-sm badge-dot has-bg badge-success d-none d-mb-inline-flex">{{$service->area}},{{$service->district}},{{$service->state}},{{$service->country}}</span>
                                             </div>
-                                            <div class="nk-tb-col tb-col-sm">
+                                            <div class="nk-tb-col ">
                                                 <?php
                                                 $type= $service->type=='1'?'Comercial':'Private';
                                                 ?>
@@ -106,7 +106,7 @@
                                     </div><!-- .nk-tb-list -->
                                     <div class="card">
                                         <div class="card-inner">
-                                            <div class="nk-block-between-md g-3">
+                                            <div class="nk-block-between-md ">
                                                 <div class="g">
                                                     <ul class="pagination justify-content-center justify-content-md-start">
                                                         <li class="page-item"><a class="page-link" href="#"><em class="icon ni ni-chevrons-left"></em></a></li>

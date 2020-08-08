@@ -30,7 +30,7 @@
 
                         <!-- ============================================================= Header Logo ============================================================= -->
                         <div class="header-logo">
-                            <a href="home.html" class="header-logo-link">
+                            <a href="{{url('/')}}" class="header-logo-link">
                                 <svg version="1.1" x="0px" y="0px" width="175.748px"
                                     height="42.52px" viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52">
                                     <ellipse class="ellipse-bg" fill-rule="evenodd" clip-rule="evenodd" fill="#FDD700" cx="170.05" cy="36.341" rx="5.32" ry="5.367"/>
@@ -584,7 +584,7 @@
 
                                 <form enctype="multipart/form-data" action="{{route('user-book-service-save')}}" class="checkout woocommerce-checkout" method="post" name="checkout">
                                 	@csrf
-                                	<input type="hidden" value="{{$service->id}}" name="service">
+                                	<input type="hidden" value="{{$service->service_id}}" name="service">
                                     <div id="customer_details" class="col2-set">
                                         <div class="col-1">
                                             <div class="woocommerce-billing-fields">
@@ -1208,11 +1208,11 @@
         <script type="text/javascript" src="{{asset('users/assets1/js/wow.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('users/assets1/js/jquery.easing.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('users/assets1/js/jquery.waypoints.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/assets/js/electro.js')}}"></script>
+        <script type="text/javascript" src="{{asset('users/assets1/js/electro.js')}}"></script>
 
         <!-- For demo purposes – can be removed on production -->
 
-        <script src="switchstylesheet/switchstylesheet.js"></script>
+        <script src="{{asset('users/switchstylesheet/switchstylesheet.js')}}"></script>
 
            <script>
            (function($) {

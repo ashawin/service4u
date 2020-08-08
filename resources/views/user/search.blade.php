@@ -31,7 +31,7 @@
 
                         <!-- ============================================================= Header Logo ============================================================= -->
                         <div class="header-logo">
-                            <a href="home.html" class="header-logo-link">
+                            <a href="{{url('/')}}" class="header-logo-link">
                                 <svg version="1.1" x="0px" y="0px" width="175.748px"
                                     height="42.52px" viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52">
                                     <ellipse class="ellipse-bg" fill-rule="evenodd" clip-rule="evenodd" fill="#FDD700" cx="170.05" cy="36.341" rx="5.32" ry="5.367"/>
@@ -3485,7 +3485,7 @@
                                 </li>
                             </ul>
                         </aside>
-                        <aside class="widget widget_electro_products_filter">
+                      <!--   <aside class="widget widget_electro_products_filter">
                             <h3 class="widget-title">Filters</h3>
                             <aside class="widget woocommerce widget_layered_nav">
                                 <h3 class="widget-title">Brands</h3>
@@ -3563,7 +3563,7 @@
                                     <span class="electro-price"><span class="amount">&#36;2,780.00</span></span>
                                 </li>
                             </ul>
-                        </aside>
+                        </aside> -->
                     </div>
 
                 </div><!-- .container -->
@@ -4076,11 +4076,99 @@
 
         </div><!-- #page -->
 
+
+    
+
+        <!-- For demo purposes – can be removed on production : End -->
+
+        <script type="text/javascript" src="{{asset('users/assets1/js/jquery.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('users/assets1/js/tether.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('users/assets1/js/bootstrap.min.js')}}"></script>
+            <script type="text/javascript" src="{{asset('users/assets1/js/bootstrap-hover-dropdown.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('users/assets1/js/owl.carousel.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('users/assets1/js/echo.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('users/assets1/js/wow.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('users/assets1/js/jquery.easing.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('users/assets1/js/jquery.waypoints.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('users/assets1/js/electro.js')}}"></script>
+
         <!-- For demo purposes – can be removed on production -->
-        <div id="config" class="config">
-            <div id="config_wrapper">
 
+        <script src="{{asset('users/switchstylesheet/switchstylesheet.js')}}"></script>
 
+           <script>
+           (function($) {
+               $(document).ready(function(){
+                   $(".changecolor").switchstylesheet( { seperator:"color"} );
+                   $('.show-theme-options').click(function(){
+                       $(this).parent().toggleClass('open');
+                       return false;
+                   });
 
-                                <div id="config_container">
+                   $('#home-pages').on( 'change', function() {
+                       $.ajax({
+                           url : $('#home-pages option:selected').val(),
+                           success:function(res) {
+                               location.href = $('#home-pages option:selected').val();
+                           }
+                       });
+                   });
+
+                    $('#demo-pages').on( 'change', function() {
+                        $.ajax({
+                            url : $('#demo-pages option:selected').val(),
+                            success:function(res) {
+                                location.href = $('#demo-pages option:selected').val();
+                            }
+                        });
+                    });
+
+                    $('#header-style').on( 'change', function() {
+                        $.ajax({
+                            url : $('#header-style option:selected').val(),
+                            success:function(res) {
+                                location.href = $('#header-style option:selected').val();
+                            }
+                        });
+                    });
+
+                    $('#shop-style').on( 'change', function() {
+                        $.ajax({
+                            url : $('#shop-style option:selected').val(),
+                            success:function(res) {
+                                location.href = $('#shop-style option:selected').val();
+                            }
+                        });
+                    });
+
+                    $('#product-category-col').on( 'change', function() {
+                        $.ajax({
+                            url : $('#product-category-col option:selected').val(),
+                            success:function(res) {
+                                location.href = $('#product-category-col option:selected').val();
+                            }
+                        });
+                    });
+
+                    $('#single-products').on( 'change', function() {
+                        $.ajax({
+                            url : $('#single-products option:selected').val(),
+                            success:function(res) {
+                                location.href = $('#single-products option:selected').val();
+                            }
+                        });
+                    });
+
+                    $('.style-toggle').on( 'click', function() {
+                        $(this).parent('.config').toggleClass( 'open' );
+                    });
+               });
+        })(jQuery);
+        </script>
+
+        <!-- For demo purposes – can be removed on production : End -->
+
+    </body>
+
+       
 @endsection

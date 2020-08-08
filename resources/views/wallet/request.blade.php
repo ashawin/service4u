@@ -53,12 +53,12 @@
                                                Id
                                             </div>
                                             <div class="nk-tb-col"><span class="sub-text">User</span></div>
-                                            <div class="nk-tb-col tb-col-mb"><span class="sub-text">Balance</span></div>
-                                            <div class="nk-tb-col tb-col-md"><span class="sub-text">Phone</span></div>
+                                            <div class="nk-tb-col "><span class="sub-text">Balance</span></div>
+                                            <div class="nk-tb-col"><span class="sub-text">Phone</span></div>
                                         
-                                            <div class="nk-tb-col tb-col-md"><span class="sub-text">Status</span></div>
-                                            <div class="nk-tb-col tb-col-md"><span class="sub-text">Date</span></div>
-                                            <div class="nk-tb-col tb-col-md"><span class="sub-text">Action</span></div>
+                                            <div class="nk-tb-col "><span class="sub-text">Status</span></div>
+                                            <div class="nk-tb-col "><span class="sub-text">Date</span></div>
+                                            <div class="nk-tb-col"><span class="sub-text">Action</span></div>
                                            
                                             
                                       
@@ -82,10 +82,10 @@
                                                     </div>
                                                 </a>
                                             </div>
-                                            <div class="nk-tb-col tb-col-mb">
+                                            <div class="nk-tb-col ">
                                                 <span class="tb-amount">{{$request->balance}} <span class="currency">Rs</span></span>
                                             </div>
-                                            <div class="nk-tb-col tb-col-md">
+                                            <div class="nk-tb-col ">
                                                 <span>{{$request->mobile}}</span>
                                             </div>
                                             <?php
@@ -94,17 +94,18 @@
                                             $class= $request->status ==1 ?'danger':'success';
                                             ?>
                                             
-                                             <div class="nk-tb-col tb-col-md">
+                                             <div class="nk-tb-col ">
                                                 <span class="tb-status text-{{$class}}">{{$status}}</span>
                                             </div>
-                                            <div class="nk-tb-col tb-col-lg">
+                                            <div class="nk-tb-col ">
                                                 <span>{{$request->created_at}}</span>
                                             </div>
-                                            <div class="nk-tb-col tb-col-lg">
+                                            <div class="nk-tb-col ">
                                                 <form method="post" action="{{route('admin-transfer-balance',['id'=>$request->wal_id,'balance'=>$request->balance])}}">
                                                     @csrf
                                                     <input type="hidden" name="user_id" value="{{$request->id}}">
-                                            <a href="" class="btn btn-icon btn-primary d-md-none"></em></a>
+                                            
+                                            <button type="submit" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em><span>Confirm</span></button>
                                                             <button type="submit" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Confirm</span></button>
                                                         </form>
                                                                 </div>
