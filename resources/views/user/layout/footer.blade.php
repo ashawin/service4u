@@ -162,16 +162,17 @@
                             <div class="row align-items-center">
                                 <div class="col-auto flex-horizontal-center">
                                     <i class="ec ec-newsletter font-size-40"></i>
-                                    <h2 class="font-size-20 mb-0 ml-3">Sign up to Newsletter</h2>
+                                    <h2 class="font-size-20 mb-0 ml-3">Become a Pratner </h2>
                                 </div>
                                 <div class="col my-4 my-md-0">
-                                    <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>$20 coupon for first shopping.</strong></h5>
+                                    <h5 class="font-size-15 ml-4 mb-0">and join to <strong>consult our services .</strong></h5>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-5">
                             <!-- Subscribe Form -->
-                            <form class="js-validate js-form-message">
+                            <form class="js-validate js-form-message" method="post" action="{{route('partner-enquiry')}}">
+                                @csrf
                                 <label class="sr-only" for="subscribeSrEmail">Email address</label>
                                 <div class="input-group input-group-pill">
                                     <input type="email" class="form-control border-0 height-40" name="email" id="subscribeSrEmail" placeholder="Email address" aria-label="Email address" aria-describedby="subscribeButton" required
@@ -179,7 +180,9 @@
                                     <div class="input-group-append">
                                         <button type="submit" class="btn btn-dark btn-sm-wide height-40 py-2" id="subscribeButton">Sign Up</button>
                                     </div>
+
                                 </div>
+                               
                             </form>
                             <!-- End Subscribe Form -->
                         </div>
@@ -279,32 +282,19 @@
                         </div>
                         <div class="col-lg-7">
                             <div class="row">
-                                <div class="col-12 col-md mb-4 mb-md-0">
-                                    <h6 class="mb-3 font-weight-bold">Find it Fast</h6>
+                                <div class="col-12 col-md mb-6 mb-md-0">
+                                    <h6 class="mb-3 font-weight-bold">Our Service Type</h6>
                                     <!-- List Group -->
                                     <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
-                                        <li><a class="list-group-item list-group-item-action" href="http://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Laptops & Computers</a></li>
-                                        <li><a class="list-group-item list-group-item-action" href="http://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Cameras & Photography</a></li>
-                                        <li><a class="list-group-item list-group-item-action" href="http://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Smart Phones & Tablets</a></li>
-                                        <li><a class="list-group-item list-group-item-action" href="http://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Video Games & Consoles</a></li>
-                                        <li><a class="list-group-item list-group-item-action" href="http://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">TV & Audio</a></li>
-                                        <li><a class="list-group-item list-group-item-action" href="http://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Gadgets</a></li>
-                                        <li><a class="list-group-item list-group-item-action" href="http://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Car Electronic & GPS</a></li>
+                                        @foreach($categories as $category)
+                                        <li><a class="list-group-item list-group-item-action" href="{{$category->category}}">{{$category->category}}</a></li>
+                                        @endforeach
+                                        
                                     </ul>
                                     <!-- End List Group -->
                                 </div>
 
-                                <div class="col-12 col-md mb-4 mb-md-0">
-                                    <!-- List Group -->
-                                    <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent mt-md-6">
-                                        <li><a class="list-group-item list-group-item-action" href="http://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Printers & Ink</a></li>
-                                        <li><a class="list-group-item list-group-item-action" href="http://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Software</a></li>
-                                        <li><a class="list-group-item list-group-item-action" href="http://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Office Supplies</a></li>
-                                        <li><a class="list-group-item list-group-item-action" href="http://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Computer Components</a></li>
-                                        <li><a class="list-group-item list-group-item-action" href="http://transvelo.github.io/electro-html/2.0/html/shop/product-categories-5-column-sidebar.html">Accesories</a></li>
-                                    </ul>
-                                    <!-- End List Group -->
-                                </div>
+                               
 
                                 <div class="col-12 col-md mb-4 mb-md-0">
                                     <h6 class="mb-3 font-weight-bold">Customer Care</h6>
@@ -330,7 +320,7 @@
             <div class="bg-gray-14 py-2">
                 <div class="container">
                     <div class="flex-center-between d-block d-md-flex">
-                        <div class="mb-3 mb-md-0">© <a href="#" class="font-weight-bold text-gray-90">Electro</a> - All rights Reserved</div>
+                        <div class="mb-3 mb-md-0">© <a href="#" class="font-weight-bold text-gray-90">Service4u</a> - All rights Reserved</div>
                         <div class="text-md-right">
                             <span class="d-inline-block bg-white border rounded p-1">
                                 <img class="max-width-5" src="../../assets/img/100X60/img1.jpg" alt="Image Description">

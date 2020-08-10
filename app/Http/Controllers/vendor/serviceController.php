@@ -44,9 +44,20 @@ class serviceController extends Controller
        ->select('products.product','countries.country','states.state','areas.area','districts.district','categories.category','sub_categories.subcategory','services.id as service_id','services.price','services.type','services.desc','services.is_price_show','services.currency','service_requests.status')
        ->get();
 
-       $myservice=ServiceRequest::with('myservice')
-       ->where('status','=',1)
+      $myservice=ServiceRequest::
+       join('services','services.id','=','service_requests.service_id') 
+       ->join('countries','countries.id','=','services.country_id')   
+       ->join('districts','districts.id','services.district_id')
+       ->join('states','states.id','=','services.state_id')
+       ->join('areas','areas.id','=','services.area_id')
+       ->join('products','products.id','=','services.product_id')
+       ->join('categories','categories.id','services.category_id')
+       ->join('sub_categories','sub_categories.id','services.subcategory_id')
+       ->where('service_requests.provider_id','=',auth()->user()->id) 
+       ->where('service_requests.status','=',1)      
+       ->select('products.product','countries.country','states.state','areas.area','districts.district','categories.category','sub_categories.subcategory','services.id as service_id','services.price','services.type','services.desc','services.is_price_show','services.currency','service_requests.status')
        ->get();
+
        
       
        

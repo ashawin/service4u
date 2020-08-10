@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Route;
   Route::post('services', 'user\HomeController@search')->name('user-search');
   Route::get('book/{slug}', 'user\bookController@index')->name('user-book-service');
   Route::post('book/save', 'user\bookController@save')->name('user-book-service-save');
+
+  //
+   Route::post('partner/enquiry/save', 'user\HomeController@partnerEnquiry')->name('partner-enquiry');
  
 
 Auth::routes();

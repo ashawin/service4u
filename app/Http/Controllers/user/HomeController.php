@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Service;
 use App\Models\Product;
+use App\Models\Enquiry;
 
 class HomeController extends Controller
 {
@@ -60,5 +61,13 @@ class HomeController extends Controller
        ->get();
     
       return view('user.search',['categories'=>$categories,'services'=>$result]);
+    }
+
+    public function partnerEnquiry(Request $request){
+      $this->validate($request,['email'=>'required|unique:users,email']);
+
+      Enquiry::create(array('slug'=>\Str::slug('partnerEnquiry'),'email'=>$request->email));
+      session()->flash('msg','Request Send Successfully');
+      return redirect('/');
     }
 }

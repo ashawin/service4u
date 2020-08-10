@@ -16,8 +16,7 @@
                     <nav>
                         <ul id="menu-top-bar-right" class="nav nav-inline pull-right animate-dropdown flip">
                             <li class="menu-item animate-dropdown"><a title="Store Locator" href="#"><i class="ec ec-map-pointer"></i>Store Locator</a></li>
-                            <li class="menu-item animate-dropdown"><a title="Track Your Order" href="track-your-order.html"><i class="ec ec-transport"></i>Track Your Order</a></li>
-                            <li class="menu-item animate-dropdown"><a title="Shop" href="shop.html"><i class="ec ec-shopping-bag"></i>Shop</a></li>
+                         
                             <li class="menu-item animate-dropdown"><a title="My Account" href="my-account.html"><i class="ec ec-user"></i>My Account</a></li>
                         </ul>
                     </nav>
@@ -1040,12 +1039,15 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="navbar-search" method="get" action="http://transvelo.github.io/">
+
+                                    
+                    <form class="navbar-search" method="post" action="{{route('user-search')}}">
+                        @csrf
                         <label class="sr-only screen-reader-text" for="search">Search for:</label>
                         <div class="input-group">
                             <input type="text" id="search" class="form-control search-field" dir="ltr" value="" name="s" placeholder="Search for products" />
                             <div class="input-group-addon search-categories">
-                                <select name='product_cat' id='product_cat' class='postform resizeselect' >
+                                <select name='key' id='product_cat' class='postform resizeselect' >
                                     <option value='0' selected='selected'>All Categories</option>
                                     @foreach($categories as $category)
                                     <option class="level-0" value="{{$category->id}}">{{$category->category}}</option>
@@ -3897,19 +3899,22 @@
                     </div>
                 </div>
 
-                <div class="footer-newsletter">
+                 <div class="footer-newsletter">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-12 col-sm-7">
-                                <h5 class="newsletter-title">Sign up to Newsletter</h5>
-                                <span class="newsletter-marketing-text">...and receive <strong>$20 coupon for first shopping</strong></span>
-                            </div>
+                             <div class="col-xs-12 col-sm-7">
+                                <h5 class="newsletter-title">ecome Our Partner</h5>
+                                <span class="newsletter-marketing-text">and join to <strong>consult our services</strong></span>
+                                </div>
+                            
+                          
                             <div class="col-xs-12 col-sm-5">
-                                <form>
+                                <form method="post" action="{{route('partner-enquiry')}}">
+                                    @csrf
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Enter your email address">
+                                        <input type="text" class="form-control" name="email" placeholder="Enter your email address">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-secondary" type="button">Sign Up</button>
+                                            <button class="btn btn-secondary" type="submit">Sign Up</button>
                                         </span>
                                     </div>
                                 </form>
@@ -3928,13 +3933,11 @@
                                             <h4 class="widget-title">Find It Fast</h4>
                                             <div class="menu-footer-menu-1-container">
                                                 <ul id="menu-footer-menu-1" class="menu">
-                                                    <li class="menu-item"><a href="single-product.html">Laptops &#038; Computers</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Cameras &#038; Photography</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Smart Phones &#038; Tablets</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Video Games &#038; Consoles</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">TV &#038; Audio</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Gadgets</a></li>
-                                                    <li class="menu-item "><a href="single-product.html">Car Electronic &#038; GPS</a></li>
+                                                        @foreach($categories as $category)
+                                                    <li class="menu-item"><a href="single-product.html">{{$category->category}}</a></li>
+                                                    @endforeach
+                                                
+                                                
                                                 </ul>
                                             </div>
                                         </div>
@@ -3943,17 +3946,7 @@
 
                                 <div class="columns">
                                     <aside id="nav_menu-3" class="widget clearfix widget_nav_menu">
-                                        <div class="body">
-                                            <h4 class="widget-title">&nbsp;</h4>
-                                            <div class="menu-footer-menu-2-container">
-                                                <ul id="menu-footer-menu-2" class="menu">
-                                                    <li class="menu-item"><a href="single-product.html">Printers &#038; Ink</a></li>
-                                                    <li class="menu-item "><a href="single-product.html">Software</a></li>
-                                                    <li  class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2742"><a href="single-product.html">Office Supplies</a></li>
-                                                    <li  class="menu-item "><a href="single-product.html">Computer Components</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                  
                                     </aside>
                                 </div><!-- /.columns -->
 
@@ -4058,7 +4051,7 @@
 
                 <div class="copyright-bar">
                     <div class="container">
-                        <div class="pull-left flip copyright">&copy; <a href="http://demo2.transvelo.in/html/electro/">Electro</a> - All Rights Reserved</div>
+                        <div class="pull-left flip copyright">&copy; <a href="http://demo2.transvelo.in/html/electro/">Service4u</a> - All Rights Reserved</div>
                         <div class="pull-right flip payment">
                             <div class="footer-payment-logo">
                                 <ul class="cash-card card-inline">

@@ -21,7 +21,7 @@
                                             <a class="nav-link active " href="#services" data-toggle="tab" >Services</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#pending" data-toggle="tab">Pending Service</a>
+                                            <a class="nav-link" href="#pending" data-toggle="tab">My Service</a>
                                         </li>
                                       
                                       
@@ -99,11 +99,11 @@
                                                         <th class="tb-ticket-status">
                                                             <span>Area</span>
                                                         </th>
-                                                        <th class="tb-ticket-action"> Status </th>
+                                                        <!-- <th class="tb-ticket-action"> Status </th> -->
                                                     </tr><!-- .tb-ticket-title -->
                                                 </thead>
                                                 <tbody class="tb-ticket-body">
-                                                    @foreach($pendingservices as $pending)
+                                                    @foreach($myservices as $pending)
                                                     <tr class="tb-ticket-item ">
                                                         <td class="tb-ticket-id"><a href="html/subscription/ticket-details.html">{{$pending->service_id}}</a></td>
                                                         <td class="tb-ticket-desc">
@@ -119,9 +119,9 @@
                                                             <span class="badge badge-success">{{$pending->country}},{{$pending->state}},{{$pending->district}}, {{$pending->area}}</span>
                                                         </td>
                                                       
-                                                        <td class="tb-ticket-status">
+                                                      <!--   <td class="tb-ticket-status">
                                                         	<span class="badge badge-danger">Pending</span>
-                                                        </td>
+                                                        </td> -->
                                                     </tr><!-- .tb-ticket-item -->
                                                     @endforeach
                                                 

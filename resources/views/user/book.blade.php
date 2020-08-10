@@ -576,7 +576,16 @@
                 <div class="container">
 
                     <nav class="woocommerce-breadcrumb"><a href="{{url('')}}">Home</a><span class="delimiter"><i class="fa fa-angle-right"></i></span>Book</nav>
+                        @if(session()->has('msg'))
+                        <h3 style="text-align: center"class="alert alert-success">{{session()->get('msg')}}</h3>
+                        @endif
+                          @if(session()->has('msgerror'))
+                        <h3 style="text-align: center"class="alert alert-danger">{{session()->get('msgerror')}}</h3>
+                        @endif
 
+                        @if($errors->has('email'))
+            <h3 style="text-align: center" class="alert alert-danger">{{$errors->first('email')}}</h3>
+        @endif
                     <div id="primary" class="content-area">
                         <main id="main" class="site-main">
                             <article class="page type-page status-publish hentry">
@@ -588,15 +597,10 @@
                                     <div id="customer_details" class="col2-set">
                                         <div class="col-1">
                                             <div class="woocommerce-billing-fields">
-
+                                                <p id="billing_last_name_field" class="form-row form-row form-row-wide validate-required"><label class="" for="billing_last_name"> Name <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_last_name" name="name" class="input-text " required></p><div class="clear"></div>
                                                 
 
                                             
-
-                                                <p id="billing_last_name_field" class="form-row form-row form-row-wide validate-required"><label class="" for="billing_last_name"> Name <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_last_name" name="name" class="input-text " required></p><div class="clear"></div>
-
-                                              
-
                                                 <p id="billing_email_field" class="form-row form-row form-row-first validate-required validate-email"><label class="" for="billing_email">Email Address <abbr title="required" class="required">*</abbr></label><input type="email" value="" placeholder="" id="billing_email" name="email" class="input-text " required></p>
 
                                                 <p id="billing_phone_field" class="form-row form-row form-row-last validate-required validate-phone"><label class="" for="billing_phone">Phone <abbr title="required" class="required">*</abbr></label><input type="tel" value="" placeholder="" id="billing_phone" name="mobile" class="input-text "required></p><div class="clear"></div>
@@ -608,95 +612,58 @@
 
                                                 
 
-                                                <p id="billing_city_field" class="form-row form-row form-row-wide address-field validate-required" data-o_class="form-row form-row form-row-wide address-field validate-required"><label class="" for="billing_city"> District <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="city" name="district" class="input-text " required></p>
+                                                <p id="billing_city_field" class="form-row form-row form-row-first  validate-required" data-o_class="form-row form-row form-row-wide address-field validate-required"><label class="" for="billing_city"> District <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="city" name="district" class="input-text " required></p>
 
-                                                <p id="billing_state_field" class="form-row form-row form-row-first validate-required validate-email"><label class="" for="billing_state">State  <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_state" name="state" class="input-text " required></p>
+                                                <p id="billing_state_field" class="form-row form-row form-row-last validate-required validate-email"><label class="" for="billing_state">State  <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_state" name="state" class="input-text " required></p>
 
-                                                <p id="billing_postcode_field" class="form-row form-row form-row-last address-field validate-postcode validate-required" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode"><label class="" for="billing_postcode">Postcode / ZIP <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_postcode" name="pin" class="input-text " required></p>
-
-                                                <div class="clear"></div>
-
-                                                <p class="form-row form-row-wide create-account"><input type="checkbox" value="1" name="account" id="createaccount" class="input-checkbox"> <label class="checkbox" for="createaccount">Create an account?</label></p>
 
                                             </div>
                                         </div>
-                                         <div class="woocommerce-checkout-review-order col-2" id="order_review">
-                                      <!--   <table class="shop_table woocommerce-checkout-review-order-table">
-                                            <thead>
-                                                <tr>
-                                                    <th class="product-name">Product</th>
-                                                    <th class="product-total">Total</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="cart_item">
-                                                    <td class="product-name">
-                                                        Wireless Audio System Multiroom 360&nbsp;
-                                                        <strong class="product-quantity">× 1</strong>
-                                                    </td>
-                                                    <td class="product-total">
-                                                        <span class="amount">$1,999.00</span>
-                                                    </td>
-                                                </tr>
-                                                <tr class="cart_item">
-                                                    <td class="product-name">
-                                                        Tablet White EliteBook  Revolve 810 G2&nbsp;
-                                                        <strong class="product-quantity">× 1</strong>
-                                                    </td>
-                                                    <td class="product-total">
-                                                        <span class="amount">$1,300.00</span>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                            <tfoot>
+                                  
+                                      
 
-                                                <tr class="cart-subtotal">
-                                                    <th>Subtotal</th>
-                                                    <td><span class="amount">$3,299.00</span></td>
-                                                </tr>
+                                   <div class="col-2">                                        
 
-                                                <tr class="shipping">
-                                                    <th>Shipping</th>
-                                                    <td data-title="Shipping">Flat Rate: <span class="amount">$300.00</span> <input type="hidden" class="shipping_method" value="international_delivery" id="shipping_method_0" data-index="0" name="shipping_method[0]"></td>
-                                                </tr>
-
-                                                <tr class="order-total">
-                                                    <th>Total</th>
-                                                    <td><strong><span class="amount">$3,599.00</span></strong> </td>
-                                                </tr>
-                                            </tfoot>
-                                        </table> -->
-
-                                        <div class="woocommerce-checkout-payment" id="payment">
-                                            <ul class="wc_payment_methods payment_methods methods">
-                                            
-                                            
-                                             
-                                                <li class="wc_payment_method payment_method_cod">
-                                                    <input type="radio" data-order_button_text="" value="1" name="payment_method" class="input-radio" id="payment_method_cod" required>
-
-                                                    <label for="payment_method_cod">Cash on Delivery</label>
-                                                    <div style="display:none;" class="payment_box payment_method_cod">
-                                                        <p>Pay with cash upon delivery.</p>
-                                                    </div>
-                                                </li>
-                                                <li class="wc_payment_method payment_method_paypal">
-                                                    <input type="radio" data-order_button_text="Proceed to PayPal" value="2" name="payment_method" class="input-radio" id="payment_method_paypal" required>
-
-                                                    <label for="payment_method_paypal">Online <img alt="PayPal Acceptance Mark" src="../../www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg">
-                                                    </div>
-                                                </li>
-                                            </ul>
+                                                  <p id="billing_postcode_field" class="form-row form-row form-row-first address-field validate-postcode validate-required" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode"><label class="" for="billing_postcode">Payment Method <abbr title="required" class="required">*</abbr></label>
+                                            <fieldset>
+                                                   <h3 id="ship-to-different-address">
+                                                    <label class="checkbox" for="ship-to-different-address-checkbox">Cash On Delivery</label>
+                                                    <input type="radio" value="1" name="payment_method" class="input-checkbox" id="ship-to-different-address-checkbox">
+                                                </h3>
                                           
-                                        </div>
+                                                  <h3 id="ship-to-different-address">
+                                                    <label class="checkbox" for="ship-to-different-address-checkbox">Online</label>
+                                                    <input type="radio" value="1" name="payment_method" class="input-checkbox" id="ship-to-different-address-checkbox">
+                                                </h3>
+                                                </fieldset></p>
+
+                                                 <p id="billing_postcode_field" class="form-row form-row form-row-last address-field validate-postcode validate-required" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode"><label class="" for="billing_postcode">Postcode / ZIP <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_postcode" name="pin" class="input-text " required></p>
+
+                                                  
+                                            
+                                          
+                                        
+
+                                                
+
+                                                <div class="clear"></div>
+
+                                                <p class="form-row form-row-wide create-account"><input type="checkbox" value="1" name="account" id="createaccount" class="input-checkbox" onclick="isaccount()"> <label class="checkbox" for="createaccount">Create an account?</label></p>
+                                                <div id="passblock"  >
+                                                  
+                                                <p id="billing_postcode_field" class="form-row form-row form-row-last address-field validate-postcode validate-required" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode"><label class="" for="billing_postcode">Password <abbr title="required" class="required">*</abbr></label><input type="password" value="" placeholder="" id="password" name="password" class="input-text " ></p>
+
+                                                 <p id="billing_postcode_field" class="form-row form-row form-row-last address-field validate-postcode validate-required" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode"><label class="" for="billing_postcode">Confirm Password <abbr title="required" class="required">*</abbr></label><input type="password" value="" placeholder="" id="billing_postcode" name="cpassword" class="input-text " ></p>
+                                             </div>
+
                                     </div>
 
                                         
-                                                <input type="submit" data-value="Place order" value="Place order" class="button alt">
+                                              
                                     </div>
 
                                  
-
+                                        <input type="submit" data-value="Place order" value="Place order" class="button alt">
                                    
                                 </form>
                             </article>
@@ -1036,16 +1003,18 @@
                 <div class="footer-newsletter">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-12 col-sm-7">
-                                <h5 class="newsletter-title">Sign up to Newsletter</h5>
-                                <span class="newsletter-marketing-text">...and receive <strong>$20 coupon for first shopping</strong></span>
-                            </div>
+                             <div class="col-xs-12 col-sm-7">
+                                <h5 class="newsletter-title">Become Our Partner</h5>
+                                <span class="newsletter-marketing-text">and join to <strong>consult our services</strong></span>
+                                </div>
+                          
                             <div class="col-xs-12 col-sm-5">
-                                <form>
+                                <form method="post" action="{{route('partner-enquiry')}}">
+                                    @csrf
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Enter your email address">
+                                        <input type="text" class="form-control" name="email" placeholder="Enter your email address">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-secondary" type="button">Sign Up</button>
+                                            <button class="btn btn-secondary" type="submit">Sign Up</button>
                                         </span>
                                     </div>
                                 </form>
@@ -1064,13 +1033,10 @@
                                             <h4 class="widget-title">Find It Fast</h4>
                                             <div class="menu-footer-menu-1-container">
                                                 <ul id="menu-footer-menu-1" class="menu">
-                                                    <li class="menu-item"><a href="single-product.html">Laptops &#038; Computers</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Cameras &#038; Photography</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Smart Phones &#038; Tablets</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Video Games &#038; Consoles</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">TV &#038; Audio</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Gadgets</a></li>
-                                                    <li class="menu-item "><a href="single-product.html">Car Electronic &#038; GPS</a></li>
+                                                    @foreach($categories as $category)
+                                                    <li class="menu-item"><a href="single-product.html">Laptops &#038; {{$category->category}}</a></li>
+                                                    @endforeach
+                                                
                                                 </ul>
                                             </div>
                                         </div>
@@ -1212,11 +1178,12 @@
 
         <!-- For demo purposes – can be removed on production -->
 
-        <script src="{{asset('users/switchstylesheet/switchstylesheet.js')}}"></script>
 
            <script>
            (function($) {
                $(document).ready(function(){
+                 $("#passblock").hide();
+
                    $(".changecolor").switchstylesheet( { seperator:"color"} );
                    $('.show-theme-options').click(function(){
                        $(this).parent().toggleClass('open');
@@ -1282,6 +1249,13 @@
             		});
                });
         })(jQuery);
+
+        function isaccount(){
+            $("#passblock").show();
+          
+            $("#password").attr("required", "true");
+
+        }
         </script>
         <!-- For demo purposes – can be removed on production : End -->
 

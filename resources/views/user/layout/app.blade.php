@@ -33,6 +33,13 @@
     </head>
 
     <body>
+        @if($errors->has('email'))
+            <p style="text-align: center" class="alert alert-danger">{{$errors->first('email')}}</p>
+        @endif
+        @if(session()->has('msg'))
+
+        <p style="text-align: center" class="alert alert-success">{{session()->get('msg')}}</p>
+        @endif
 
         <!-- ========== HEADER ========== -->
        @include('user.layout.header')
