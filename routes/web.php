@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
   Route::get('', 'user\HomeController@index')->name('user-dashboard');
   Route::get('category/subcategory/{slug}', 'user\HomeController@productDetails')->name('user-product-details');
   Route::post('services', 'user\HomeController@search')->name('user-search');
+   Route::get('services/{cat}', 'user\HomeController@searchCat')->name('user-search-cat');
   Route::get('book/{slug}', 'user\bookController@index')->name('user-book-service');
   Route::post('book/save', 'user\bookController@save')->name('user-book-service-save');
 
@@ -92,9 +93,15 @@ Route::group([ 'prefix' => 'admin' ,'middleware' => ['App\Http\Middleware\AdminM
 
       //Wallet
         Route::get('transaction/details', 'admin\walletController@index')->name('admin-transaction');
-        Route::get('wallet/balance/request', 'admin\walletController@walletRequest')->name('admin-wallet-request');
+      Route::get('wallet/balance/request', 'admin\walletController@walletRequest')->name('admin-wallet-request');
+    Route::get('wallet/request/delete/{id}','admin\walletController@deletrequest')->name('delete-wallet-request');
         Route::post('add/amount/{id}/{balance}', 'admin\walletController@transferBalance')->name('admin-transfer-balance');
         Route::post('add/admin/balance', 'admin\walletController@addBalance')->name('admin-add-balance');
+
+        //Enquiry
+         Route::get('inbox', 'admin\dashboardController@inbox')->name('admin-inbox');
+       
+
 
       //Ajax
       Route::post('ajax/states', 'admin\ajaxController@getStates')->name('admin-ajax-state');

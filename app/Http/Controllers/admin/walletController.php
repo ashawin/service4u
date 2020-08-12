@@ -56,8 +56,7 @@ class walletController extends Controller
 
 
         $requests=walletRequest::leftJoin('users','users.id','wallet_requests.holder_id')
-        ->select('users.*','wallet_requests.id as wal_id','wallet_requests.balance','wallet_requests.status')
-        ->where('wallet_requests.status','=',1)->get();
+        ->select('users.*','wallet_requests.id as wal_id','wallet_requests.balance','wallet_requests.status')->orderBy('id', 'desc')->get();
         
         return  view('wallet.request',['requests'=>$requests]);
 

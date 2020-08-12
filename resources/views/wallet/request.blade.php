@@ -100,15 +100,27 @@
                                             <div class="nk-tb-col ">
                                                 <span>{{$request->created_at}}</span>
                                             </div>
+
+                                            @if($request->status=0)
                                             <div class="nk-tb-col ">
                                                 <form method="post" action="{{route('admin-transfer-balance',['id'=>$request->wal_id,'balance'=>$request->balance])}}">
                                                     @csrf
                                                     <input type="hidden" name="user_id" value="{{$request->id}}">
                                             
-                                            <button type="submit" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em><span>Confirm</span></button>
+                                                            <button type="submit" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em><span>Confirm</span></button>
                                                             <button type="submit" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Confirm</span></button>
-                                                        </form>
-                                                                </div>
+                                                </form>
+                                             </div>
+                                             @else
+                                             
+                                              <div class="nk-tb-col ">
+                                               
+                                                            <a href="{{url('wallet/request/delete/'.$request->wal_id)}}"  class="btn btn-icon btn-danger d-md-none"><em class="icon ni ni-plus"></em><span>delete</span></button>
+                                                           
+                                            
+                                             </div>
+
+                                             @endif
                                            
                                             
                                         </div><!-- .nk-tb-item -->

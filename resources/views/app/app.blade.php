@@ -8,8 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>  
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
+    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
@@ -64,10 +63,11 @@
         </div>
         <!-- main @e -->
     </div>
-                            
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+                          
     <script src="{{asset('assets/js/bundle.js')}}"></script>
     <script src="{{asset('assets/js/scripts.js')}}"></script>
-    <script src="{{asset('assets/js/charts/chart-ecommerce.js')}}"></script>
+    <!-- <script src="{{asset('assets/js/charts/chart-ecommerce.js')}}"></script> -->
      @yield('script')
    
 

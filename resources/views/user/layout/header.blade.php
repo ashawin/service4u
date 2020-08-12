@@ -215,7 +215,7 @@
                                                                 <div id="headerSidebarComputersCollapse" class="collapse" data-parent="#headerSidebarContent">
                                                                     <ul class="u-header-collapse__nav-list">
                                                                        @foreach($category->subcategories as $subcat)
-                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="#">{{$subcat->subcategory}}</a></li>
+                                                                        <li class=""><a class="u-header-collapse__submenu-nav-link" href="{{url('services/'.$subcat->subcategory)}}">{{$subcat->subcategory}}</a></li>
                                                                         @endforeach
                                                                         
                                                                     </ul>
@@ -466,7 +466,7 @@
                                                                             <!-- <span class="u-header__sub-menu-title">Computers & Accessories</span> -->
                                                                             <ul class="u-header__sub-menu-nav-group mb-3">
                                                                                @foreach($category->subcategories as $subcat)
-                                                                                <li><a class="nav-link u-header__sub-menu-nav-link" href="#">{{$subcat->subcategory}}</a></li>
+                                                                                <li><a class="nav-link u-header__sub-menu-nav-link" href="{{url('services/'.$subcat->subcategory)}}">{{$subcat->subcategory}}</a></li>
                                                                                 @endforeach
                                                                                
                                                                             </ul>
@@ -591,21 +591,11 @@
                                         <!-- End Home -->
 
                                         <!-- Featured Brands -->
-                                        <li class="nav-item u-header__nav-item">
-                                            <a class="nav-link u-header__nav-link" href="#" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">Featured Brands</a>
-                                        </li>
-                                        <!-- End Featured Brands -->
-
-                                        <!-- Trending Styles -->
-                                        <li class="nav-item u-header__nav-item">
-                                            <a class="nav-link u-header__nav-link" href="#" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu">Trending Styles</a>
-                                        </li>
+                                    
                                         <!-- End Trending Styles -->
 
                                         <!-- Gift Cards -->
-                                        <li class="nav-item u-header__nav-item">
-                                            <a class="nav-link u-header__nav-link" href="#" aria-haspopup="true" aria-expanded="false">Gift Cards</a>
-                                        </li>
+                                      
                                         <!-- End Gift Cards -->
 
                                         <!-- Button -->

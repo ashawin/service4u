@@ -76,21 +76,23 @@
                                         <span class="nk-menu-icon"><em class="icon ni ni-server-fill"></em></span>
                                         <span class="nk-menu-text">Wallet Request</span>
                                     </a>
-                                </li><!-- .nk-menu-item -->
+                                </li>
+
+                                  <li class="nk-menu-item">
+                                    <a href="{{route('admin-inbox')}}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-server-fill"></em></span>
+                                        <span class="nk-menu-text">Inbox</span>
+                                    </a>
+                                </li>
+                               
+                                <!-- .nk-menu-item -->
                              <!--     <li class="nk-menu-item">
                                     <a href="html/ecommerce/integration.html" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-server-fill"></em></span>
                                         <span class="nk-menu-text">Integration</span>
                                     </a>
                                 </li> -->
-                                 <li class="nk-menu-item">
-                                    <a href="html/components.html" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-layers-fill"></em></span>
-                                        <span class="nk-menu-text"><form method="post" action="{{route('logout')}}">
-                                                        @csrf
-                                                        <button type="submit"><em class="icon ni ni-signout"></em><span>Sign out</span></button></form></span>
-                                    </a>
-                                </li>
+                           
                                 <li class="nk-menu-heading">
                                     <h6 class="overline-title text-primary-alt">Return to</h6>
                                 </li><!-- .nk-menu-item -->

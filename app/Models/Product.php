@@ -15,11 +15,11 @@ class Product extends Model
 	    return $this->hasManyThrough(Product::class, self::class, 'parent_id', 'category_id');
 	}
 
-	   public function Category(){
+	   public function category(){
     	return $this->hasMany(Category::class,'id','category_id');
     }
 
     public function SubCategory(){
-    	return $this->hasMany(SubCategory::class,'id','subcategory_id');
+    	return $this->belongsTo(SubCategory::class,'id','subcategory_id');
     }
 }

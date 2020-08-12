@@ -182,8 +182,11 @@
     </div>
     <!-- app-root @e -->
     <!-- JavaScript -->
+
     <script src="{{asset('vendor/assets/js/bundle.js')}}"></script>
     <script src="{{asset('vendor/assets/js/scripts.js')}}"></script>
+
+  @yield('script')
 </body>
 
 </html>

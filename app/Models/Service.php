@@ -11,8 +11,8 @@ class Service extends Model
     protected $table="services";
     protected $fillable=['area','price','product_id','desc','type','currency','is_price_show','area_id','category_id','subcategory_id','country_id','state_id','district_id','provider_id','status'];
 
-      public function Category(){
-    	return $this->hasMany(Category::class,'id','category_id');
+    public function category(){
+        return $this->hasMany(Category::class,'id','category_id');
     }
 
     public function SubCategory(){

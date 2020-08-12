@@ -156,7 +156,14 @@
                 $.HSCore.components.HSFocusState.init();
 
                 // initialization of form validation
-           
+                $.HSCore.components.HSValidation.init('.js-validate', {
+                    rules: {
+                        confirmPassword: {
+                            equalTo: '#signupPassword'
+                        }
+                    }
+                });
+
                 // initialization of show animations
                 $.HSCore.components.HSShowAnimation.init('.js-animation-link');
 

@@ -85,12 +85,12 @@
                                                             <span class="badge badge-success">{{$service->country}},{{$service->state}},{{$service->district}}, {{$service->area}}</span>
                                                         </td>
                                                         <td class="tb-ticket-action">
-                                                            <form method="post" action="{{route('vendor-service-orders-confirm')}}">
+                                                            <form id="form-{{$service->order_id}}" method="post" action="{{route('vendor-service-orders-confirm')}}">
                                                                 @csrf
                                                                 <input type="hidden" name="order_id" value="{{$service->order_id}}">
                                                                 <input type="hidden" name="price" value="{{$service->price}}">
 
-                                                            <button  class="btn btn-success ">
+                                                            <button type="button" id="{{$service->order_id}}" price="{{$service->price}}" class="btn btn-success " onclick="getconfirm(this)">
                                                                 Confirm
                                                                 
                                                             </button >
@@ -188,4 +188,20 @@
                                 </div>
                               
                             </div>
+@endsection
+
+@section('script')
+<script>
+    function getconfirm(e){
+      var id= $(e).attr('id');
+      var price =$(e).attr('price');
+       var r = confirm("Rs."+price+"  will get deduct from your wallet.");
+    if (r == true) {
+       
+ $( "#form-"+id).submit();
+} else {
+  e.preventDefault();
+}
+}
+    </script>
 @endsection
