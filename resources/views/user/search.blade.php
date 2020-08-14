@@ -568,7 +568,7 @@
                     </div>
                 </div>
 
-            </header><
+            </header>
 
             <nav class="navbar navbar-primary navbar-full hidden-md-down">
                 <div class="container">

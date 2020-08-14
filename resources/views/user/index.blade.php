@@ -29,7 +29,7 @@
                                         <a href="http://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="btn btn-primary transition-3d-hover rounded-lg font-weight-normal py-2 px-md-7 px-3 font-size-16"
                                             data-scs-animation-in="fadeInUp"
                                             data-scs-animation-delay="400">
-                                            Start Buying
+                                           Book Now
                                         </a>
                                     </div>
                                     <div class="col-xl-5 col-6  d-flex align-items-center"
@@ -128,7 +128,7 @@
                                            {{$service->product}}
                                         </div>
                                         <div class="link text-gray-90 font-weight-bold font-size-15" href="#">
-                                            Shop now
+                                            Book now
                                             <span class="link__icon ml-1">
                                                 <span class="link__icon-inner"><i class="ec ec-arrow-right-categproes"></i></span>
                                             </span>
@@ -211,6 +211,7 @@
                                 <!-- Nav Classic -->
                                 <div class="position-relative bg-white text-center z-index-2">
                                     <ul class="nav nav-classic nav-tab justify-content-center" id="pills-tab" role="tablist">
+                                        @if(isset($categories[0]->category))
                                      <li class="nav-item">
                                             <a class="nav-link active " id="{{\Str::slug($categories[0]->category)}}-tab" data-toggle="pill" href="#{{\Str::slug($categories[0]->category)}}" role="tab" aria-controls="{{\Str::slug($categories[0]->category)}}" aria-selected="false">
                                                 <div class="d-md-flex justify-content-md-center align-items-md-center">
@@ -218,14 +219,16 @@
                                                 </div>
                                             </a>
                                         </li>
-
-                                                                       <li class="nav-item">
+                                        @endif
+                                      @if(isset($categories[1]->category))
+                                         <li class="nav-item">
                                             <a class="nav-link  " id="{{\Str::slug($categories[1]->category)}}-tab" data-toggle="pill" href="#{{\Str::slug($categories[1]->category)}}" role="tab" aria-controls="{{\Str::slug($categories[1]->category)}}" aria-selected="false">
                                                 <div class="d-md-flex justify-content-md-center align-items-md-center">
                                                    {{$categories[1]->category}}
                                                 </div>
                                             </a>
                                         </li>
+                                        @endif
                                   
                                     
                                     </ul>
@@ -255,7 +258,7 @@
                                                 
 
                                           ?>
-                                            <li class="col-6 col-wd-3 col-md-4 product-item">
+                                            <li class="col-6 col-wd-3 col-md-4 ">
                                                 <div class="product-item__outer h-100">
                                                     <div class="product-item__inner px-xl-4 p-3">
                                                         <div class="product-item__body pb-xl-2">

@@ -100,6 +100,7 @@ Route::group([ 'prefix' => 'admin' ,'middleware' => ['App\Http\Middleware\AdminM
 
         //Enquiry
          Route::get('inbox', 'admin\dashboardController@inbox')->name('admin-inbox');
+         Route::post('banner/save', 'admin\dashboardController@saveBanner')->name('admin-banner-save');
        
 
 

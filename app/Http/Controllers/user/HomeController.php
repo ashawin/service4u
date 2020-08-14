@@ -62,16 +62,18 @@ class HomeController extends Controller
        ->join('products','products.id','=','services.product_id')
        ->join('categories','categories.id','services.category_id')
        ->join('sub_categories','sub_categories.id','services.subcategory_id')
-       ->where('products.slug','like','%'.$product.'%')
+       
        ->select('countries.country','states.state','districts.district','products.product','areas.area','categories.category','sub_categories.subcategory','services.id as service_id','services.price','services.type','services.desc','services.is_price_show','services.currency','products.images','products.slug as pro_slug')
-       ->get();
+       ->take(6)->get();
+
+
 
      
 
       
       
 
-    	return view('user.product-details',['categories'=>$categories,'service'=>$service]);
+    	return view('user.product-details',['categories'=>$categories,'service'=>$service,'services'=>$services]);
     }
 
     public function search(Request $request)
