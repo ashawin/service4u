@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Service;
 use App\Models\Product;
 use App\Models\Enquiry;
+use App\Models\Banner;
 
 class HomeController extends Controller
 {
@@ -15,6 +16,9 @@ class HomeController extends Controller
 
     	$categories=Category::with('subcategories')->get();
       $products=Category::with('products')->get();
+      $mainBanner=Banner::join('categories','categories.id','=','banners.category_id')->where('banners.slug','=','mainBanner')
+      ->select('categories.category','banners.*')
+      ->first();
      
   
     	$services=Service::join('countries','countries.id','=','services.country_id')   
@@ -36,7 +40,7 @@ class HomeController extends Controller
        ->select('countries.country','states.state','districts.district','products.product','areas.area','categories.category','sub_categories.subcategory','services.id as service_id','services.price','services.type','services.desc','services.is_price_show','services.currency','products.images','products.slug as pro_slug','products.id as pro_id')
        ->get();
 
-    	return view('user.index',['categories'=>$categories,'services'=>$services,'products'=>$products,'all'=>$allservices]);
+    	return view('user.index',['categories'=>$categories,'services'=>$services,'products'=>$products,'all'=>$allservices,'mainBanner'=>$mainBanner]);
     }
 
     public function productDetails($product){
@@ -120,6 +124,19 @@ class HomeController extends Controller
        ->select('countries.country','states.state','districts.district','products.product','areas.area','categories.category','sub_categories.subcategory','services.id as service_id','services.price','services.type','services.desc','services.is_price_show','services.currency','products.images','products.slug as pro_slug')
        ->get();
         return view('user.search',['categories'=>$categories,'services'=>$result]);
+
+    }
+
+    public function contact(){
+      return view('user.contact');
+    }
+
+    public function contactSave(Request $request){
+      $this->validate($request,['name'=>'required','email'=>'required|email','mobile'=>'required|min:11|numeric','desc'=>'required']);
+
+      Enquiry::create( array('slug'=>'usercontact','name' =>$request->name ,'email'=>$request->email,'mobile'=>$request->mobile,'desc1'=>$request->desc));
+      session()->flash('msg','Successfully Send');
+         return redirect()->route('user-contact');
 
 
     }

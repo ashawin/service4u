@@ -32,6 +32,27 @@
                         </div>
                     </div>
                 </div>
+                  <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header border-bottom">Manage Banner</div>
+                        <div class="card-inner">
+                            <h5 class="card-title">Manage Banner</h5>
+                            <p class="card-text">Manage Banner and all</p>
+                            <a href="{{route('admin-banner')}}" class="btn btn-primary">Manage</a>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header border-bottom">Manage Policy</div>
+                        <div class="card-inner">
+                            <h5 class="card-title">Manage Policy</h5>
+                            <p class="card-text">Manage policy and all</p>
+                            <a href="{{route('admin-policy')}}" class="btn btn-primary">Manage</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div><!-- .card-preview -->

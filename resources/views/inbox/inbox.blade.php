@@ -292,8 +292,19 @@
                                             </div>
                                             <?php
 
-                                             $type=$inbox->slug=='partnerenquiry' ?'partnership':'user service';
-                                                  $class= $inbox->slug=='partnerenquiry' ?'danger':'primary';
+                                             
+                                             if($inbox->slug=='partnerenquiry'){
+                                                $type='partnership';
+                                                $class='danger';
+
+                                             }elseif($inbox->slug=='userenquiry') {
+                                                 $type='user service';
+                                                $class='primary';
+                                             }else{
+                                                $type='user contact';
+                                                $class='info';
+
+                                             } 
                                              	
                                             ?>
                                                <div class="nk-ibx-item-elem nk-ibx-item-fluid">

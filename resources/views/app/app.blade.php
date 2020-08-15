@@ -14,6 +14,7 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
    <meta name="_token" content="{{csrf_token()}}" />
+    <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
    
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
@@ -63,6 +64,9 @@
         </div>
         <!-- main @e -->
     </div>
+       <script>
+                        CKEDITOR.replace( 'editor1' );
+                </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
                           
     <script src="{{asset('assets/js/bundle.js')}}"></script>

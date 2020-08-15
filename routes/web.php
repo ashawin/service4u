@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
    Route::get('services/{cat}', 'user\HomeController@searchCat')->name('user-search-cat');
   Route::get('book/{slug}', 'user\bookController@index')->name('user-book-service');
   Route::post('book/save', 'user\bookController@save')->name('user-book-service-save');
+  Route::get('contact', 'user\HomeController@contact')->name('user-contact');
+  Route::post('contact/save', 'user\HomeController@contactSave')->name('user-contact-save');
 
   //
    Route::post('partner/enquiry/save', 'user\HomeController@partnerEnquiry')->name('partner-enquiry');
@@ -43,6 +45,7 @@ Route::group([ 'prefix' => 'vendor' ,'middleware' => ['App\Http\Middleware\Vendo
 });
 
 Route::group([ 'prefix' => 'admin' ,'middleware' => ['App\Http\Middleware\AdminMiddleware']], function () {
+  Route::get('policy', 'admin\dashboardController@policy')->name('admin-policy');
    Route::get('dashboard', 'admin\dashboardController@index')->name('admin-dashboard');
    Route::get('profile', 'admin\profileController@index')->name('admin-profile');
    Route::get('customers', 'admin\customerController@index')->name('admin-customer');
@@ -93,14 +96,17 @@ Route::group([ 'prefix' => 'admin' ,'middleware' => ['App\Http\Middleware\AdminM
 
       //Wallet
         Route::get('transaction/details', 'admin\walletController@index')->name('admin-transaction');
-      Route::get('wallet/balance/request', 'admin\walletController@walletRequest')->name('admin-wallet-request');
-    Route::get('wallet/request/delete/{id}','admin\walletController@deletrequest')->name('delete-wallet-request');
-        Route::post('add/amount/{id}/{balance}', 'admin\walletController@transferBalance')->name('admin-transfer-balance');
+          Route::get('wallet/balance/request', 'admin\walletController@walletRequest')->name('admin-wallet-request');
+        Route::get('wallet/request/delete/{id}','admin\walletController@deletrequest')->name('delete-wallet-request');
+            Route::post('add/amount/{id}/{balance}', 'admin\walletController@transferBalance')->name('admin-transfer-balance');
         Route::post('add/admin/balance', 'admin\walletController@addBalance')->name('admin-add-balance');
 
         //Enquiry
          Route::get('inbox', 'admin\dashboardController@inbox')->name('admin-inbox');
+         Route::get('banner', 'admin\dashboardController@getBanner')->name('admin-banner');
          Route::post('banner/save', 'admin\dashboardController@saveBanner')->name('admin-banner-save');
+         Route::get('banner/delete/{id}', 'admin\dashboardController@deleteBanner')->name('admin-banner-delete');
+
        
 
 

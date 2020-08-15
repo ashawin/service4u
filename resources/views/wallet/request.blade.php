@@ -63,11 +63,15 @@
                                             
                                       
                                         </div><!-- .nk-tb-item -->
+                                        <?php
+                                        $i=1;
+                                        ?>
                                         @foreach($requests as $request)
+                                        
                                         <div class="nk-tb-item">
-                                            <div class="nk-tb-col nk-tb-col-check">
+                                            <div class="nk-tb-col ">
                                                 <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                   {{$request->wal_id}}
+                                                   {{$i}}
                                                 </div>
                                             </div>
                                             <div class="nk-tb-col">
@@ -116,11 +120,16 @@
                                               <div class="nk-tb-col ">
                                                
                                                             <a href="{{url('wallet/request/delete/'.$request->wal_id)}}"  class="btn btn-icon btn-danger d-md-none"><em class="icon ni ni-plus"></em><span>delete</span></button>
+                                                            </a>
                                                            
                                             
                                              </div>
 
                                              @endif
+                                             <?php
+                                             $i++;
+
+                                             ?>
                                            
                                             
                                         </div><!-- .nk-tb-item -->
