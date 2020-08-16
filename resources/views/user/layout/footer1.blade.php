@@ -158,10 +158,7 @@
                                             <div class="menu-footer-menu-3-container">
                                                 <ul id="menu-footer-menu-3" class="menu">
                                                     <li class="menu-item"><a href="{{url('contact')}}">Contact Us</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Track your Order</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Wishlist</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Customer Service</a></li>
-                                                    <li class="menu-item"><a href="single-product.html">Returns/Exchange</a></li>
+                                                  
                                                      <li><a class="menu-item" href="{{url('privacypolicy')}}">Privacy Policy</a></li>
                                         <li><a class="menu-item" href="{{url('termsandcondition')}}">Terms and Conditions</a></li>
                                                 </ul>

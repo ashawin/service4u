@@ -322,8 +322,7 @@
                                             <!-- End Input -->
                                         </li>
                                         <!-- End Search -->
-                                        <li class="col d-none d-xl-block"><a href="http://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Compare"><i class="font-size-22 ec ec-compare"></i></a></li>
-                                        <li class="col d-none d-xl-block"><a href="http://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="Favorites"><i class="font-size-22 ec ec-favorites"></i></a></li>
+                                      
                                         <li class="col d-xl-none px-2 px-sm-3"><a href="http://transvelo.github.io/electro-html/2.0/html/shop/my-account.html" class="text-gray-90" data-toggle="tooltip" data-placement="top" title="My Account"><i class="font-size-22 ec ec-user"></i></a></li>
                                         <li class="col pr-xl-0 px-2 px-sm-3 d-xl-none">
                                             <a href="http://transvelo.github.io/electro-html/2.0/html/shop/cart.html" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Cart">
@@ -563,7 +562,7 @@
                                                             <li><a href="http://transvelo.github.io/electro-html/2.0/html/shop/checkout.html" class="nav-link u-header__sub-menu-nav-link">Checkout</a></li>
                                                             <li><a href="http://transvelo.github.io/electro-html/2.0/html/shop/my-account.html" class="nav-link u-header__sub-menu-nav-link">My Account</a></li>
                                                             <li><a href="http://transvelo.github.io/electro-html/2.0/html/shop/track-your-order.html" class="nav-link u-header__sub-menu-nav-link">Track your Order</a></li>
-                                                            <li><a href="http://transvelo.github.io/electro-html/2.0/html/shop/compare.html" class="nav-link u-header__sub-menu-nav-link">Compare</a></li>
+                                                           
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-3">

@@ -149,10 +149,7 @@
                                     <!-- List Group -->
                                     <ul class="list-group list-group-flush list-group-borderless mb-0 list-group-transparent">
                                         <li><a class="list-group-item list-group-item-action" href="{{url('contact')}}">Contact Us</a></li>
-                                        <li><a class="list-group-item list-group-item-action" href="http://transvelo.github.io/electro-html/2.0/html/shop/track-your-order.html">Order Tracking</a></li>
-                                        <li><a class="list-group-item list-group-item-action" href="http://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html">Wish List</a></li>
-                                        <li><a class="list-group-item list-group-item-action" href="terms-and-conditions.html">Customer Service</a></li>
-                                        <li><a class="list-group-item list-group-item-action" href="terms-and-conditions.html">Returns / Exchange</a></li>
+                                       
                                         <li><a class="list-group-item list-group-item-action" href="{{url('privacypolicy')}}">Privacy Policy</a></li>
                                         <li><a class="list-group-item list-group-item-action" href="{{url('termsandcondition')}}">Terms and Conditions</a></li>
                                     </ul>

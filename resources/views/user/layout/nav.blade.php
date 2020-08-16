@@ -553,15 +553,6 @@
                         </li>
                     </ul>
 
-                    <ul class="navbar-wishlist nav navbar-nav pull-right flip">
-                        <li class="nav-item">
-                            <a href="wishlist.html" class="nav-link"><i class="ec ec-favorites"></i></a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-compare nav navbar-nav pull-right flip">
-                        <li class="nav-item">
-                            <a href="compare.html" class="nav-link"><i class="ec ec-compare"></i></a>
-                        </li>
-                    </ul>
+                 
                 </div>
             </nav>

@@ -1,11 +1,10 @@
-
-            <header id="masthead" class="site-header header-v2">
+ <header id="masthead" class="site-header header-v2">
                 <div class="container hidden-md-down">
                     <div class="row">
 
-                       
+                        <!-- ============================================================= Header Logo ============================================================= -->
                         <div class="header-logo">
-                            <a href="home.html" class="header-logo-link">
+                            <a href="{{url('/')}}" class="header-logo-link">
                                 <svg version="1.1" x="0px" y="0px" width="175.748px"
                                     height="42.52px" viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52">
                                     <ellipse class="ellipse-bg" fill-rule="evenodd" clip-rule="evenodd" fill="#FDD700" cx="170.05" cy="36.341" rx="5.32" ry="5.367"/>
@@ -59,25 +58,15 @@
                             <div class="collapse navbar-toggleable-xs" id="default-header">
                                 <nav>
                                     <ul id="menu-main-menu" class="nav nav-inline yamm">
-                                        <li class="menu-item menu-item-has-children animate-dropdown dropdown"><a title="Home" href="shop.html" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Home</a>
-                                            <ul role="menu" class=" dropdown-menu">
-                                                <li class="menu-item animate-dropdown  "><a title="Home v1" href="home.html">Home v1</a></li>
-                                                <li class="menu-item current-menu-item current_page_item animate-dropdown active"><a title="Home v2" href="home-v2.html">Home v2</a></li>
-                                                <li class="menu-item animate-dropdown  "><a title="Home v3" href="home-v3.html">Home v3</a></li>
-                                            </ul>
+                                        <li class="menu-item menu-item-has-children animate-dropdown dropdown"><a title="Home" href="{{url('/')}}" >Home</a>
+                                           
                                         </li>
-                                        <li class="menu-item animate-dropdown"><a title="About Us" href="about.html">About Us</a></li>
+                                        <li class="menu-item animate-dropdown"><a title="About Us" href="{{url('contact')}}">About Us</a></li>
 
-                                        <li class="menu-item menu-item-has-children animate-dropdown dropdown"><a title="Blog" href="blog.html" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Blog</a>
-                                            <ul role="menu" class=" dropdown-menu">
-                                                <li class="menu-item animate-dropdown"><a title="Blog v1" href="blog-v1.html">Blog v1</a></li>
-                                                <li class="menu-item animate-dropdown"><a title="Blog v2" href="blog-v2.html">Blog v2</a></li>
-                                                <li class="menu-item animate-dropdown"><a title="Blog v3" href="blog-v3.html">Blog v3</a></li>
-                                            </ul>
-                                        </li>
                                        
-                                        <li class="menu-item"><a title="Features" href="#">Features</a></li>
-                                        <li class="menu-item"><a title="Contact Us" href="#">Contact Us</a></li>
+                                      
+                                        <li class="menu-item"><a title="Features" href="{{url('contact')}}">Features</a></li>
+                                        <li class="menu-item"><a title="Contact Us" href="{{url('contact')}}">Contact Us</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -101,7 +90,7 @@
 
                         <!-- ============================================================= Header Logo ============================================================= -->
                         <div class="header-logo">
-                            <a href="home.html" class="header-logo-link">
+                            <a href="{{url('/')}}" class="header-logo-link">
                                 <svg version="1.1" x="0px" y="0px" width="175.748px"
                                     height="42.52px" viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52">
                                     <ellipse class="ellipse-bg" fill-rule="evenodd" clip-rule="evenodd" fill="#FDD700" cx="170.05" cy="36.341" rx="5.32" ry="5.367"/>
@@ -446,4 +435,4 @@
                     </div>
                 </div>
 
-            </header><
+            </header>
