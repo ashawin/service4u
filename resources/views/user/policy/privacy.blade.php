@@ -1,12 +1,10 @@
 @extends('user.layout.app1')
 @section('content')
-   <body class="page-template-default contact-v1">
+   <body class="page full-width">
         <div id="page" class="hfeed site">
             <a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
             <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
-			@if(session()->has('msg'))
-			   <h2 style="text-align: center" class="alert alert-success">{{session()->get('msg')}}</h2>
-			@endif
+
             <div class="top-bar hidden-md-down">
                 <div class="container">
                     <nav>
@@ -84,112 +82,110 @@
                              </div>
 
                             <div class="collapse navbar-toggleable-xs" id="default-header">
-                                <nav>
-                                    <ul id="menu-main-menu" class="nav nav-inline yamm">
-                                        <li class="menu-item menu-item-has-children animate-dropdown dropdown"><a title="Home" href="shop.html" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Home</a>
-                                            <ul role="menu" class=" dropdown-menu">
-                                                <li class="menu-item animate-dropdown  "><a title="Home v1" href="home.html">Home v1</a></li>
-                                                <li class="menu-item current-menu-item current_page_item animate-dropdown active"><a title="Home v2" href="home-v2.html">Home v2</a></li>
-                                                <li class="menu-item animate-dropdown  "><a title="Home v3" href="home-v3.html">Home v3</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item animate-dropdown"><a title="About Us" href="about.html">About Us</a></li>
+                                <ul id="menu-main-menu" class="nav nav-inline yamm">
+                                    <li class="menu-item menu-item-has-children animate-dropdown dropdown"><a title="Home" href="shop.html" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Home</a>
+                                        <ul role="menu" class=" dropdown-menu">
+                                            <li class="menu-item animate-dropdown  "><a title="Home v1" href="home.html">Home v1</a></li>
+                                            <li class="menu-item current-menu-item current_page_item animate-dropdown active"><a title="Home v2" href="home-v2.html">Home v2</a></li>
+                                            <li class="menu-item animate-dropdown  "><a title="Home v3" href="home-v3.html">Home v3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item animate-dropdown"><a title="About Us" href="about.html">About Us</a></li>
 
-                                        <li class="menu-item menu-item-has-children animate-dropdown dropdown"><a title="Blog" href="blog.html" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Blog</a>
-                                            <ul role="menu" class=" dropdown-menu">
-                                                <li class="menu-item animate-dropdown"><a title="Blog v1" href="blog-v1.html">Blog v1</a></li>
-                                                <li class="menu-item animate-dropdown"><a title="Blog v2" href="blog-v2.html">Blog v2</a></li>
-                                                <li class="menu-item animate-dropdown"><a title="Blog v3" href="blog-v3.html">Blog v3</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="yamm-fw menu-item menu-item-has-children animate-dropdown dropdown">
-                                            <a title="Pages" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Pages</a>
-                                            <ul role="menu" class=" dropdown-menu">
-                                                <li class="menu-item animate-dropdown">
-                                                    <div class="yamm-content" style="display:inline-block; width: 100%;">
-                                                        <div class="row">
-                                                            <div class="wpb_column vc_column_container col-sm-4">
-                                                                <div class="vc_column-inner ">
-                                                                    <div class="wpb_wrapper">
-                                                                        <div class="vc_wp_custommenu wpb_content_element">
-                                                                            <div class="widget widget_nav_menu">
-                                                                                <div class="menu-pages-menu-1-container">
-                                                                                    <ul id="menu-pages-menu-1" class="menu">
-                                                                                        <li class="nav-title menu-item"><a href="#">Home &#038; Static Pages</a></li>
-                                                                                        <li class="menu-item"><a href="home.html">Home v1</a></li>
-                                                                                        <li class="menu-item current-menu-item current_page_item"><a href="home-v2.html">Home v2</a></li>
-                                                                                        <li class="menu-item"><a href="home-v3.html">Home v3</a></li>
-                                                                                        <li class="menu-item"><a href="about.html">About</a></li>
-                                                                                        <li class="menu-item"><a href="contact-v2.html">Contact v2</a></li>
-                                                                                        <li class="menu-item"><a href="contact-v1.html">Contact v1</a></li>
-                                                                                        <li class="menu-item"><a href="faq.html">FAQ</a></li>
-                                                                                        <li class="menu-item"><a href="store-directory.html">Store Directory</a></li>
-                                                                                        <li class="menu-item"><a href="terms-and-conditions.html">Terms and Conditions</a></li>
-                                                                                        <li class="menu-item"><a href="404.html">404</a></li>
-                                                                                        <li class="nav-title menu-item"><a href="#">Product Categories</a></li>
-                                                                                        <li class="menu-item"><a href="cat-3-col.html">3 Column Sidebar</a></li>
-                                                                                        <li class="menu-item"><a href="cat-4-col.html">4 Column Sidebar</a></li>
-                                                                                        <li class="menu-item"><a href="cat-4-fw.html">4 Column Full width</a></li>
-                                                                                        <li class="menu-item"><a href="product-category-6-column.html">6 Columns Full width</a></li>
-                                                                                    </ul>
-                                                                                </div>
+                                    <li class="menu-item menu-item-has-children animate-dropdown dropdown"><a title="Blog" href="blog.html" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Blog</a>
+                                        <ul role="menu" class=" dropdown-menu">
+                                            <li class="menu-item animate-dropdown"><a title="Blog v1" href="blog-v1.html">Blog v1</a></li>
+                                            <li class="menu-item animate-dropdown"><a title="Blog v2" href="blog-v2.html">Blog v2</a></li>
+                                            <li class="menu-item animate-dropdown"><a title="Blog v3" href="blog-v3.html">Blog v3</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="yamm-fw menu-item menu-item-has-children animate-dropdown dropdown">
+                                        <a title="Pages" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">Pages</a>
+                                        <ul role="menu" class=" dropdown-menu">
+                                            <li class="menu-item animate-dropdown">
+                                                <div class="yamm-content" style="display:inline-block; width: 100%;">
+                                                    <div class="row">
+                                                        <div class="wpb_column vc_column_container col-sm-4">
+                                                            <div class="vc_column-inner ">
+                                                                <div class="wpb_wrapper">
+                                                                    <div class="vc_wp_custommenu wpb_content_element">
+                                                                        <div class="widget widget_nav_menu">
+                                                                            <div class="menu-pages-menu-1-container">
+                                                                                <ul id="menu-pages-menu-1" class="menu">
+                                                                                    <li class="nav-title menu-item"><a href="#">Home &#038; Static Pages</a></li>
+                                                                                    <li class="menu-item"><a href="home.html">Home v1</a></li>
+                                                                                    <li class="menu-item current-menu-item current_page_item"><a href="home-v2.html">Home v2</a></li>
+                                                                                    <li class="menu-item"><a href="home-v3.html">Home v3</a></li>
+                                                                                    <li class="menu-item"><a href="about.html">About</a></li>
+                                                                                    <li class="menu-item"><a href="contact-v2.html">Contact v2</a></li>
+                                                                                    <li class="menu-item"><a href="contact-v1.html">Contact v1</a></li>
+                                                                                    <li class="menu-item"><a href="faq.html">FAQ</a></li>
+                                                                                    <li class="menu-item"><a href="store-directory.html">Store Directory</a></li>
+                                                                                    <li class="menu-item"><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+                                                                                    <li class="menu-item"><a href="404.html">404</a></li>
+                                                                                    <li class="nav-title menu-item"><a href="#">Product Categories</a></li>
+                                                                                    <li class="menu-item"><a href="cat-3-col.html">3 Column Sidebar</a></li>
+                                                                                    <li class="menu-item"><a href="cat-4-col.html">4 Column Sidebar</a></li>
+                                                                                    <li class="menu-item"><a href="cat-4-fw.html">4 Column Full width</a></li>
+                                                                                    <li class="menu-item"><a href="product-category-6-column.html">6 Columns Full width</a></li>
+                                                                                </ul>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="wpb_column vc_column_container col-sm-4">
-                                                                <div class="vc_column-inner ">
-                                                                    <div class="wpb_wrapper">
-                                                                        <div class="vc_wp_custommenu wpb_content_element">
-                                                                            <div class="widget widget_nav_menu">
-                                                                                <div class="menu-pages-menu-2-container">
-                                                                                    <ul id="menu-pages-menu-2" class="menu">
-                                                                                        <li class="nav-title menu-item"><a href="#">Shop Pages</a></li>
-                                                                                        <li class="menu-item"><a href="shop.html#grid">Shop Grid</a></li>
-                                                                                        <li class="menu-item"><a href="shop.html#grid-extended">Shop Grid Extended</a></li>
-                                                                                        <li class="menu-item"><a href="shop.html#list-view">Shop List View</a></li>
-                                                                                        <li class="menu-item"><a href="shop.html#list-view-small">Shop List View Small</a></li>
-                                                                                        <li class="menu-item"><a href="shop.html">Shop Left Sidebar</a></li>
-                                                                                        <li class="menu-item"><a href="shop-fw.html">Shop Full width</a></li>
-                                                                                        <li class="menu-item"><a href="shop-right-side-bar.html">Shop Right Sidebar</a></li>
-                                                                                        <li class="nav-title menu-item"><a href="#">Blog Pages</a></li>
-                                                                                        <li class="menu-item"><a href="blog-v1.html">Blog v1</a></li>
-                                                                                        <li class="menu-item"><a href="blog-v3.html">Blog v3</a></li>
-                                                                                        <li class="menu-item"><a href="blog-v2.html">Blog v2</a></li>
-                                                                                        <li class="menu-item"><a href="blog-fw.html">Blog Full Width</a></li>
-                                                                                        <li class="menu-item"><a href="blog-single.html">Single Blog Post</a></li>
+                                                        </div>
+                                                        <div class="wpb_column vc_column_container col-sm-4">
+                                                            <div class="vc_column-inner ">
+                                                                <div class="wpb_wrapper">
+                                                                    <div class="vc_wp_custommenu wpb_content_element">
+                                                                        <div class="widget widget_nav_menu">
+                                                                            <div class="menu-pages-menu-2-container">
+                                                                                <ul id="menu-pages-menu-2" class="menu">
+                                                                                    <li class="nav-title menu-item"><a href="#">Shop Pages</a></li>
+                                                                                    <li class="menu-item"><a href="shop.html#grid">Shop Grid</a></li>
+                                                                                    <li class="menu-item"><a href="shop.html#grid-extended">Shop Grid Extended</a></li>
+                                                                                    <li class="menu-item"><a href="shop.html#list-view">Shop List View</a></li>
+                                                                                    <li class="menu-item"><a href="shop.html#list-view-small">Shop List View Small</a></li>
+                                                                                    <li class="menu-item"><a href="shop.html">Shop Left Sidebar</a></li>
+                                                                                    <li class="menu-item"><a href="shop-fw.html">Shop Full width</a></li>
+                                                                                    <li class="menu-item"><a href="shop-right-side-bar.html">Shop Right Sidebar</a></li>
+                                                                                    <li class="nav-title menu-item"><a href="#">Blog Pages</a></li>
+                                                                                    <li class="menu-item"><a href="blog-v1.html">Blog v1</a></li>
+                                                                                    <li class="menu-item"><a href="blog-v3.html">Blog v3</a></li>
+                                                                                    <li class="menu-item"><a href="blog-v2.html">Blog v2</a></li>
+                                                                                    <li class="menu-item"><a href="blog-fw.html">Blog Full Width</a></li>
+                                                                                    <li class="menu-item"><a href="blog-single.html">Single Blog Post</a></li>
 
-                                                                                    </ul>
-                                                                                </div>
+                                                                                </ul>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="wpb_column vc_column_container col-sm-4">
-                                                                <div class="vc_column-inner ">
-                                                                    <div class="wpb_wrapper">
-                                                                        <div class="vc_wp_custommenu wpb_content_element">
-                                                                            <div class="widget widget_nav_menu">
-                                                                                <div class="menu-pages-menu-3-container">
-                                                                                    <ul id="menu-pages-menu-3" class="menu">
-                                                                                        <li class="nav-title menu-item"><a href="single-product.html">Single Product Pages</a></li>
-                                                                                        <li class="menu-item"><a href="single-product-extended.html">Single Product Extended</a></li>
-                                                                                        <li class="menu-item"><a href="single-product.html">Single Product Fullwidth</a></li>
-                                                                                        <li class="menu-item"><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
-                                                                                        <li class="menu-item"><a href="single-product-sidebar-accessories.html">Single Product Sidebar Accessories </a></li>
-                                                                                        <li class="menu-item"><a href="single-product-sidebar-specification.html">Single Product Sidebar Specification </a></li>
-                                                                                        <li class="menu-item"><a href="single-product-sidebar-reviews.html">Single Product Sidebar Reviews </a></li>
-                                                                                        <li class="nav-title menu-item"><a href="#">Ecommerce Pages</a></li>
-                                                                                        <li class="menu-item"><a href="shop.html">Shop</a></li>
-                                                                                        <li class="menu-item"><a href="cart.html">Cart</a></li>
-                                                                                        <li class="menu-item"><a href="checkout.html">Checkout</a></li>
-                                                                                        <li class="menu-item"><a href="my-account.html">My Account</a></li>
-                                                                                        <li class="menu-item"><a href="compare.html">Compare</a></li>
-                                                                                        <li class="menu-item"><a href="wishlist.html">Wishlist</a></li>
-                                                                                    </ul>
-                                                                                </div>
+                                                        </div>
+                                                        <div class="wpb_column vc_column_container col-sm-4">
+                                                            <div class="vc_column-inner ">
+                                                                <div class="wpb_wrapper">
+                                                                    <div class="vc_wp_custommenu wpb_content_element">
+                                                                        <div class="widget widget_nav_menu">
+                                                                            <div class="menu-pages-menu-3-container">
+                                                                                <ul id="menu-pages-menu-3" class="menu">
+                                                                                    <li class="nav-title menu-item"><a href="single-product.html">Single Product Pages</a></li>
+                                                                                    <li class="menu-item"><a href="single-product-extended.html">Single Product Extended</a></li>
+                                                                                    <li class="menu-item"><a href="single-product.html">Single Product Fullwidth</a></li>
+                                                                                    <li class="menu-item"><a href="single-product-sidebar.html">Single Product Sidebar</a></li>
+                                                                                    <li class="menu-item"><a href="single-product-sidebar-accessories.html">Single Product Sidebar Accessories </a></li>
+                                                                                    <li class="menu-item"><a href="single-product-sidebar-specification.html">Single Product Sidebar Specification </a></li>
+                                                                                    <li class="menu-item"><a href="single-product-sidebar-reviews.html">Single Product Sidebar Reviews </a></li>
+                                                                                    <li class="nav-title menu-item"><a href="#">Ecommerce Pages</a></li>
+                                                                                    <li class="menu-item"><a href="shop.html">Shop</a></li>
+                                                                                    <li class="menu-item"><a href="cart.html">Cart</a></li>
+                                                                                    <li class="menu-item"><a href="checkout.html">Checkout</a></li>
+                                                                                    <li class="menu-item"><a href="my-account.html">My Account</a></li>
+                                                                                    <li class="menu-item"><a href="compare.html">Compare</a></li>
+                                                                                    <li class="menu-item"><a href="wishlist.html">Wishlist</a></li>
+                                                                                </ul>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -197,13 +193,13 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item"><a title="Features" href="#">Features</a></li>
-                                        <li class="menu-item"><a title="Contact Us" href="#">Contact Us</a></li>
-                                    </ul>
-                                </nav>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item"><a title="Features" href="#">Features</a></li>
+                                    <li class="menu-item"><a title="Contact Us" href="#">Contact Us</a></li>
+                                </ul>
                             </div>
                         </div>
 
@@ -577,105 +573,45 @@
             <div id="content" class="site-content" tabindex="-1">
                 <div class="container">
 
-                    <nav class="woocommerce-breadcrumb"><a href="home.html">Home</a><span class="delimiter"><i class="fa fa-angle-right"></i></span>Contact-v1</nav>
+                    <nav class="woocommerce-breadcrumb" >
+                        <a href="{{url('/')}}">Home</a>
+                        <span class="delimiter"><i class="fa fa-angle-right"></i></span>
+                    Privacy Policy
+                    </nav><!-- .woocommerce-breadcrumb -->
+
 
                     <div id="primary" class="content-area">
                         <main id="main" class="site-main">
-                            <article class="post-2508 page type-page status-publish hentry" id="post-2508">
-                                <div itemprop="mainContentOfPage" class="entry-content">
-                                    <div class="map" style="width: 100vw; position: relative; margin-left: -50vw; left: 50%; margin-bottom: 3em;">
-                                        <iframe height="514" allowfullscreen="" style="border: 0px none;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.593303940039!2d-0.15470444843858283!3d51.53901886611164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ae62edd5771%3A0x27f2d823e2be0249!2sPrincess+Rd%2C+London+NW1+8JR%2C+UK!5e0!3m2!1sen!2s!4v1458827996435"></iframe>
-                                    </div>
-                                    <div class="vc_row-full-width vc_clearfix"></div>
-                                    <div class="vc_row wpb_row vc_row-fluid">
-                                        <div class="contact-form wpb_column vc_column_container vc_col-sm-9 col-sm-9">
-                                            <div class="vc_column-inner ">
-                                                <div class="wpb_wrapper">
 
-                                                    <div class="wpb_text_column wpb_content_element ">
-                                                        <div class="wpb_wrapper">
-                                                            <h2 class="contact-page-title">Leave us a Message</h2>
-                                                         
-                                                        </div>
-                                                    </div>
-                                                    <div lang="en-US" dir="ltr" id="wpcf7-f2507-p2508-o1" class="wpcf7" role="form">
-                                                        <div class="screen-reader-response"></div>
-                                                        <form class="wpcf7-form" method="post" action="{{route('user-contact-save')}}">
-                                                        	@csrf
+                          <article id="post-2183" class="hentry">
+                                @if(isset($text))
 
-                                                            <div style="display: none;">
-                                                                <input type="hidden" value="2507" name="_wpcf7">
-                                                                <input type="hidden" value="4.4.1" name="_wpcf7_version">
-                                                                <input type="hidden" value="en_US" name="_wpcf7_locale">
-                                                                <input type="hidden" value="wpcf7-f2507-p2508-o1" name="_wpcf7_unit_tag">
-                                                                <input type="hidden" value="47d6f1c9ce" name="_wpnonce">
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <div class="col-xs-12 col-md-6">
-                                                                    <label>First name*</label><br>
-                                                                    <span class="wpcf7-form-control-wrap first-name"><input type="text" aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required input-text" size="40" value="" name="name"></span>
-                                                                </div>
-                                                              
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <div class="col-xs-12 col-md-6">
-                                                                    <label>Email*</label><br>
-                                                                    <span class="wpcf7-form-control-wrap first-name"><input type="email" aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required input-text" size="40" value="" name="email"></span>
-                                                                </div>
-                                                                <div class="col-xs-12 col-md-6">
-                                                                    <label>Mobile*</label><br>
-                                                                    <span class="wpcf7-form-control-wrap last-name"><input type="\tel" aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required input-text" size="40" value="" name="mobile"></span>
-                                                                </div>
-                                                            </div>
-                                                           
-                                                            <div class="form-group">
-                                                                <label>Your Message</label><br>
-                                                                <span class="wpcf7-form-control-wrap your-message"><textarea aria-invalid="false" class="wpcf7-form-control wpcf7-textarea" rows="10" cols="40" name="desc"></textarea></span>
-                                                            </div>
-                                                            <div class="form-group clearfix">
+                                <header class="entry-header">
+                                    <h1 class="entry-title">Privacy Policy</h1>
+                                    <p class="entry-subtitle">This Agreement was last modified on {{$text->created_at}}</p>
+                                </header><!-- .entry-header -->
 
-                                                                <p><input type="submit" value="Send Message"></p>
+                                <div class="entry-content">
+                                  {!!$text->desc1!!}
 
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="store-info wpb_column vc_column_container vc_col-sm-3 col-sm-3">
-                                            <div class="vc_column-inner ">
-                                                <div class="wpb_wrapper">
-                                                    <div class="wpb_text_column wpb_content_element ">
-                                                        <div class="wpb_wrapper">
-                                                            <h2 class="contact-page-title">Our Store</h2>
-                                                            <address>17 Princess Road<br>
-                                                                London, Greater London<br>
-                                                                NW1 8JR, UK
-                                                            </address>
-                                                            <h3>Hours of Operation</h3>
-                                                            <ul class="list-unstyled operation-hours inner-right-md">
-                                                                <li class="clearfix"><span class="day">Monday:</span><span class="pull-right flip hours">12-6 PM</span></li>
-                                                                <li class="clearfix"><span class="day">Tuesday:</span><span class="pull-right flip hours">12-6 PM</span></li>
-                                                                <li class="clearfix"><span class="day">Wednesday:</span><span class="pull-right flip hours">12-6 PM</span></li>
-                                                                <li class="clearfix"><span class="day">Thursday:</span><span class="pull-right flip hours">12-6 PM</span></li>
-                                                                <li class="clearfix"><span class="day">Friday:</span><span class="pull-right flip hours">12-6 PM</span></li>
-                                                                <li class="clearfix"><span class="day">Saturday:</span><span class="pull-right flip hours">12-6 PM</span></li>
-                                                                <li class="clearfix"><span class="day">Sunday</span><span class="pull-right flip hours">Closed</span></li>
-                                                            </ul>
-                                                            <h3>Careers</h3>
-                                                            <p class="inner-right-md">If you’re interested in employment opportunities at Electro, please email us: <a href="mailto:contact@yourstore.com">contact@yourstore.com</a></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                </div><!-- .entry-content -->
+                                @else
+                                <div style="text-align: center" class="entry-content">
+                                <h3>We will update it soon</h3>
+
                                 </div>
-                            </article>
+                                @endif
+
+
+                            </article><!-- #post-## -->
+
                         </main><!-- #main -->
                     </div><!-- #primary -->
-                </div><!-- .container -->
+
+
+                </div><!-- .col-full -->
             </div><!-- #content -->
+
 
             <section class="brands-carousel">
                 <h2 class="sr-only">Brands Carousel</h2>
@@ -903,12 +839,12 @@
                 </div>
             </section>
 
-          @include('user.layout.footer1')
+           @include('user.layout.footer1')
 
         </div><!-- #page -->
 
         <!-- For demo purposes – can be removed on production -->
-      
+        
         <!-- For demo purposes – can be removed on production : End -->
 
         <script type="text/javascript" src="assets/js/jquery.min.js"></script>

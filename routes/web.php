@@ -25,6 +25,10 @@ use Illuminate\Support\Facades\Route;
 
   //
    Route::post('partner/enquiry/save', 'user\HomeController@partnerEnquiry')->name('partner-enquiry');
+
+   //policy
+     Route::get('privacypolicy', 'user\HomeController@privacypolicy')->name('user-policy');
+       Route::get('termsandcondition', 'user\HomeController@terms')->name('user-terms');
  
 
 Auth::routes();
@@ -46,6 +50,7 @@ Route::group([ 'prefix' => 'vendor' ,'middleware' => ['App\Http\Middleware\Vendo
 
 Route::group([ 'prefix' => 'admin' ,'middleware' => ['App\Http\Middleware\AdminMiddleware']], function () {
   Route::get('policy', 'admin\dashboardController@policy')->name('admin-policy');
+   Route::post('policy/save', 'admin\dashboardController@savePolicy')->name('admin-policy-save');
    Route::get('dashboard', 'admin\dashboardController@index')->name('admin-dashboard');
    Route::get('profile', 'admin\profileController@index')->name('admin-profile');
    Route::get('customers', 'admin\customerController@index')->name('admin-customer');

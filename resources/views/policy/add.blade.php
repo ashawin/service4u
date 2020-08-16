@@ -20,13 +20,15 @@
                                                 <div class="card h-100">
                                                     <div class="card-inner">
                                                        
-                                                        <form action="#">
+                                                        <form action="{{route('admin-policy-save')}}" method="post">
+                                                            @csrf
                                                             <div class="form-group">
                                                                 <label class="form-label" for="full-name">Type</label>
-                                                                <select class="form-select form-control form-control-lg">
-                                                                    <option value="default_option">Default Option</option>
-                                                                    <option value="option_select_name">Option select name</option>
-                                                                    <option value="option_select_name">Option select name</option>
+                                                                <select  name="title" class="form-select form-control form-control-lg">
+                                                                     <option value="" selected="">Select Option</option>
+                                                                    <option value="privacypolicy">Privacy Policy</option>
+                                                                    <option value="terms&condition">Terms and  Condition</option>
+                                                                  
                                                                 </select>
                                                             </div>
                                                           

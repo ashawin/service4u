@@ -351,11 +351,11 @@
 
 
                                 ?>
+
                         <div class="tab-pane fade pt-2 {{$active}} " id="{{\Str::slug($product->category)}}-2" role="tabpanel" aria-labelledby="{{\Str::slug($product->category)}}-2-tab">
                             <div class="row no-gutters">
-                                <div class="col-md-12 col-wd-4 d-md-flex d-wd-block">
-                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
-                                        @foreach($product->products as $pro)
+                              
+                                  @foreach($product->products as $pro)
                                           <?php
                                               $service=App\Models\Service::join('products','products.id','=','services.product_id')
                                           ->select('products.product','products.images','products.slug as pro_slug','products.id as pro_id')
@@ -368,9 +368,11 @@
                                                 
 
                                           ?>
-                                        <li class="col-xl-12  remove-divider ">
-                                            <div class="product-item__outer  w-100 prodcut-box-shadow">
-                                                <div class="product-item__inner bg-white p-3">
+                                 <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
+                                    <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
+                                        <li class="col-xl-3 product-item max-width-xl-100 remove-divider">
+                                            <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
+                                                 <div class="product-item__inner bg-white p-3">
                                                     <div class="product-item__body pb-xl-2">
                                                         <div class="mb-2"><a href="{{url('category/subcategory/'.$service->pro_slug)}}" class="font-size-12 text-gray-5">Speakers</a></div>
                                                         <h5 class="mb-1 product-item__title"><a href="http://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">{{$service->product}}</a></h5>
@@ -395,10 +397,12 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        @endforeach
                                       
+                                       
                                     </ul>
                                 </div>
+                                @endforeach
+                               
                                 
                                
                             </div>
@@ -562,6 +566,7 @@
                                                     <a href="http://transvelo.github.io/electro-html/2.0/html/shop/wishlist.html" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -571,6 +576,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- End Recently viewed -->
                 <!-- Brand Carousel -->
                 

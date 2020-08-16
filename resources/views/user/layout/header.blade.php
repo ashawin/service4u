@@ -15,7 +15,7 @@
                             <div class="topbar-right ml-auto">
                                 <ul class="list-inline mb-0">
                                     <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
-                                        <a href="contact-v2.html" class="u-header-topbar__nav-link"><i class="ec ec-map-pointer mr-1"></i> Store Locator</a>
+                                        <a href="{{url('contact')}}" class="u-header-topbar__nav-link"><i class="ec ec-map-pointer mr-1"></i>Contact Us</a>
                                     </li>
                                    
                                  

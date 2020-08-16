@@ -9,6 +9,7 @@ use App\Models\Service;
 use App\Models\Product;
 use App\Models\Enquiry;
 use App\Models\Banner;
+use App\Models\Page;
 
 class HomeController extends Controller
 {
@@ -128,7 +129,8 @@ class HomeController extends Controller
     }
 
     public function contact(){
-      return view('user.contact');
+      $categories=Category::all();
+      return view('user.contact',['categories'=>$categories]);
     }
 
     public function contactSave(Request $request){
@@ -137,7 +139,18 @@ class HomeController extends Controller
       Enquiry::create( array('slug'=>'usercontact','name' =>$request->name ,'email'=>$request->email,'mobile'=>$request->mobile,'desc1'=>$request->desc));
       session()->flash('msg','Successfully Send');
          return redirect()->route('user-contact');
+    }
 
+    public function privacypolicy(){
+      $categories=Category::all();
+    $text=  Page::where('slug','=','privacypolicy')->first();
+    return view('user.policy.privacy',['text'=>$text,'categories'=>$categories]);
 
+    }
+
+    public function terms(){
+       $categories=Category::all();
+      $text=Page::where('slug','=','terms&condition')->first();
+      return view('user.policy.terms',['text'=>$text,'categories'=>$categories]);
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Enquiry;
 use App\Models\Category;
 use App\Models\Banner;
+use App\Models\Page;
 
 class dashboardController extends Controller
 {
@@ -57,5 +58,15 @@ class dashboardController extends Controller
 
     public function policy(){
       return view('policy.add');
+    }
+
+    public function savePolicy(Request $request){
+      $this->validate($request,['title'=>'required','editor1'=>'required']);
+
+      Page::create(array('title'=>$request->title,'slug'=>\Str::slug($request->title),'desc1'=>$request->editor1));
+      session()->flash('msg','Successfully Added');
+      return redirect()->route('admin-policy');
+
+
     }
 }
