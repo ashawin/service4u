@@ -374,8 +374,8 @@
                                             <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
                                                  <div class="product-item__inner bg-white p-3">
                                                     <div class="product-item__body pb-xl-2">
-                                                        <div class="mb-2"><a href="{{url('category/subcategory/'.$service->pro_slug)}}" class="font-size-12 text-gray-5">Speakers</a></div>
-                                                        <h5 class="mb-1 product-item__title"><a href="http://transvelo.github.io/electro-html/2.0/html/shop/single-product-fullwidth.html" class="text-blue font-weight-bold">{{$service->product}}</a></h5>
+                                                        <div class="mb-2"><a href="{{url('category/subcategory/'.$service->pro_slug)}}" class="font-size-12 text-gray-5">{{$service->product}}</a></div>
+                                                        <h5 class="mb-1 product-item__title"><a href="{{url('category/subcategory/'.$service->pro_slug)}}" class="text-blue font-weight-bold">{{$service->product}}</a></h5>
                                                         <div class="mb-2">
                                                             <a href="{{url('category/subcategory/'.$service->pro_slug)}}" class="d-block text-center"><img class="img-fluid" src="{{asset('products/images/'.$images[0])}}" height="200px" width="200px" alt="Image Description"></a>
                                                         </div>
@@ -383,9 +383,7 @@
                                                             <div class="prodcut-price">
                                                                 <div class="text-gray-100">{{$service->price}}</div>
                                                             </div>
-                                                            <div class="d-none d-xl-block prodcut-add-cart">
-                                                                <a href="{{url('category/subcategory/'.$service->pro_slug)}}" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
-                                                            </div>
+                                                           
                                                         </div>
                                                     </div>
                                             <!--         <div class="product-item__footer">

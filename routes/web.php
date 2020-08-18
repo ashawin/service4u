@@ -49,7 +49,10 @@ Route::group([ 'prefix' => 'vendor' ,'middleware' => ['App\Http\Middleware\Vendo
 });
 
 Route::group([ 'prefix' => 'admin' ,'middleware' => ['App\Http\Middleware\AdminMiddleware']], function () {
+   Route::get('add/subscription', 'admin\subscriptionController@add')->name('admin-subsc-add');
+   Route::post('add/subscription/save', 'admin\subscriptionController@save')->name('admin-subsc-save');
   Route::get('policy', 'admin\dashboardController@policy')->name('admin-policy');
+
    Route::post('policy/save', 'admin\dashboardController@savePolicy')->name('admin-policy-save');
    Route::get('dashboard', 'admin\dashboardController@index')->name('admin-dashboard');
    Route::get('profile', 'admin\profileController@index')->name('admin-profile');

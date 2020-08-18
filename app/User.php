@@ -7,11 +7,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Bavix\Wallet\Traits\HasWallet;
 use Bavix\Wallet\Interfaces\Wallet;
-
+use Rinvex\Subscriptions\Traits\HasSubscriptions;
 
 class User extends Authenticatable implements Wallet
 {
-    use Notifiable, HasWallet;
+    use Notifiable, HasWallet, HasSubscriptions;
 
     /**
      * The attributes that are mass assignable.

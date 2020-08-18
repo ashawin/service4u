@@ -713,8 +713,8 @@
                                         <li class="product">
                                             <div class="product-outer">
                                                 <div class="product-inner">
-                                                    <span class="loop-product-categories"><a href="product-category.html" rel="tag">{{$ser->category}}</a></span>
-                                                    <a href="single-product.html">
+                                                    <span class="loop-product-categories"><a href="{{url('category/subcategory/'.$ser->pro_slug)}}" rel="tag">{{$ser->category}}</a></span>
+                                                    <a href="{{url('category/subcategory/'.$ser->pro_slug)}}">
                                                         <h3>{{$ser->product}}</h3>
                                                         <div class="product-thumbnail">
                                                             <img data-echo="{{asset('products/images/'.$images[0])}}" src="{{asset('products/images/'.$images[0])}}" alt="">
@@ -727,7 +727,7 @@
                                                                 <ins><span class="amount">&#036;{{$ser->price}}</span></ins>
                                                             </span>
                                                         </span>
-                                                        <a rel="nofollow" href="single-product.html" class="button add_to_cart_button">Add to cart</a>
+                                                       
                                                     </div><!-- /.price-add-to-cart -->
 
                                                     

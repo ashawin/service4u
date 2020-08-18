@@ -135,7 +135,7 @@
                                             <div class="menu-footer-menu-1-container">
                                                 <ul id="menu-footer-menu-1" class="menu">
                                                         @foreach($categories as $category)
-                                                    <li class="menu-item"><a href="single-product.html">{{$category->category}}</a></li>
+                                                    <li class="menu-item"><a href="{{url('services/'.$category->category)}}">{{$category->category}}</a></li>
                                                     @endforeach
                                                 
                                                 
