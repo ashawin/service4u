@@ -53,6 +53,17 @@
                         </div>
                     </div>
                 </div>
+                   <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header border-bottom">Manage Subscriptions</div>
+                        <div class="card-inner">
+                            <h5 class="card-title">Manage Subscriptions</h5>
+                            <p class="card-text">Manage Subscriptions and all</p>
+                            <a href="{{route('admin-subscription')}}" class="btn btn-primary">Manage</a>
+                        </div>
+                    </div>
+                </div>
+              
             </div>
         </div>
     </div><!-- .card-preview -->

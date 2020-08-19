@@ -2,7 +2,9 @@
 @section('content')
     <body class="page home page-template-default">
         <div id="page" class="hfeed site">
-          
+            <a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
             <div class="top-bar hidden-md-down">
                 <div class="container">
                     <nav>
@@ -10,11 +12,10 @@
                             <li class="menu-item animate-dropdown"><a title="Welcome to Worldwide Electronics Store" href="#">Welcome </a></li>
                         </ul>
                     </nav>
-                    
+
                     <nav>
                         <ul id="menu-top-bar-right" class="nav nav-inline pull-right animate-dropdown flip">
-                            <li class="menu-item animate-dropdown"><a title="Store Locator" href="{{url('contact')}}"><i class="ec ec-map-pointer"></i>contact</a></li>
-                           
+                            <li class="menu-item animate-dropdown"><a title="Store Locator" href="{{url('contact')}}"><i class="ec ec-map-pointer"></i>Contact</a></li>
                             
                             <li class="menu-item animate-dropdown"><a title="My Account" href="{{url('profile')}}"><i class="ec ec-user"></i>My Account</a></li>
                         </ul>
@@ -22,118 +23,177 @@
                 </div>
             </div><!-- /.top-bar -->
 
-            @include('user.layout.header1')
+      @include('user.layout.header1')
+        @include('user.layout.nav')
 
-            @include('user.layout.nav')
-
-            <div id="content" class="site-content" tabindex="-1">
+            <div tabindex="-1" class="site-content" id="content">
                 <div class="container">
 
-                    <nav class="woocommerce-breadcrumb"><a href="{{url('')}}">Home</a><span class="delimiter"><i class="fa fa-angle-right"></i></span>Book</nav>
-                                @if(!$errors->isEmpty())
-                @foreach ($errors->all() as $error)
-                    <div>{{ $error }}</div>
-                @endforeach
-            @endif
-                        @if(session()->has('msg'))
-                        <h3 style="text-align: center"class="alert alert-success">{{session()->get('msg')}}</h3>
-                        @endif
-                          @if(session()->has('msgerror'))
-                        <h3 style="text-align: center"class="alert alert-danger">{{session()->get('msgerror')}}</h3>
-                        @endif
-
-                        @if($errors->has('email'))
-            <h3 style="text-align: center" class="alert alert-danger">{{$errors->first('email')}}</h3>
-        @endif
-                    <div id="primary" class="content-area">
-                        <main id="main" class="site-main">
+                    <nav class="woocommerce-breadcrumb"><a href="home.html">Home</a><span class="delimiter"><i class="fa fa-angle-right"></i></span>Account</nav>
+                    <div class="content-area" id="primary">
+                        <main class="site-main" id="main">
                             <article class="page type-page status-publish hentry">
-                                <header class="entry-header"><h1 itemprop="name" class="entry-title">Book Service</h1></header><!-- .entry-header -->
+                                <div itemprop="mainContentOfPage" class="entry-content">
+                                    <div id="yith-wcwl-messages"></div>
+                                    <form class="woocommerce" method="post" id="yith-wcwl-form">
 
-                                <form enctype="multipart/form-data" action="{{route('user-book-service-save')}}" class="checkout woocommerce-checkout" method="post" name="checkout">
-                                	@csrf
-                                    @if($type==0)
-                                	<input type="hidden" value="{{$service->service_id}}" name="service">
-                                    @else
-                                    <input type="hidden" value="{{$service->id}}" name="service">
-                                    @endif
-                                    <input type="hidden" value="{{$type}}" name="type">
-                                    <div id="customer_details" class="col2-set">
-                                        <div class="col-1">
-                                            <div class="woocommerce-billing-fields">
-                                                <p id="billing_last_name_field" class="form-row form-row form-row-wide validate-required"><label class="" for="billing_last_name"> Name <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_last_name" name="name" class="input-text " required></p><div class="clear"></div>
-                                                
-
-                                            
-                                                <p id="billing_email_field" class="form-row form-row form-row-first validate-required validate-email"><label class="" for="billing_email">Email Address <abbr title="required" class="required">*</abbr></label><input type="email" value="" placeholder="" id="billing_email" name="email" class="input-text " required></p>
-
-                                                <p id="billing_phone_field" class="form-row form-row form-row-last validate-required validate-phone"><label class="" for="billing_phone">Phone <abbr title="required" class="required">*</abbr></label><input type="tel" value="" placeholder="" id="billing_phone" name="mobile" class="input-text "required></p><div class="clear"></div>
-
-                                                <p id="billing_country_field" class="form-row form-row form-row-wide validate-required validate-email"><label class="" for="billing_country">Country <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="country" name="country" class="input-text " required></p><div class="clear"></div>
-
-                                                <p id="billing_address_1_field" class="form-row form-row form-row-wide address-field validate-required"><label class="" for="billing_address_1">Address <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="Street address" id="billing_address_1" name="address" class="input-text " required></p>
-                                                <p id="billing_address_1_field" class="form-row form-row form-row-wide address-field validate-required"><label class="" for="billing_address_1">Address 1 </label><input type="text" value="" placeholder="Street address1" id="billing_address_1" name="address1" class="input-text " ></p>
-
-                                                
-
-                                                <p id="billing_city_field" class="form-row form-row form-row-first  validate-required" data-o_class="form-row form-row form-row-wide address-field validate-required"><label class="" for="billing_city"> District <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="city" name="district" class="input-text " required></p>
-
-                                                <p id="billing_state_field" class="form-row form-row form-row-last validate-required validate-email"><label class="" for="billing_state">State  <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_state" name="state" class="input-text " required></p>
-
-
-                                            </div>
+                                        <input type="hidden" value="68bc4ab99c" name="yith_wcwl_form_nonce" id="yith_wcwl_form_nonce"><input type="hidden" value="/electro/wishlist/" name="_wp_http_referer">
+                                        <!-- TITLE -->
+                                        <div class="wishlist-title ">
+                                            <h2>My Orders</h2>
                                         </div>
-                                  
-                                      
 
-                                   <div class="col-2">                                        
+                                        <!-- WISHLIST TABLE -->
+                                        <table data-token="" data-id="" data-page="1" data-per-page="5" data-pagination="no" class="shop_table cart wishlist_table">
 
-                                                  <p id="billing_postcode_field" class="form-row form-row form-row-first address-field validate-postcode validate-required" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode"><label class="" for="billing_postcode">Payment Method <abbr title="required" class="required">*</abbr></label>
-                                            <fieldset>
-                                                   <h3 id="ship-to-different-address">
-                                                    <label class="checkbox" for="ship-to-different-address-checkbox">Cash On Delivery</label>
-                                                    <input type="radio" value="1" name="payment_method" class="input-checkbox" id="ship-to-different-address-checkbox">
-                                                </h3>
-                                          
-                                                  <h3 id="ship-to-different-address">
-                                                    <label class="checkbox" for="ship-to-different-address-checkbox">Online</label>
-                                                    <input type="radio" value="1" name="payment_method" class="input-checkbox" id="ship-to-different-address-checkbox">
-                                                </h3>
-                                                </fieldset></p>
+                                            <thead>
+                                                <tr>
 
-                                                 <p id="billing_postcode_field" class="form-row form-row form-row-last address-field validate-postcode validate-required" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode"><label class="" for="billing_postcode">Postcode / ZIP <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_postcode" name="pin" class="input-text " required></p>
+                                                    <th class="product-remove"></th>
 
-                                                  
-                                            
-                                          
-                                        
+                                                    <th class="product-thumbnail"></th>
 
-                                                
+                                                    <th class="product-name">
+                                                        <span class="nobr">Product Name</span>
+                                                    </th>
 
-                                                <div class="clear"></div>
+                                                    <th class="product-price">
+                                                        <span class="nobr">Unit Price</span>
+                                                    </th>
+                                                    <th class="product-stock-stauts">
+                                                        <span class="nobr">Stock Status</span>
+                                                    </th>
 
-                                            
-                                                  
-                                                <p id="billing_postcode_field" class="form-row form-row form-row-last address-field validate-postcode validate-required" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode"><label class="" for="billing_postcode">Password <abbr title="required" class="required">*</abbr></label><input type="password" value="" placeholder="" id="password" name="password" class="input-text " required="true"></p>
+                                                    <th class="product-add-to-cart"></th>
 
-                                                 <p id="billing_postcode_field" class="form-row form-row form-row-last address-field validate-postcode validate-required" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode"><label class="" for="billing_postcode">Confirm Password <abbr title="required" class="required">*</abbr></label><input type="password" value="" placeholder="" id="billing_postcode" name="password_confirmation" class="input-text " ></p>
-                                             
+                                                </tr>
+                                            </thead>
 
-                                    </div>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="product-remove">
+                                                        <div>
+                                                            <a title="Remove this product" class="remove remove_from_wishlist" href="#">×</a>
+                                                        </div>
+                                                    </td>
 
-                                        
-                                              
-                                    </div>
+                                                    <td class="product-thumbnail">
+                                                        <a href="single-product.html"><img width="180" height="180" alt="1" class="wp-post-image" src="assets/images/products/2.jpg"></a>
+                                                    </td>
 
-                                 
-                                        <input type="submit" data-value="Place order" value="Place order" class="button alt">
-                                   
-                                </form>
-                            </article>
+                                                    <td class="product-name">
+                                                        <a href="single-product.html">White Solo 2 Wireless</a>
+                                                    </td>
+
+                                                    <td class="product-price">
+                                                        <span class="electro-price"><span class="amount">$248.99</span></span>
+                                                    </td>
+
+                                                    <td class="product-stock-status">
+                                                        <span class="in-stock">In stock</span>
+                                                    </td>
+
+                                                    <td class="product-add-to-cart">
+                                                        <!-- Date added -->
+
+                                                        <!-- Add to cart button -->
+                                                        <a href="#" class="button"> Add to Cart</a>
+                                                        <!-- Change wishlist -->
+
+                                                        <!-- Remove from wishlist -->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td class="product-remove">
+                                                        <div>
+                                                            <a title="Remove this product" class="remove remove_from_wishlist" href="#">×</a>
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="product-thumbnail">
+                                                        <a href="single-product.html"><img width="180" height="180" alt="Ultrabooks" class="wp-post-image" src="assets/images/products/3.jpg"></a>
+                                                    </td>
+
+                                                    <td class="product-name">
+                                                        <a href="single-product.html">Tablet Red EliteBook  Revolve 810 G2</a>
+                                                    </td>
+
+                                                    <td class="product-price">
+                                                        <span class="electro-price"><span class="amount">$1200.00</span></span>
+                                                    </td>
+
+                                                    <td class="product-stock-status">
+                                                        <span class="in-stock">In stock</span>
+                                                    </td>
+
+                                                    <td class="product-add-to-cart">
+                                                        <!-- Date added -->
+
+                                                        <!-- Add to cart button -->
+
+                                                        <a href="#" class="button"> Add to Cart</a>
+                                                        <!-- Change wishlist -->
+
+                                                        <!-- Remove from wishlist -->
+                                                    </td>
+                                                </tr>
+                                                <tr >
+
+                                                    <td class="product-remove">
+                                                        <div>
+                                                            <a title="Remove this product" class="remove remove_from_wishlist" href="#">×</a>
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="product-thumbnail">
+                                                        <a href="single-product.html"><img width="180" height="180" alt="GameStation" class=" wp-post-image" src="assets/images/products/1.jpg"></a>
+                                                    </td>
+
+                                                    <td class="product-name">
+                                                        <a href="single-product.html">GameConsole Destiny  Special Edition</a>
+                                                    </td>
+
+                                                    <td class="product-price">
+                                                        <span class="electro-price"><span class="amount">$789.00</span></span>
+                                                    </td>
+
+                                                    <td class="product-stock-status">
+                                                        <span class="in-stock">In stock</span>
+                                                    </td>
+
+                                                    <td class="product-add-to-cart">
+                                                        <!-- Date added -->
+
+                                                        <!-- Add to cart button -->
+                                                        <a href="#" class="button"> Add to Cart</a>
+                                                        <!-- Change wishlist -->
+
+                                                        <!-- Remove from wishlist -->
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="6"></td>
+                                                </tr>
+                                            </tfoot>
+
+                                        </table>
+
+                                        <input type="hidden" value="85fe311a9d" name="yith_wcwl_edit_wishlist" id="yith_wcwl_edit_wishlist"><input type="hidden" value="/electro/wishlist/" name="_wp_http_referer">
+
+                                    </form>
+
+                                </div><!-- .entry-content -->
+
+                            </article><!-- #post-## -->
+
                         </main><!-- #main -->
                     </div><!-- #primary -->
-                </div><!-- .container -->
-            </div><!-- #content -->
+                </div><!-- .col-full -->
+            </div>
 
             <section class="brands-carousel">
                 <h2 class="sr-only">Brands Carousel</h2>
@@ -361,15 +421,15 @@
                 </div>
             </section>
 
-             @include('user.layout.footer1')
+           @include('user.layout.footer1')
 
         </div><!-- #page -->
 
         <!-- For demo purposes – can be removed on production -->
-     
+ 
         <!-- For demo purposes – can be removed on production : End -->
 
-     <script type="text/javascript" src="{{asset('users/assets1/js/jquery.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('users/assets1/js/jquery.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('users/assets1/js/tether.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('users/assets1/js/bootstrap.min.js')}}"></script>
             <script type="text/javascript" src="{{asset('users/assets1/js/bootstrap-hover-dropdown.min.js')}}"></script>
@@ -382,12 +442,11 @@
 
         <!-- For demo purposes – can be removed on production -->
 
+        <script src="{{asset('users/switchstylesheet/switchstylesheet.js')}}"></script>
 
            <script>
            (function($) {
                $(document).ready(function(){
-                 $("#passblock").hide();
-
                    $(".changecolor").switchstylesheet( { seperator:"color"} );
                    $('.show-theme-options').click(function(){
                        $(this).parent().toggleClass('open');
@@ -453,14 +512,9 @@
             		});
                });
         })(jQuery);
-
-        function isaccount(){
-            $("#passblock").show();
-          
-            $("#password").attr("required", "true");
-
-        }
         </script>
+        <!-- For demo purposes – can be removed on production : End -->
+
         <!-- For demo purposes – can be removed on production : End -->
 
     </body>

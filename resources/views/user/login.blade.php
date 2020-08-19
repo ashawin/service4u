@@ -2,137 +2,119 @@
 @section('content')
     <body class="page home page-template-default">
         <div id="page" class="hfeed site">
-          
+            <a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
+            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
             <div class="top-bar hidden-md-down">
                 <div class="container">
                     <nav>
                         <ul id="menu-top-bar-left" class="nav nav-inline pull-left animate-dropdown flip">
-                            <li class="menu-item animate-dropdown"><a title="Welcome to Worldwide Electronics Store" href="#">Welcome </a></li>
+                            <li class="menu-item animate-dropdown"><a title="Welcome to Worldwide Electronics Store" href="#">Welcome to Worldwide Electronics Store</a></li>
                         </ul>
                     </nav>
-                    
+
                     <nav>
                         <ul id="menu-top-bar-right" class="nav nav-inline pull-right animate-dropdown flip">
-                            <li class="menu-item animate-dropdown"><a title="Store Locator" href="{{url('contact')}}"><i class="ec ec-map-pointer"></i>contact</a></li>
-                           
-                            
-                            <li class="menu-item animate-dropdown"><a title="My Account" href="{{url('profile')}}"><i class="ec ec-user"></i>My Account</a></li>
+                            <li class="menu-item animate-dropdown"><a title="Store Locator" href="#"><i class="ec ec-map-pointer"></i>Store Locator</a></li>
+                            <li class="menu-item animate-dropdown"><a title="Track Your Order" href="track-your-order.html"><i class="ec ec-transport"></i>Track Your Order</a></li>
+                            <li class="menu-item animate-dropdown"><a title="Shop" href="shop.html"><i class="ec ec-shopping-bag"></i>Shop</a></li>
+                            <li class="menu-item animate-dropdown"><a title="My Account" href="my-account.html"><i class="ec ec-user"></i>My Account</a></li>
                         </ul>
                     </nav>
                 </div>
             </div><!-- /.top-bar -->
 
             @include('user.layout.header1')
-
-            @include('user.layout.nav')
+              @include('user.layout.nav')
 
             <div id="content" class="site-content" tabindex="-1">
                 <div class="container">
 
-                    <nav class="woocommerce-breadcrumb"><a href="{{url('')}}">Home</a><span class="delimiter"><i class="fa fa-angle-right"></i></span>Book</nav>
-                                @if(!$errors->isEmpty())
-                @foreach ($errors->all() as $error)
-                    <div>{{ $error }}</div>
-                @endforeach
-            @endif
-                        @if(session()->has('msg'))
-                        <h3 style="text-align: center"class="alert alert-success">{{session()->get('msg')}}</h3>
-                        @endif
-                          @if(session()->has('msgerror'))
-                        <h3 style="text-align: center"class="alert alert-danger">{{session()->get('msgerror')}}</h3>
-                        @endif
+                    <nav class="woocommerce-breadcrumb" ><a href="home.html">Home</a><span class="delimiter"><i class="fa fa-angle-right"></i></span>My Account</nav><!-- .woocommerce-breadcrumb -->
 
-                        @if($errors->has('email'))
-            <h3 style="text-align: center" class="alert alert-danger">{{$errors->first('email')}}</h3>
-        @endif
                     <div id="primary" class="content-area">
                         <main id="main" class="site-main">
-                            <article class="page type-page status-publish hentry">
-                                <header class="entry-header"><h1 itemprop="name" class="entry-title">Book Service</h1></header><!-- .entry-header -->
+                            <article id="post-8" class="hentry">
 
-                                <form enctype="multipart/form-data" action="{{route('user-book-service-save')}}" class="checkout woocommerce-checkout" method="post" name="checkout">
-                                	@csrf
-                                    @if($type==0)
-                                	<input type="hidden" value="{{$service->service_id}}" name="service">
-                                    @else
-                                    <input type="hidden" value="{{$service->id}}" name="service">
-                                    @endif
-                                    <input type="hidden" value="{{$type}}" name="type">
-                                    <div id="customer_details" class="col2-set">
-                                        <div class="col-1">
-                                            <div class="woocommerce-billing-fields">
-                                                <p id="billing_last_name_field" class="form-row form-row form-row-wide validate-required"><label class="" for="billing_last_name"> Name <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_last_name" name="name" class="input-text " required></p><div class="clear"></div>
-                                                
+                                <div class="entry-content">
+                                    <div class="woocommerce">
+                                        <div class="customer-login-form">
+                                            <span class="or-text">or</span>
 
-                                            
-                                                <p id="billing_email_field" class="form-row form-row form-row-first validate-required validate-email"><label class="" for="billing_email">Email Address <abbr title="required" class="required">*</abbr></label><input type="email" value="" placeholder="" id="billing_email" name="email" class="input-text " required></p>
+                                            <div class="col2-set" id="customer_login">
 
-                                                <p id="billing_phone_field" class="form-row form-row form-row-last validate-required validate-phone"><label class="" for="billing_phone">Phone <abbr title="required" class="required">*</abbr></label><input type="tel" value="" placeholder="" id="billing_phone" name="mobile" class="input-text "required></p><div class="clear"></div>
-
-                                                <p id="billing_country_field" class="form-row form-row form-row-wide validate-required validate-email"><label class="" for="billing_country">Country <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="country" name="country" class="input-text " required></p><div class="clear"></div>
-
-                                                <p id="billing_address_1_field" class="form-row form-row form-row-wide address-field validate-required"><label class="" for="billing_address_1">Address <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="Street address" id="billing_address_1" name="address" class="input-text " required></p>
-                                                <p id="billing_address_1_field" class="form-row form-row form-row-wide address-field validate-required"><label class="" for="billing_address_1">Address 1 </label><input type="text" value="" placeholder="Street address1" id="billing_address_1" name="address1" class="input-text " ></p>
-
-                                                
-
-                                                <p id="billing_city_field" class="form-row form-row form-row-first  validate-required" data-o_class="form-row form-row form-row-wide address-field validate-required"><label class="" for="billing_city"> District <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="city" name="district" class="input-text " required></p>
-
-                                                <p id="billing_state_field" class="form-row form-row form-row-last validate-required validate-email"><label class="" for="billing_state">State  <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_state" name="state" class="input-text " required></p>
+                                                <div class="col-1">
 
 
-                                            </div>
-                                        </div>
-                                  
-                                      
+                                                    <h2>Login</h2>
 
-                                   <div class="col-2">                                        
+                                                    <form method="post" class="login" action="{{route('login')}}">
+                                                    	@csrf
 
-                                                  <p id="billing_postcode_field" class="form-row form-row form-row-first address-field validate-postcode validate-required" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode"><label class="" for="billing_postcode">Payment Method <abbr title="required" class="required">*</abbr></label>
-                                            <fieldset>
-                                                   <h3 id="ship-to-different-address">
-                                                    <label class="checkbox" for="ship-to-different-address-checkbox">Cash On Delivery</label>
-                                                    <input type="radio" value="1" name="payment_method" class="input-checkbox" id="ship-to-different-address-checkbox">
-                                                </h3>
-                                          
-                                                  <h3 id="ship-to-different-address">
-                                                    <label class="checkbox" for="ship-to-different-address-checkbox">Online</label>
-                                                    <input type="radio" value="1" name="payment_method" class="input-checkbox" id="ship-to-different-address-checkbox">
-                                                </h3>
-                                                </fieldset></p>
+                                                        <p class="before-login-text">Welcome back! Sign in to your account</p>
 
-                                                 <p id="billing_postcode_field" class="form-row form-row form-row-last address-field validate-postcode validate-required" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode"><label class="" for="billing_postcode">Postcode / ZIP <abbr title="required" class="required">*</abbr></label><input type="text" value="" placeholder="" id="billing_postcode" name="pin" class="input-text " required></p>
+                                                        <p class="form-row form-row-wide">
+                                                            <label for="username"> Mobile<span class="required">*</span></label>
+                                                            <input type="text" class="input-text" name="mobile" id="username" value="" />
+                                                        </p>
 
-                                                  
-                                            
-                                          
-                                        
+                                                        <p class="form-row form-row-wide">
+                                                            <label for="password">Password<span class="required">*</span></label>
+                                                            <input class="input-text" type="password" name="password" id="password" />
+                                                        </p>
 
-                                                
+                                                        <p class="form-row">
+                                                            <input class="button" type="submit" value="Login" name="login">
+                                                            
+                                                        </p>
 
-                                                <div class="clear"></div>
+                                                        
 
-                                            
-                                                  
-                                                <p id="billing_postcode_field" class="form-row form-row form-row-last address-field validate-postcode validate-required" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode"><label class="" for="billing_postcode">Password <abbr title="required" class="required">*</abbr></label><input type="password" value="" placeholder="" id="password" name="password" class="input-text " required="true"></p>
+                                                    </form>
 
-                                                 <p id="billing_postcode_field" class="form-row form-row form-row-last address-field validate-postcode validate-required" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode"><label class="" for="billing_postcode">Confirm Password <abbr title="required" class="required">*</abbr></label><input type="password" value="" placeholder="" id="billing_postcode" name="password_confirmation" class="input-text " ></p>
-                                             
 
-                                    </div>
+                                                </div><!-- .col-1 -->
 
-                                        
-                                              
-                                    </div>
+                                              <!--   <div class="col-2">
 
-                                 
-                                        <input type="submit" data-value="Place order" value="Place order" class="button alt">
-                                   
-                                </form>
-                            </article>
+                                                    <h2>Register</h2>
+
+                                                    <form method="post" class="register">
+
+                                                        <p class="before-register-text">Create your very own account</p>
+
+                                                        <p class="form-row form-row-wide">
+                                                            <label for="reg_email">Email address<span class="required">*</span></label>
+                                                            <input type="email" class="input-text" name="email" id="reg_email" value="" />
+                                                        </p>
+
+                                                        <p class="form-row"><input type="submit" class="button" name="register" value="Register" /></p>
+
+                                                        <div class="register-benefits">
+                                                            <h3>Sign up today and you will be able to :</h3>
+                                                            <ul>
+                                                                <li>Speed your way through checkout</li>
+                                                                <li>Track your orders easily</li>
+                                                                <li>Keep a record of all your purchases</li>
+                                                            </ul>
+                                                        </div>
+
+                                                    </form>
+
+                                                </div> --><!-- .col-2 -->
+
+                                            </div><!-- .col2-set -->
+
+                                        </div><!-- /.customer-login-form -->
+                                    </div><!-- .woocommerce -->
+                                </div><!-- .entry-content -->
+
+                            </article><!-- #post-## -->
+
                         </main><!-- #main -->
                     </div><!-- #primary -->
-                </div><!-- .container -->
+
+                </div><!-- .col-full -->
             </div><!-- #content -->
 
             <section class="brands-carousel">
@@ -366,28 +348,27 @@
         </div><!-- #page -->
 
         <!-- For demo purposes – can be removed on production -->
-     
+       
         <!-- For demo purposes – can be removed on production : End -->
 
-     <script type="text/javascript" src="{{asset('users/assets1/js/jquery.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/tether.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/bootstrap.min.js')}}"></script>
-            <script type="text/javascript" src="{{asset('users/assets1/js/bootstrap-hover-dropdown.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/owl.carousel.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/echo.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/wow.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/jquery.easing.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/jquery.waypoints.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/electro.js')}}"></script>
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/tether.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap-hover-dropdown.min.js"></script>
+        <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="assets/js/echo.min.js"></script>
+        <script type="text/javascript" src="assets/js/wow.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.easing.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
+        <script type="text/javascript" src="assets/js/electro.js"></script>
 
         <!-- For demo purposes – can be removed on production -->
 
+        <script src="switchstylesheet/switchstylesheet.js"></script>
 
            <script>
            (function($) {
                $(document).ready(function(){
-                 $("#passblock").hide();
-
                    $(".changecolor").switchstylesheet( { seperator:"color"} );
                    $('.show-theme-options').click(function(){
                        $(this).parent().toggleClass('open');
@@ -453,13 +434,6 @@
             		});
                });
         })(jQuery);
-
-        function isaccount(){
-            $("#passblock").show();
-          
-            $("#password").attr("required", "true");
-
-        }
         </script>
         <!-- For demo purposes – can be removed on production : End -->
 

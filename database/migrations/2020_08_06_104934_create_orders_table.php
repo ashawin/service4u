@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('service_id');
             $table->string('provider_id')->nullable();
+             $table->string('user_id');
             $table->string('name');
             $table->string('email')->nullable();
             $table->string('mobile');
@@ -28,6 +29,7 @@ class CreateOrdersTable extends Migration
              $table->string('pin')->nullable();
              $table->string('status');
                $table->string('payment_type');
+               $table->string('type');
            
             $table->timestamps();
         });

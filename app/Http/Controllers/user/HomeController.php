@@ -153,4 +153,18 @@ class HomeController extends Controller
       $text=Page::where('slug','=','terms&condition')->first();
       return view('user.policy.terms',['text'=>$text,'categories'=>$categories]);
     }
+
+    public function profile(){
+      $categories=Category::all();
+      return view('user.account',['categories'=>$categories]);
+    }
+
+    public function login()
+    {
+      $categories=Category::all();
+      return view('user.login',['categories'=>$categories]);
+    }
+
+
+  
 }

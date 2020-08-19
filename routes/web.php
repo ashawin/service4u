@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('user/login', 'user\HomeController@login')->name('user-login');
   Route::get('', 'user\HomeController@index')->name('user-dashboard');
   Route::get('category/subcategory/{slug}', 'user\HomeController@productDetails')->name('user-product-details');
   Route::post('services', 'user\HomeController@search')->name('user-search');
@@ -23,8 +23,18 @@ use Illuminate\Support\Facades\Route;
   Route::get('contact', 'user\HomeController@contact')->name('user-contact');
   Route::post('contact/save', 'user\HomeController@contactSave')->name('user-contact-save');
 
+  //subscription
+  Route::get('subscription/plans', 'user\subscriptionController@index')->name('user-subs-plan');
+  Route::get('subscription/plan/{id}/{slug}', 'user\subscriptionController@subscriptionDetails')->name('user-subs-plan-detail');
+  Route::get('subscription/plans/{slug}/book', 'user\subscriptionController@book')->name('user-subs-book');
+
   //
    Route::post('partner/enquiry/save', 'user\HomeController@partnerEnquiry')->name('partner-enquiry');
+
+   //profile
+   Route::get('profile', 'user\HomeController@profile')->name('user-profile');
+
+
 
    //policy
      Route::get('privacypolicy', 'user\HomeController@privacypolicy')->name('user-policy');
@@ -49,6 +59,8 @@ Route::group([ 'prefix' => 'vendor' ,'middleware' => ['App\Http\Middleware\Vendo
 });
 
 Route::group([ 'prefix' => 'admin' ,'middleware' => ['App\Http\Middleware\AdminMiddleware']], function () {
+    Route::get('subscriptions', 'admin\subscriptionController@index')->name('admin-subscription');
+  
    Route::get('add/subscription', 'admin\subscriptionController@add')->name('admin-subsc-add');
    Route::post('add/subscription/save', 'admin\subscriptionController@save')->name('admin-subsc-save');
   Route::get('policy', 'admin\dashboardController@policy')->name('admin-policy');

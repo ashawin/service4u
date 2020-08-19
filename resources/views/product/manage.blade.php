@@ -48,11 +48,8 @@
                                     <div class="nk-tb-list is-separate mb-3">
                                         <div class="nk-tb-item nk-tb-head">
                                             <div class="nk-tb-col nk-tb-col-check">
-                                                <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                    <input type="checkbox" class="custom-control-input" id="uid">
-                                                    <label class="custom-control-label" for="uid"></label>
-                                                </div>
-                                            </div>
+                                         
+
                                             <div class="nk-tb-col "><span>Name</span></div>
                                             <div class="nk-tb-col "><span>Category</span></div>
                                             <div class="nk-tb-col "><span>SubCategory</span></div>

@@ -13,6 +13,13 @@ use App\User;
 
 class subscriptionController extends Controller
 {
+
+
+	public function index(){
+
+	     $plans= app('rinvex.subscriptions.plan')->all();    
+		return view('subscription.manage',['plans'=>$plans]);
+	}
     public function add(){
     	$countries=Country::all();
     	$products=Product::all();
@@ -29,9 +36,10 @@ class subscriptionController extends Controller
 	    'name' => $request->title,
 	    'description' => $request->desc,
 	    'price' => $request->price,
+	    'area_id' => $request->area_id,
 	    'signup_fee' => 0.00,
 	    'invoice_period' => $request->period,
-	    'invoice_interval' => 'month',
+	    'invoice_interval' => 'day',
 	    'trial_period' => 0,
 	    'trial_interval' => 'day',
 	    'sort_order' => 1,
