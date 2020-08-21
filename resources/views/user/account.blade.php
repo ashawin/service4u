@@ -49,7 +49,7 @@
                                             <thead>
                                                 <tr>
 
-                                                    <th class="product-remove"></th>
+                                                    
 
                                                     <th class="product-thumbnail"></th>
 
@@ -58,10 +58,10 @@
                                                     </th>
 
                                                     <th class="product-price">
-                                                        <span class="nobr">Unit Price</span>
+                                                        <span class="nobr"> Price</span>
                                                     </th>
                                                     <th class="product-stock-stauts">
-                                                        <span class="nobr">Stock Status</span>
+                                                        <span class="nobr"> Status</span>
                                                     </th>
 
                                                     <th class="product-add-to-cart"></th>
@@ -70,108 +70,37 @@
                                             </thead>
 
                                             <tbody>
+                                                @foreach($services as $service)
+                                                <?php
+                                                $images=array();
+                                                $images=explode('|',$service->images);
+                                                ?>
                                                 <tr>
-                                                    <td class="product-remove">
-                                                        <div>
-                                                            <a title="Remove this product" class="remove remove_from_wishlist" href="#">×</a>
-                                                        </div>
-                                                    </td>
-
+                                        
                                                     <td class="product-thumbnail">
-                                                        <a href="single-product.html"><img width="180" height="180" alt="1" class="wp-post-image" src="assets/images/products/2.jpg"></a>
+                                                        <a href="#"><img width="180" height="180" alt="1" class="wp-post-image" src="{{asset('products/images/'.$images[0])}}"></a>
                                                     </td>
 
                                                     <td class="product-name">
-                                                        <a href="single-product.html">White Solo 2 Wireless</a>
+                                                        <a href="single-product.html">{{$service->product}}</a>
                                                     </td>
 
                                                     <td class="product-price">
-                                                        <span class="electro-price"><span class="amount">$248.99</span></span>
+                                                        <span class="electro-price"><span class="amount">{{$service->price}}</span></span>
                                                     </td>
+                                                    <?php
+                                                    $status=$service->status==0 ?'pending':'confirm';
+                                                    ?>
 
                                                     <td class="product-stock-status">
-                                                        <span class="in-stock">In stock</span>
+                                                        <span class="in-stock">{{$status}}</span>
                                                     </td>
 
-                                                    <td class="product-add-to-cart">
-                                                        <!-- Date added -->
-
-                                                        <!-- Add to cart button -->
-                                                        <a href="#" class="button"> Add to Cart</a>
-                                                        <!-- Change wishlist -->
-
-                                                        <!-- Remove from wishlist -->
-                                                    </td>
+                                                 
+                                                  
                                                 </tr>
-                                                <tr>
-
-                                                    <td class="product-remove">
-                                                        <div>
-                                                            <a title="Remove this product" class="remove remove_from_wishlist" href="#">×</a>
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="product-thumbnail">
-                                                        <a href="single-product.html"><img width="180" height="180" alt="Ultrabooks" class="wp-post-image" src="assets/images/products/3.jpg"></a>
-                                                    </td>
-
-                                                    <td class="product-name">
-                                                        <a href="single-product.html">Tablet Red EliteBook  Revolve 810 G2</a>
-                                                    </td>
-
-                                                    <td class="product-price">
-                                                        <span class="electro-price"><span class="amount">$1200.00</span></span>
-                                                    </td>
-
-                                                    <td class="product-stock-status">
-                                                        <span class="in-stock">In stock</span>
-                                                    </td>
-
-                                                    <td class="product-add-to-cart">
-                                                        <!-- Date added -->
-
-                                                        <!-- Add to cart button -->
-
-                                                        <a href="#" class="button"> Add to Cart</a>
-                                                        <!-- Change wishlist -->
-
-                                                        <!-- Remove from wishlist -->
-                                                    </td>
-                                                </tr>
-                                                <tr >
-
-                                                    <td class="product-remove">
-                                                        <div>
-                                                            <a title="Remove this product" class="remove remove_from_wishlist" href="#">×</a>
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="product-thumbnail">
-                                                        <a href="single-product.html"><img width="180" height="180" alt="GameStation" class=" wp-post-image" src="assets/images/products/1.jpg"></a>
-                                                    </td>
-
-                                                    <td class="product-name">
-                                                        <a href="single-product.html">GameConsole Destiny  Special Edition</a>
-                                                    </td>
-
-                                                    <td class="product-price">
-                                                        <span class="electro-price"><span class="amount">$789.00</span></span>
-                                                    </td>
-
-                                                    <td class="product-stock-status">
-                                                        <span class="in-stock">In stock</span>
-                                                    </td>
-
-                                                    <td class="product-add-to-cart">
-                                                        <!-- Date added -->
-
-                                                        <!-- Add to cart button -->
-                                                        <a href="#" class="button"> Add to Cart</a>
-                                                        <!-- Change wishlist -->
-
-                                                        <!-- Remove from wishlist -->
-                                                    </td>
-                                                </tr>
+                                                  @endforeach
+                                                
                                             </tbody>
 
                                             <tfoot>

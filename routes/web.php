@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('user/login', 'user\HomeController@login')->name('user-login');
+Route::middleware('user')->group(function () {
+    Route::get('/user', function () {
+        //
+    });
+});
   Route::get('', 'user\HomeController@index')->name('user-dashboard');
   Route::get('category/subcategory/{slug}', 'user\HomeController@productDetails')->name('user-product-details');
   Route::post('services', 'user\HomeController@search')->name('user-search');
@@ -32,7 +37,7 @@ Route::get('user/login', 'user\HomeController@login')->name('user-login');
    Route::post('partner/enquiry/save', 'user\HomeController@partnerEnquiry')->name('partner-enquiry');
 
    //profile
-   Route::get('profile', 'user\HomeController@profile')->name('user-profile');
+   Route::get('profile', 'user\profileController@profile')->name('user-profile');
 
 
 

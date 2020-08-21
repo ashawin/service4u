@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Service;
 use App\Models\ServiceRequest;
+use App\Models\Orders;
 use App\User;
 
 class subscriptionController extends Controller
@@ -17,7 +18,17 @@ class subscriptionController extends Controller
 
 	public function index(){
 
-	     $plans= app('rinvex.subscriptions.plan')->all();    
+	     $plans= app('rinvex.subscriptions.plan')->all(); 
+         $planrequests=Orders::join('plans','plans.id','=','orders.service_id') 
+         ->join('users','users.id','=','orders.user_id')
+            ->join('areas','areas.id','=','plans.area_id')
+            ->join('countries','countries.id','=','areas.country_id')
+             ->join('states','states.id','=','areas.state_id')
+              ->join('districts','districts.id','=','areas.district_id')
+              ->where('orders.type','=',1)
+              ->where('orders.status','=',0)
+              ->select('plans.*','users.*','countries.country','states.state','areas.area')
+              ->get();
 		return view('subscription.manage',['plans'=>$plans]);
 	}
     public function add(){

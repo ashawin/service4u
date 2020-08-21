@@ -45,7 +45,7 @@ class areaController extends Controller
 
     	$this->validate($request,[
     		"country"=>'required|unique:countries']);
-    	Country::create(array('country' => $request->country));
+    	Country::create(array('category_id' => $request->country,'country' => $request->country));
     	session()->flash('msg','Successfully Added');
     	return redirect()->route('admin-area');
     }

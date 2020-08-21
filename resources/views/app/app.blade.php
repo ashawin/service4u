@@ -64,15 +64,16 @@
         </div>
         <!-- main @e -->
     </div>
-       <script>
-                        CKEDITOR.replace( 'editor1' );
-                </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-                          
+      
+                   
     <script src="{{asset('assets/js/bundle.js')}}"></script>
     <script src="{{asset('assets/js/scripts.js')}}"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <!-- <script src="{{asset('assets/js/charts/chart-ecommerce.js')}}"></script> -->
      @yield('script')
+
+      
    
 
   

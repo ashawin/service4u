@@ -47,8 +47,7 @@
                                 <div class="nk-block">
                                     <div class="nk-tb-list is-separate mb-3">
                                         <div class="nk-tb-item nk-tb-head">
-                                            <div class="nk-tb-col nk-tb-col-check">
-                                         
+                                                                                     
 
                                             <div class="nk-tb-col "><span>Name</span></div>
                                             <div class="nk-tb-col "><span>Category</span></div>

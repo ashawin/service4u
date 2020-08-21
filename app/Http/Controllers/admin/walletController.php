@@ -20,6 +20,7 @@ class walletController extends Controller
     
     ->select('transactions.*','users.*')
     ->get();
+
    
 
       return view('wallet.index',['transactions'=>$transaction]);
@@ -38,12 +39,14 @@ class walletController extends Controller
 
 
     public function transferBalance(Request $request ,$id,$balance){
+        
 
     	$user= User::find($request->user_id);
       
     	
     	  $transfer = auth()->user()->transfer($user,$balance);
-          WalletRequest::where('id','=',$id)->update(['status' => 2]);
+        $status=  WalletRequest::find($id)->update(array('status' => 2));
+
     	
     	session()->flash('msg','Successfully Added');
     	return redirect()->route('admin-wallet-request');
@@ -55,8 +58,8 @@ class walletController extends Controller
     public function walletRequest(){
 
 
-        $requests=walletRequest::leftJoin('users','users.id','wallet_requests.holder_id')
-        ->select('users.*','wallet_requests.id as wal_id','wallet_requests.balance','wallet_requests.status')->orderBy('id', 'desc')->get();
+        $requests=walletRequest::join('users','users.id','wallet_requests.holder_id')
+        ->select('users.name','users.email','users.mobile','wallet_requests.id as wal_id','wallet_requests.balance','wallet_requests.status','users.id as user_id')->orderBy('wallet_requests.id', 'desc')->get();
         
         return  view('wallet.request',['requests'=>$requests]);
 

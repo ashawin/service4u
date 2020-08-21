@@ -154,10 +154,7 @@ class HomeController extends Controller
       return view('user.policy.terms',['text'=>$text,'categories'=>$categories]);
     }
 
-    public function profile(){
-      $categories=Category::all();
-      return view('user.account',['categories'=>$categories]);
-    }
+   
 
     public function login()
     {

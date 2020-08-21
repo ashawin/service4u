@@ -856,10 +856,10 @@
 							                        <label class="form-label">State</label>
                                                             <div class="form-control-wrap">
                                                                 <select class="form-select form-control form-control-lg" data-search="on" required name="state_id" id="state">
-                                                                    <option value="" seleted>Select State</option>
-                                                                   <!--  @foreach($states as $state)
+                                                                	  <option value="" seleted>Select Country</option>
+                                                                  @foreach($states as $state)
                                                                     <option value="{{$state->id}}">{{$state->state}}</option>
-                                                                    @endforeach -->
+                                                                    @endforeach
                                                                    
                                                                 </select>
                                                             </div>
@@ -946,35 +946,4 @@
 						  
 @endsection
 
-@section('script')
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-
-<script>
-
-  $("#country").on('change', function(){
-  alert('h');
-              var val=  $(this).val();
-              var html='';
-
-               $.ajax({
-               	dataType: "json",
-                   type:'POST',
-                   url:'admin/ajax/states',
-                   data:{"_token": "{{ csrf_token() }}",id:val},
-                   success:function(data) {
-		                for(var key in data) {		                
-		                	html+='<option value="'+data[key]['id']+'">'+data[key]['state']+'</option>'
-		                		               
-		            }
-		             $('#state').append(html);
-                  
-                    
-                   }
-                });
-
-            });
-        </script>
-@endsecion

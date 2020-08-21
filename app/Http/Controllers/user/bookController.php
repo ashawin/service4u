@@ -35,11 +35,21 @@ class bookController extends Controller
       $this->validate($request,['name'=>'required','mobile'=>'required','country'=>'required','email'=>'required','state'=>'required','district'=>'required','pin'=>'required','payment_method'=>'required','address'=>'required','service'=>'required',
     'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
 'password_confirmation' => 'min:6','type'=>'required']);
-      $user=User::where('mobile','=',$request->mobile)->first();
-      if(empty($user)){
-      $user=User::create(array('name'=>$request->name,'email'=>$request->email,'mobile'=>$request->mobile,'address'=>$request->address,'country'=>$request->country,'state'=>$request->state,'distric'=>$request->district,'role'=>3,'password'=>\Hash::make($request->password)));
+      if (\Auth::check())
+      {
+        $user=User::find(auth()->user()->id);
+      }
+      else{
+        if(User::where('mobile', '=', $request->mobile)->exists()){
+          return redirect('user/login');
+        }else{
+      
+        $user=User::create(array('name'=>$request->name,'email'=>$request->email,'mobile'=>$request->mobile,'address'=>$request->address,'country'=>$request->country,'state'=>$request->state,'distric'=>$request->district,'role'=>3,'password'=>\Hash::make($request->password)));
        \Auth::login($user);
-    }
+       }
+     }
+
+    
     
 if($request->type==0){
       $service=Service::join('countries','countries.id','=','services.country_id')   
@@ -76,19 +86,12 @@ if($request->type==0){
         Enquiry::create(array('slug'=>\Str::slug('userEnquiry'),'name'=>$request->name,'email'=>$request->email,'mobile'=>$request->mobile,'service'=>$request->service,'country'=>$request->country,'state'=>$request->state,'area'=>$request->address));
         session()->flash('msgerror','Sorry !.Service is Not available in the this area.We will reach you soon ');
        } 
-
-    
-
-        
-      
-     	
+	
     	return redirect()->back();
 
     }
 
 
-    public function subs(){
-
-    }
+   
 }
 
