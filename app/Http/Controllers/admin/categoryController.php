@@ -24,7 +24,7 @@ class categoryController extends Controller
     public function addcategory(Request $request)
     {
     	$this->validate($request,['category'=>'required|unique:categories']);
-    	Category::create(array('slug'=>\Str::slug($request->category),'category' => $request->category ));
+    	Category::create(array('slug'=>Str::slug($request->category),'category' => $request->category ));
     	Session()->flash('msg','Successfully Added');
     	return redirect()->route('admin-category');
 
@@ -41,7 +41,7 @@ class categoryController extends Controller
     public function addsubcategory(Request $request)
     {
         $this->validate($request,['category_id'=>'required','subcategory'=>'required']);
-    	SubCategory::create(array('slug'=>\Str::slug($request->subcategory),'category_id' => $request->category_id,'subcategory'=>$request->subcategory));
+    	SubCategory::create(array('slug'=>Str::slug($request->subcategory),'category_id' => $request->category_id,'subcategory'=>$request->subcategory));
     	Session()->flash('msg','Successfully Added');
     	return redirect()->route('admin-category');
     }

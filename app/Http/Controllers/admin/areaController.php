@@ -45,7 +45,7 @@ class areaController extends Controller
 
     	$this->validate($request,[
     		"country"=>'required|unique:countries']);
-    	Country::create(array('category_id' => $request->country,'country' => $request->country));
+    	Country::create(array('slug'=>Str::slug($request->country),'category_id' => $request->country,'country' => $request->country));
     	session()->flash('msg','Successfully Added');
     	return redirect()->route('admin-area');
     }
@@ -59,7 +59,7 @@ class areaController extends Controller
     		"state" => 'required'
     	]);
     	session()->flash('msg','Successfully Added');
-    	State::create(array('country_id' => $request->country_id ,'state'=>$request->state));
+    	State::create(array('slug'=>Str::slug($request->state),'country_id' => $request->country_id ,'state'=>$request->state));
     	return redirect()->route('admin-area');
           State:create( array('country_id' => $request->country_id ,'state'=>$request->state ));
 
@@ -77,7 +77,7 @@ class areaController extends Controller
     		"district" => 'required'
     	]);
     	session()->flash('msg','Successfully Added');
-    	District::create(array('country_id' => $request->country_id ,'state_id'=>$request->state_id ,'district'=>$request->district));
+    	District::create(array('slug'=>Str::slug($request->district),'country_id' => $request->country_id ,'state_id'=>$request->state_id ,'district'=>$request->district));
     	return redirect()->route('admin-area');
          
     }
@@ -92,7 +92,7 @@ class areaController extends Controller
     		"area" => 'required'
     	]);
     	session()->flash('msg','Successfully Added');
-    	Area::create(array('country_id' => $request->country_id ,'state_id'=>$request->state_id ,'district_id'=>$request->district_id,'area'=>$request->area));
+    	Area::create(array('slug'=>Str::slug($request->area),'country_id' => $request->country_id ,'state_id'=>$request->state_id ,'district_id'=>$request->district_id,'area'=>$request->area));
     	return redirect()->route('admin-area');
     }
 

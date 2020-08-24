@@ -10,8 +10,12 @@ use App\Models\Orders;
 class profileController extends Controller
 {
      public function profile(){
+     	$user=auth()->user();
+     	$subscriptions= app('rinvex.subscriptions.plan_subscription')->ofUser($user)->get(); 
 
-      $categories=Category::all();
+
+
+       $categories=Category::all();
       $services=Orders::
       join('services','services.id','=','orders.service_id')
       ->join('products','products.id','=','services.product_id')
@@ -20,6 +24,6 @@ class profileController extends Controller
    
 
 
-      return view('user.account',['categories'=>$categories,'services'=>$services]);
+      return view('user.account',['categories'=>$categories,'services'=>$services,'subscriptions'=>$subscriptions]);
     }
 }

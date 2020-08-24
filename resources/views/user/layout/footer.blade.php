@@ -152,10 +152,7 @@
                                        
                                         <li><a class="list-group-item list-group-item-action" href="{{url('privacypolicy')}}">Privacy Policy</a></li>
                                         <li><a class="list-group-item list-group-item-action" href="{{url('termsandcondition')}}">Terms and Conditions</a></li>
-                                         <li><form method="post" action="{{route('logout')}}">
-                                            @csrf
-                                            <button type="submit">Logout</button></form>
-                                           </li>
+                                        
                                     </ul>
                                     <!-- End List Group -->
                                 </div>

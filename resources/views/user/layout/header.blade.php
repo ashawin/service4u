@@ -17,25 +17,27 @@
                                     <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
                                         <a href="{{url('contact')}}" class="u-header-topbar__nav-link"><i class="ec ec-map-pointer mr-1"></i>Contact Us</a>
                                     </li>
+                                     @if(Auth::check())
+                                     <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
+                                        <a title="My Account" href="{{url('profile')}}"><i class="ec ec-user"></i>My Account</a>
+                                     </li>
+                                     <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
+
+                                    <a href="{{ route('logout') }}" title="My Account" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();"><i class="ec ec-user"></i>Logout</a>
+                           <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
+                            @else
                                    
                                  
                                     <li class="list-inline-item mr-0 u-header-topbar__nav-item u-header-topbar__nav-item-border">
                                         <!-- Account Sidebar Toggle Button -->
-                                        <a id="sidebarNavToggler" href="javascript:;" role="button" class="u-header-topbar__nav-link"
-                                            aria-controls="sidebarContent"
-                                            aria-haspopup="true"
-                                            aria-expanded="false"
-                                            data-unfold-event="click"
-                                            data-unfold-hide-on-scroll="false"
-                                            data-unfold-target="#sidebarContent"
-                                            data-unfold-type="css-animation"
-                                            data-unfold-animation-in="fadeInRight"
-                                            data-unfold-animation-out="fadeOutRight"
-                                            data-unfold-duration="500">
-                                            <i class="ec ec-user mr-1"></i> Register <span class="text-gray-50">or</span> Sign in
-                                        </a>
+                                             
+                                       <a title="My Account" href="{{url('user/login')}}"><i class="ec ec-user"></i>Login/Signup</a>
                                         <!-- End Account Sidebar Toggle Button -->
                                     </li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>

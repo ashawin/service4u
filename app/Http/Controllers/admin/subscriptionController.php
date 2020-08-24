@@ -27,9 +27,11 @@ class subscriptionController extends Controller
               ->join('districts','districts.id','=','areas.district_id')
               ->where('orders.type','=',1)
               ->where('orders.status','=',0)
-              ->select('plans.*','users.*','countries.country','states.state','areas.area')
+              ->select('plans.*','users.mobile','orders.id as order_id','users.id as user_id','countries.country','states.state','areas.area')
               ->get();
-		return view('subscription.manage',['plans'=>$plans]);
+
+
+		return view('subscription.manage',['plans'=>$plans,'planrequests'=>$planrequests]);
 	}
     public function add(){
     	$countries=Country::all();
@@ -40,9 +42,6 @@ class subscriptionController extends Controller
 
     public function save(Request $request){
 
-
-	
-	
 	$plan = app('rinvex.subscriptions.plan')->create([
 	    'name' => $request->title,
 	    'description' => $request->desc,
@@ -66,9 +65,16 @@ class subscriptionController extends Controller
 	session()->flash('msg','Successly created');
 
 	return redirect()->route('admin-subsc-add');
-
-
-
   
+    }
+
+    public function confirm(Request $request,$id){
+    	$user = User::find($request->user_id);
+    	$plan = app('rinvex.subscriptions.plan')->find($request->plan_id);
+    	$user->newSubscription('main', $plan);
+    	Orders::find($id)->update(['status'=>1]);
+    	session()->flash('msg','Successfuly Assigned');
+    	return redirect()->back();
+
     }
 }

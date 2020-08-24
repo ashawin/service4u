@@ -1,32 +1,6 @@
 @extends('user.layout.app1')
 @section('content')
-   <body class="page home page-template-default">
-        <div id="page" class="hfeed site">
-            <a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
-            <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
-
-            <div class="top-bar hidden-md-down">
-                <div class="container">
-                    <nav>
-                        <ul id="menu-top-bar-left" class="nav nav-inline pull-left animate-dropdown flip">
-                            <li class="menu-item animate-dropdown"><a title="Welcome to Worldwide Electronics Store" href="#">Welcome </a></li>
-                        </ul>
-                    </nav>
-
-                    <nav>
-                        <ul id="menu-top-bar-right" class="nav nav-inline pull-right animate-dropdown flip">
-                            <li class="menu-item animate-dropdown"><a title="Store Locator" href="#"><i class="ec ec-map-pointer"></i>Store Locator</a></li>
-                            <li class="menu-item animate-dropdown"><a title="Track Your Order" href="track-your-order.html"><i class="ec ec-transport"></i>Track Your Order</a></li>
-                            <li class="menu-item animate-dropdown"><a title="Shop" href="shop.html"><i class="ec ec-shopping-bag"></i>Shop</a></li>
-                            <li class="menu-item animate-dropdown"><a title="My Account" href="my-account.html"><i class="ec ec-user"></i>My Account</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div><!-- /.top-bar -->
-@include('user.layout.header1')
-@include('user.layout.nav')
-
-            <div id="content" class="site-content" tabindex="-1">
+  <div id="content" class="site-content" tabindex="-1">
                 <div class="container">
 
                     <nav class="woocommerce-breadcrumb" ><a href="http://demo2.transvelo.in/electro">Home</a><span class="delimiter"><i class="fa fa-angle-right"></i></span>Subscription Plans</nav>
@@ -85,9 +59,9 @@
                                 <div role="tabpanel" class="tab-pane active" id="grid" aria-expanded="true">
 
                                     <ul class="products columns-3">
-                                    	@foreach($plans as $plan)
+                                        @foreach($plans as $plan)
                                         <li class="product list-view">
-                                        	<?php
+                                            <?php
                                              $images=array();
   $fearray=$plan->features;
   if(!$fearray->isEmpty()){
@@ -96,9 +70,9 @@
  
   $images=explode('|',$pro->images);
 }
-                                                                    	?>
+                                                                        ?>
 
-                                                                    	
+                                                                        
                                             <div class="media">
                                                 <div class="media-left">
                                                     <a href="{{url('subscription/plan/'.$plan->id.'/'.$plan->slug)}}">
@@ -117,8 +91,8 @@
 
                                                                 <div class="product-short-description">
                                                                     <ul style="padding-left: 18px;">
-                                                                    	
-                                                                    	@foreach($fearray as $fea)
+                                                                        
+                                                                        @foreach($fearray as $fea)
                                                                         <li>{{$fea->name}}</li>
                                                                         @endforeach
                                                                       
@@ -184,102 +158,5 @@
                     </div><!-- #primary -->
                 </div><!-- .container -->
             </div><!-- #content -->
-
-            
-
-       @include('user.layout.footer1')
-
-        </div><!-- #page -->
-
-        <!-- For demo purposes – can be removed on production -->
-      
-        <!-- For demo purposes – can be removed on production : End -->
-<script type="text/javascript" src="{{asset('users/assets1/js/jquery.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/tether.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/bootstrap.min.js')}}"></script>
-            <script type="text/javascript" src="{{asset('users/assets1/js/bootstrap-hover-dropdown.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/owl.carousel.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/echo.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/wow.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/jquery.easing.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/jquery.waypoints.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('users/assets1/js/electro.js')}}"></script>
-
-        <!-- For demo purposes – can be removed on production -->
-
-        <script src="{{asset('users/switchstylesheet/switchstylesheet.js')}}"></script>
-
-           <script>
-           (function($) {
-               $(document).ready(function(){
-                   $(".changecolor").switchstylesheet( { seperator:"color"} );
-                   $('.show-theme-options').click(function(){
-                       $(this).parent().toggleClass('open');
-                       return false;
-                   });
-
-                   $('#home-pages').on( 'change', function() {
-                       $.ajax({
-                           url : $('#home-pages option:selected').val(),
-                           success:function(res) {
-                               location.href = $('#home-pages option:selected').val();
-                           }
-                       });
-                   });
-
-                    $('#demo-pages').on( 'change', function() {
-            			$.ajax({
-            				url : $('#demo-pages option:selected').val(),
-            				success:function(res) {
-            					location.href = $('#demo-pages option:selected').val();
-            				}
-            			});
-            		});
-
-                    $('#header-style').on( 'change', function() {
-            			$.ajax({
-            				url : $('#header-style option:selected').val(),
-            				success:function(res) {
-            					location.href = $('#header-style option:selected').val();
-            				}
-            			});
-            		});
-
-                    $('#shop-style').on( 'change', function() {
-            			$.ajax({
-            				url : $('#shop-style option:selected').val(),
-            				success:function(res) {
-            					location.href = $('#shop-style option:selected').val();
-            				}
-            			});
-            		});
-
-                    $('#product-category-col').on( 'change', function() {
-            			$.ajax({
-            				url : $('#product-category-col option:selected').val(),
-            				success:function(res) {
-            					location.href = $('#product-category-col option:selected').val();
-            				}
-            			});
-            		});
-
-                    $('#single-products').on( 'change', function() {
-            			$.ajax({
-            				url : $('#single-products option:selected').val(),
-            				success:function(res) {
-            					location.href = $('#single-products option:selected').val();
-            				}
-            			});
-            		});
-
-                    $('.style-toggle').on( 'click', function() {
-            			$(this).parent('.config').toggleClass( 'open' );
-            		});
-               });
-        })(jQuery);
-        </script>
-        <!-- For demo purposes – can be removed on production : End -->
-
-    </body>
 
 @endsection

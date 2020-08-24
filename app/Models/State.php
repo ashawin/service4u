@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class State extends Model
 {
     protected $table="states";
-    protected $fillable=['country_id','state'];
+    protected $fillable=['country_id','state','slug'];
 }

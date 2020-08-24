@@ -65,6 +65,7 @@ Route::group([ 'prefix' => 'vendor' ,'middleware' => ['App\Http\Middleware\Vendo
 
 Route::group([ 'prefix' => 'admin' ,'middleware' => ['App\Http\Middleware\AdminMiddleware']], function () {
     Route::get('subscriptions', 'admin\subscriptionController@index')->name('admin-subscription');
+     Route::post('subscriptions/{id}/confirm', 'admin\subscriptionController@confirm')->name('admin-subscription-confirm');
   
    Route::get('add/subscription', 'admin\subscriptionController@add')->name('admin-subsc-add');
    Route::post('add/subscription/save', 'admin\subscriptionController@save')->name('admin-subsc-save');
