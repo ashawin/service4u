@@ -8,6 +8,7 @@ use App\Models\Country;
 use App\Models\State;
 use App\Models\District;
 use App\Models\Area;
+use Illuminate\Support\Str;
 
 class areaController extends Controller
 {

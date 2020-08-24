@@ -249,7 +249,7 @@
 
                 <div class="copyright-bar">
                     <div class="container">
-                        <div class="pull-left flip copyright">&copy; <a href="http://demo2.transvelo.in/html/electro/">Service4u</a> - All Rights Reserved</div>
+                        <div class="pull-left flip copyright">&copy;20{{date('y')}} <a href="{{url('/')}}">Service4u</a> - All Rights Reserved</div>
                         <div class="pull-right flip payment">
                             <div class="footer-payment-logo">
                                 <ul class="cash-card card-inline">

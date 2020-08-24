@@ -3,7 +3,7 @@
   <div id="content" class="site-content" tabindex="-1">
                 <div class="container">
 
-                    <nav class="woocommerce-breadcrumb" ><a href="http://demo2.transvelo.in/electro">Home</a><span class="delimiter"><i class="fa fa-angle-right"></i></span>Subscription Plans</nav>
+                    <nav class="woocommerce-breadcrumb" ><a href="{{url('/')}}">Home</a><span class="delimiter"><i class="fa fa-angle-right"></i></span>Subscription Plans</nav>
 
                     <div id="primary" class="content-area">
                         <main id="main" class="site-main">

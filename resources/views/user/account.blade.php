@@ -4,7 +4,7 @@
  <div tabindex="-1" class="site-content" id="content">
                 <div class="container">
 
-                    <nav class="woocommerce-breadcrumb"><a href="home.html">Home</a><span class="delimiter"><i class="fa fa-angle-right"></i></span>Account</nav>
+                    <nav class="woocommerce-breadcrumb"><a href="{{url('/')}}">Home</a><span class="delimiter"><i class="fa fa-angle-right"></i></span>Account</nav>
                     <div class="content-area" id="primary">
                         <main class="site-main" id="main">
                             <article class="page type-page status-publish hentry">

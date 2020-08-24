@@ -4,7 +4,7 @@
                 <div class="container">
 
                     <nav class="woocommerce-breadcrumb">
-                        <a href="home.html">Home</a>
+                        <a href="{{url('/')}}">Home</a>
                         <span class="delimiter"><i class="fa fa-angle-right"></i></span>
                         <a href="product-category.html">{{$service->category}}</a>
                         <span class="delimiter"><i class="fa fa-angle-right"></i></span>

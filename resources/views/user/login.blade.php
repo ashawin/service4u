@@ -3,7 +3,7 @@
        <div id="content" class="site-content" tabindex="-1">
                 <div class="container">
 
-                    <nav class="woocommerce-breadcrumb" ><a href="home.html">Home</a><span class="delimiter"><i class="fa fa-angle-right"></i></span>My Account</nav><!-- .woocommerce-breadcrumb -->
+                    <nav class="woocommerce-breadcrumb" ><a href="{{url('/')}}">Home</a><span class="delimiter"><i class="fa fa-angle-right"></i></span>My Account</nav><!-- .woocommerce-breadcrumb -->
 
                     <div id="primary" class="content-area">
                         <main id="main" class="site-main">
@@ -12,7 +12,7 @@
                                 <div class="entry-content">
                                     <div class="woocommerce">
                                         <div class="customer-login-form">
-                                            <span class="or-text">or</span>
+                                            
 
                                             <div class="col2-set" id="customer_login">
 

@@ -65,7 +65,7 @@
 
                                        
                                       
-                                        <li class="menu-item"><a title="Features" href="{{url('contact')}}">Features</a></li>
+                                        <li class="menu-item"><a title="Features" href="{{route('user-subs-plan')}}">Features</a></li>
                                         <li class="menu-item"><a title="Contact Us" href="{{url('contact')}}">Contact Us</a></li>
                                     </ul>
                                 </nav>
