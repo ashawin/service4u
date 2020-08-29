@@ -18,7 +18,6 @@ class CreateServiceRequestsTable extends Migration
             $table->string('slug');
             $table->string('provider_id');
             $table->string('service_id');
-            $table->string('slug')->nullable();
             $table->string('desc')->nullabe();
             $table->string('status');
             $table->timestamps();

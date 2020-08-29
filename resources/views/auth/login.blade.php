@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>e-Commerce Home | DashLite Admin Template</title>
+    <title>Service4u</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{asset('assets/css/dashlite.css')}}">
     <link id="skin-default" rel="stylesheet" href="{{asset('assets/css/theme.css')}}">
