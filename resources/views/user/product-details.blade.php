@@ -696,7 +696,7 @@
                                                     <div class="price-add-to-cart">
                                                         <span class="price">
                                                             <span class="electro-price">
-                                                                <ins><span class="amount">&#036;{{$ser->price}}</span></ins>
+                                                                <ins><span class="amount">Rs.{{$ser->price}}</span></ins>
                                                             </span>
                                                         </span>
                                                        

@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>ServiceCenter4u</title>
+    <title>Service4u</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{asset('vendor/assets/css/dashlite.css')}}">
     <link id="skin-default" rel="stylesheet" href="{{asset('vendor/assets/css/theme.css')}}">
@@ -26,10 +26,10 @@
                     <div class="container-lg wide-xl">
                         <div class="nk-header-wrap">
                             <div class="nk-header-brand">
-                                <a href="html/subscription/index.html" class="logo-link">
+                                <a href="{{route('vendor-dashboard')}}" class="logo-link">
                                     <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
                                     <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
-                                    <span class="nio-version">Subscription</span>
+                                    <span class="nio-version"></span>
                                 </a>
                             </div><!-- .nk-header-brand -->
                             <div class="nk-header-tools">
@@ -59,15 +59,15 @@
                                                         <span class="sub-text">{{auth()->user()->email}}</span>
                                                     </div>
                                                     <div class="user-action">
-                                                        <a class="btn btn-icon mr-n2" href="html/subscription/profile-setting.html"><em class="icon ni ni-setting"></em></a>
+                                                        <a class="btn btn-icon mr-n2" href="{{route('vendor-profile')}}"><em class="icon ni ni-setting"></em></a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="html/subscription/profile.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                                    <li><a href="html/subscription/profile-setting.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                                    <li><a href="html/subscription/profile-activity.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
+                                                    <li><a href="{{route('vendor-profile')}}"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                                                    <li><a href="{{route('vendor-profile')}}"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
+                                                    
                                                 </ul>
                                             </div>
                                             <div class="dropdown-inner">

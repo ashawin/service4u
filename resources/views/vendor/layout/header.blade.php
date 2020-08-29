@@ -31,14 +31,14 @@
                                             </a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="html/subscription/payments.html" class="nk-menu-link">
+                                            <a href="{{route('vendor-wallet-request')}}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-report-profit"></em></span>
                                                 <span class="nk-menu-text">Payment History</span>
                                             </a>
                                         </li>
                                        
                                         <li class="nk-menu-item">
-                                            <a href="html/subscription/profile-setting.html" class="nk-menu-link">
+                                            <a href="{{route('vendor-profile')}}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-account-setting"></em></span>
                                                 <span class="nk-menu-text">Account Setting</span>
                                             </a>
@@ -65,26 +65,7 @@
                                         </li>
                                     </ul> -->
                                     <!-- Menu -->
-                                  <!--   <ul class="nk-menu nk-menu-sm">
-                                        <!-- Menu -->
-                                        <li class="nk-menu-heading">
-                                            <span>Help Center</span>
-                                        </li>
-                                        <li class="nk-menu-item">
-                                            <a href="html/subscription/faqs.html" class="nk-menu-link">
-                                                <span class="nk-menu-text">FAQs</span>
-                                            </a>
-                                        </li>
-                                        <li class="nk-menu-item">
-                                            <a href="html/subscription/contact.html" class="nk-menu-link">
-                                                <span class="nk-menu-text">Contact</span>
-                                            </a>
-                                        </li>
-                                        <li class="nk-menu-item">
-                                            <a href="html/subscription/support.html" class="nk-menu-link">
-                                                <span class="nk-menu-text">Support</span>
-                                            </a>
-                                        </li>
+                                 
                                     <!-- </ul> --> 
                                 </div><!-- .nk-sidebar-menu -->
                                 <div class="nk-aside-close">

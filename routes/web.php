@@ -60,6 +60,8 @@ Route::group([ 'prefix' => 'vendor' ,'middleware' => ['App\Http\Middleware\Vendo
    Route::post('/service/request', 'vendor\serviceController@requestService')->name('vendor-service-request');
    Route::get('/services/orders', 'vendor\serviceController@orderService')->name('vendor-service-orders');
    Route::post('/services/orders/confirm', 'vendor\serviceController@confirmOrder')->name('vendor-service-orders-confirm');
+   //
+     Route::get('/profile', 'vendor\dashboardController@profile')->name('vendor-profile');
 
 });
 

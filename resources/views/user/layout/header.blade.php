@@ -334,7 +334,7 @@
                                             </a>
                                         </li>
                                         <li class="col pr-xl-0 px-2 px-sm-3 d-none d-xl-block">
-                                            <div id="basicDropdownHoverInvoker" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Cart"
+                                            <div id="basicDropdownHoverInvoker" class="text-gray-90 position-relative d-flex " data-toggle="tooltip" data-placement="top" title="Wallet"
                                                 aria-controls="basicDropdownHover"
                                                 aria-haspopup="true"
                                                 aria-expanded="false"
@@ -354,46 +354,7 @@
 
                                                  @endif
                                              </div>
-                                            <div id="basicDropdownHover" class="cart-dropdown dropdown-menu dropdown-unfold border-top border-top-primary mt-3 border-width-2 border-left-0 border-right-0 border-bottom-0 left-auto right-0" aria-labelledby="basicDropdownHoverInvoker">
-                                                <ul class="list-unstyled px-3 pt-3">
-                                                    <li class="border-bottom pb-3 mb-3">
-                                                        <div class="">
-                                                            <ul class="list-unstyled row mx-n2">
-                                                                <li class="px-2 col-auto">
-                                                                    <img class="img-fluid" src="../../assets/img/75X75/img1.jpg" alt="Image Description">
-                                                                </li>
-                                                                <li class="px-2 col">
-                                                                    <h5 class="text-blue font-size-14 font-weight-bold">Ultra Wireless S50 Headphones S50 with Bluetooth</h5>
-                                                                    <span class="font-size-14">1 × $1,100.00</span>
-                                                                </li>
-                                                                <li class="px-2 col-auto">
-                                                                    <a href="#" class="text-gray-90"><i class="ec ec-close-remove"></i></a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <li class="border-bottom pb-3 mb-3">
-                                                        <div class="">
-                                                            <ul class="list-unstyled row mx-n2">
-                                                                <li class="px-2 col-auto">
-                                                                    <img class="img-fluid" src="../../assets/img/75X75/img2.jpg" alt="Image Description">
-                                                                </li>
-                                                                <li class="px-2 col">
-                                                                    <h5 class="text-blue font-size-14 font-weight-bold">Widescreen NX Mini F1 SMART NX</h5>
-                                                                    <span class="font-size-14">1 × $685.00</span>
-                                                                </li>
-                                                                <li class="px-2 col-auto">
-                                                                    <a href="#" class="text-gray-90"><i class="ec ec-close-remove"></i></a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                                <div class="flex-center-between px-4 pt-2">
-                                                    <a href="http://transvelo.github.io/electro-html/2.0/html/shop/cart.html" class="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-4 px-lg-5">View cart</a>
-                                                    <a href="http://transvelo.github.io/electro-html/2.0/html/shop/checkout.html" class="btn btn-primary-dark-w ml-md-2 px-5 px-md-4 px-lg-5">Checkout</a>
-                                                </div>
-                                            </div>
+                                            
                                         </li>
                                     </ul>
                                 </div>
@@ -443,11 +404,7 @@
                                                                 data-position="left">
                                                                 <a href="#" class="nav-link u-header__nav-link font-weight-bold">Top 100 Offers</a>
                                                             </li>
-                                                            <li class="nav-item u-header__nav-item"
-                                                                data-event="hover"
-                                                                data-position="left">
-                                                                <a href="#" class="nav-link u-header__nav-link font-weight-bold">New Arrivals</a>
-                                                            </li>
+                                                           
                                                             <!-- Nav Item MegaMenu -->
                                                             @foreach($categories as $category)
                                                             <li class="nav-item hs-has-mega-menu u-header__nav-item"

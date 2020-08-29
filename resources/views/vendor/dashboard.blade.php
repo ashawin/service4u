@@ -100,7 +100,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="nk-wg1-action">
-                                                            <a href="html/subscription/payments.html" class="link"><span>Payment History</span> <em class="icon ni ni-chevron-right"></em></a>
+                                                            <a href="{{route('vendor-wallet-request')}}" class="link"><span>Payment History</span> <em class="icon ni ni-chevron-right"></em></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -144,11 +144,11 @@
                                                 <div class="card-inner">
                                                     <div class="between-center flex-wrap flex-md-nowrap g-3">
                                                         <div class="nk-block-text">
-                                                            <h6>Enterpise Plan - <span class="text-base">$599.00 / Yearly</span></h6>
+                                                            <h6>Our  Plans </h6>
                                                             <p class="text-soft">Unlimited access with priority support, 99.95% uptime, powerfull features and more...</p>
                                                         </div>
                                                         <div class="nk-block-actions flex-shrink-0">
-                                                            <a href="html/subscription/subscriptions-detail.html" class="btn btn-primary">View Plan</a>
+                                                            <a href="{{route('vendor-service')}}" class="btn btn-primary">View Plan</a>
                                                         </div>
                                                     </div>
                                                 </div><!-- .nk-card-inner -->
@@ -193,7 +193,7 @@
                                                         <p class="text-soft">Ask a question or file a support ticketn or report an issues. Our team support team will get back to you by email.</p>
                                                     </div>
                                                     <div class="nk-help-action">
-                                                        <a href="html/subscription/contact.html" class="btn btn-lg btn-outline-primary">Get Support Now</a>
+                                                        <a href="{{url('contact')}}" class="btn btn-lg btn-outline-primary">Get Support Now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -205,7 +205,7 @@
                                                 <div class="card-title-group">
                                                     <h6 class="card-title">Payment History</h6>
                                                     <div class="card-action">
-                                                        <a href="html/subscription/payments.html" class="link link-sm">See All <em class="icon ni ni-chevron-right"></em></a>
+                                                        <a href="{{route('vendor-wallet-request')}}" class="link link-sm">See All <em class="icon ni ni-chevron-right"></em></a>
                                                     </div>
                                                 </div>
                                             </div>

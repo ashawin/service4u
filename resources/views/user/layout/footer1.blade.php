@@ -9,9 +9,9 @@
                                         <h4 class="widget-title">{{$categories[0]->category}}</h4>
                                         <?php
                                           $services=App\Models\Service::join('products','products.id','=','services.product_id')
-                                          ->select('products.product','products.images','products.slug as pro_slug','products.id as pro_id')
+                                          ->select('products.product','products.images','products.slug as pro_slug','products.id as pro_id','services.price')
                                           ->where('services.category_id','=',$categories[0]->id)
-                                          ->get();
+                                          ->take(3)->get();
                                           ?>
 
                                         <ul class="product_list_widget">
@@ -21,7 +21,7 @@
                                             $images=explode('|',$service->images)
                                             ?>
                                             <li>
-                                                <a href="single-product.html" title="Tablet Thin EliteBook  Revolve 810 G6">
+                                                <a href="{{url('category/subcategory/'.$service->pro_slug)}}" title="Tablet Thin EliteBook  Revolve 810 G6">
                                                     <img class="wp-post-image" data-echo="{{asset('products/images/'.$images[0])}}" src="{{asset('products/images/'.$images[0])}}" alt="">
                                                     <span class="product-title">{{$service->product}}</span>
                                                 </a>
@@ -39,21 +39,28 @@
                                 <aside class="widget clearfix">
                                     <div class="body">
                                         @if(isset($categories[1]->category))
+                                        <h4 class="widget-title">{{$categories[1]->category}}</h4>
                                            <?php
                                           $services=App\Models\Service::join('products','products.id','=','services.product_id')
-                                          ->select('products.product','products.images','products.slug as pro_slug','products.id as pro_id')
+                                          ->select('products.product','products.images','products.slug as pro_slug','products.id as pro_id','services.price')
                                           ->where('services.category_id','=',$categories[1]->id)
-                                          ->get();
+                                          ->take(3)->get();
                                           ?>
-                                        <h4 class="widget-title">$categories[1]->category</h4>
+                                        
                                         <ul class="product_list_widget">
+                                             @foreach($services as $service)
+                                            <?php
+                                            $images=array();
+                                            $images=explode('|',$service->images)
+                                            ?>
                                             <li>
-                                                <a href="single-product.html" title="Notebook Black Spire V Nitro  VN7-591G">
-                                                    <img class="wp-post-image" data-echo="assets/images/footer/3.jpg" src="assets/images/blank.gif" alt="">
-                                                    <span class="product-title">Notebook Black Spire V Nitro  VN7-591G</span>
+                                                <a href="{{url('category/subcategory/'.$service->pro_slug)}}" title="Notebook Black Spire V Nitro  VN7-591G">
+                                                    <img class="wp-post-image" data-echo="{{asset('products/images/'.$images[0])}}" src="{{asset('products/images/'.$images[0])}}" alt="">
+                                                    <span class="product-title">{{$service->product}}</span>
                                                 </a>
-                                                <span class="electro-price"><ins><span class="amount">&#36;1,999.00</span></ins> <del><span class="amount">&#36;2,299.00</span></del></span>
+                                                <span class="electro-price"><ins><span class="amount">Rs.{{$service->price}}</span></ins> <del><span class="amount">&#36;2,299.00</span></del></span>
                                             </li>
+                                            @endforeach
 
                                            
                                         </ul>
@@ -65,21 +72,27 @@
                                 <aside class="widget clearfix">
                                     <div class="body">
                                         @if(isset($categories[2]->category))
-                                        <h4 class="widget-title">$categories[2]->category</h4>
+                                        <h4 class="widget-title">{{$categories[2]->category}}</h4>
                                         <?php
                                           $services=App\Models\Service::join('products','products.id','=','services.product_id')
-                                          ->select('products.product','products.images','products.slug as pro_slug','products.id as pro_id')
+                                          ->select('products.product','products.images','products.slug as pro_slug','products.id as pro_id','services.price')
                                           ->where('services.category_id','=',$categories[2]->id)
-                                          ->get();
+                                          ->take(3)->get();
                                           ?>
                                         <ul class="product_list_widget">
+                                             @foreach($services as $service)
+                                            <?php
+                                            $images=array();
+                                            $images=explode('|',$service->images)
+                                            ?>
                                             <li>
-                                                <a href="single-product.html" title="Notebook Black Spire V Nitro  VN7-591G">
+                                                <a href="{{url('category/subcategory/'.$service->pro_slug)}}" title="Notebook Black Spire V Nitro  VN7-591G">
                                                     <img class="wp-post-image" data-echo="assets/images/footer/6.jpg" src="assets/images/blank.gif" alt="">
-                                                    <span class="product-title">{{</span>
+                                                    <span class="product-title">{{$service->product}}</span>
                                                 </a>
-                                                <div class="star-rating" title="Rated 5 out of 5"><span style="width:100%"><strong class="rating">5</strong> out of 5</span></div>      <span class="electro-price"><ins><span class="amount">&#36;1,999.00</span></ins> <del><span class="amount">&#36;2,299.00</span></del></span>
+                                                     <span class="electro-price"><ins><span class="amount">Rs.{{$service->price}}</span></ins> <del>
                                             </li>
+                                            @endforeach
 
                                            
                                         </ul>
