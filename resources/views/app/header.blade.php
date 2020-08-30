@@ -5,7 +5,7 @@
                                 <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
                             </div>
                             <div class="nk-header-brand d-xl-none">
-                                <a href="html/index.html" class="logo-link">
+                                <a href="{{url('admin/dashboard')}}" class="logo-link">
                                     <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
                                     <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                                 </a>
@@ -23,7 +23,7 @@
                                         <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right">
                                             <div class="dropdown-head">
                                                 <span class="sub-title nk-dropdown-title">Recent Chats</span>
-                                                <a href="#">Setting</a>
+                                                <a href="{{url('admin/profile')}}">Setting</a>
                                             </div>
                                             <div class="dropdown-body">
                                                 <ul class="chat-list">
@@ -223,7 +223,7 @@
                                         </div>
                                     </li>
                                     <li class="dropdown user-dropdown">
-                                        <a href="#" class="dropdown-toggle mr-n1" data-toggle="dropdown">
+                                        <a href="{{url('admin/profile')}}" class="dropdown-toggle mr-n1" data-toggle="dropdown">
                                             <div class="user-toggle">
                                                 <div class="user-avatar sm">
                                                     <em class="icon ni ni-user-alt"></em>
@@ -249,8 +249,8 @@
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
                                                     <li><a href="{{route('admin-profile')}}"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                                    <li><a href="html/ecommerce/user-profile.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                                    <li><a href="html/ecommerce/user-profile.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
+                                                    <li><a href="{{route('admin-profile')}}"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
+                                                  
                                                 </ul>
                                             </div>
                                             <div class="dropdown-inner">

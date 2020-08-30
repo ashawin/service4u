@@ -80,39 +80,7 @@
 
                                                             </ul><!-- /.products -->
 
-                                                            <div class="check-products">
-                                                                <div class="checkbox accessory-checkbox">
-                                                                    <label>
-                                                                        <input checked disabled type="checkbox" class="product-check">
-                                                                        <span class="product-title">
-                                                                            <strong>This product: </strong>Ultra Wireless S50 Headphones S50 with Bluetooth
-                                                                        </span> -
-                                                                        <span class="accessory-price">
-                                                                            <span class="amount">&#36;1,215.00</span>
-                                                                        </span>
-                                                                    </label>
-                                                                </div>
-
-                                                                <div class="checkbox accessory-checkbox">
-                                                                    <label>
-                                                                        <input checked type="checkbox" class="product-check">
-                                                                        <span class="product-title">Universal Headphones Case in Black</span> -
-                                                                        <span class="accessory-price">
-                                                                            <span class="amount">&#36;159.00</span>
-                                                                        </span>
-                                                                    </label>
-                                                                </div>
-
-                                                                <div class="checkbox accessory-checkbox">
-                                                                    <label>
-                                                                        <input checked type="checkbox" class="product-check">
-                                                                        <span class="product-title">Headphones USB Wires</span> -
-                                                                        <span class="accessory-price">
-                                                                            <span class="amount">&#36;50.00</span>
-                                                                        </span>
-                                                                    </label>
-                                                                </div>
-                                                            </div><!-- /.check-products -->
+                                                          <!-- /.check-products -->
 
                                                         </div><!-- /.col -->
 

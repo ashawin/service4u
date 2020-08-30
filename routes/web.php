@@ -37,7 +37,7 @@ Route::middleware('user')->group(function () {
    Route::post('partner/enquiry/save', 'user\HomeController@partnerEnquiry')->name('partner-enquiry');
 
    //profile
-   Route::get('profile', 'user\profileController@profile')->name('user-profile');
+   Route::get('profile', 'user\profileController@profile')->name('user-profile')->middleware('auth');
 
 
 

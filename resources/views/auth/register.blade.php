@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Register | DashLite Admin Template</title>
+    <title>service4u</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="./assets/css/dashlite.css?ver=1.7.0">
     <link id="skin-default" rel="stylesheet" href="./assets/css/theme.css?ver=1.7.0">
@@ -26,7 +26,7 @@
                 <div class="nk-content ">
                     <div class="nk-block nk-block-middle nk-auth-body wide-xs">
                         <div class="brand-logo pb-4 text-center">
-                            <a href="html/index.html" class="logo-link">
+                            <a href="{{url('/')}}" class="logo-link">
                                 <img class="logo-light logo-img logo-img-lg" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
                                 <img class="logo-dark logo-img logo-img-lg" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                             </a>
