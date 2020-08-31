@@ -25,7 +25,7 @@
 
                                 <div class="single-product-wrapper">
                                     <div class="product-images-wrapper">
-                                        <span class="onsale">Sale!</span>
+                                      
                                         <div class="images electro-gallery">
 
                                             <div class="thumbnails-single owl-carousel">

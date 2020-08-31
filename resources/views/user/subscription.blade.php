@@ -105,8 +105,8 @@
 
                                                           
 
-                                                            <span class="price"><span class="electro-price"><span class="amount">Rs.{{$plan->price}} {{$plan->invoice_period}} Month</span></span></span>
-                                                            <a class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_sku="5487FB8/35" data-product_id="2706" data-quantity="1" href="{{url('subscription/plan/'.$plan->id.'/'.$plan->slug)}}" rel="nofollow">Book Now</a>
+                                                            <span class="price"><span class="electro-price"><span class="amount">Rs.{{$plan->price}} for  {{$plan->invoice_period}} Days </span></span></span>
+                                                            <a class="button single_add_to_cart_button button " data-product_sku="5487FB8/35" data-product_id="2706" data-quantity="1" href="{{url('subscription/plan/'.$plan->id.'/'.$plan->slug)}}" rel="nofollow">Book Now</a>
                                                             <div class="hover-area">
                                                                 <div class="action-buttons">
                                                                     <div class="yith-wcwl-add-to-wishlist add-to-wishlist-2706">

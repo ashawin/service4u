@@ -16,7 +16,9 @@ class HomeController extends Controller
     public function index(){
 
     	$categories=Category::with('subcategories')->get();
-      $products=Category::with('products')->get();
+      $products=Category::with('products')
+      ->join('services','services.category_id','=','categories.id')
+      ->where('services.type','=',0)->get();
       $mainBanner=Banner::join('categories','categories.id','=','banners.category_id')->where('banners.slug','=','mainBanner')
       ->select('categories.category','banners.*')
       ->first();
@@ -29,6 +31,7 @@ class HomeController extends Controller
        ->join('products','products.id','=','services.product_id')
        ->join('categories','categories.id','services.category_id')
        ->join('sub_categories','sub_categories.id','services.subcategory_id')
+       ->where('services.type','=',0)
        ->select('countries.country','states.state','districts.district','products.product','areas.area','categories.category','sub_categories.subcategory','services.id as service_id','services.price','services.type','services.desc','services.is_price_show','services.currency','products.images','products.slug as pro_slug','products.id as pro_id')
        ->take(4)->get();
         $allservices=Service::join('countries','countries.id','=','services.country_id')   
@@ -38,6 +41,7 @@ class HomeController extends Controller
        ->join('products','products.id','=','services.product_id')
        ->join('categories','categories.id','services.category_id')
        ->join('sub_categories','sub_categories.id','services.subcategory_id')
+       ->where('services.type','=',0)
        ->select('countries.country','states.state','districts.district','products.product','areas.area','categories.category','sub_categories.subcategory','services.id as service_id','services.price','services.type','services.desc','services.is_price_show','services.currency','products.images','products.slug as pro_slug','products.id as pro_id')
        ->get();
 
@@ -67,6 +71,7 @@ class HomeController extends Controller
        ->join('products','products.id','=','services.product_id')
        ->join('categories','categories.id','services.category_id')
        ->join('sub_categories','sub_categories.id','services.subcategory_id')
+       ->where('services.type','=',0)
        
        ->select('countries.country','states.state','districts.district','products.product','areas.area','categories.category','sub_categories.subcategory','services.id as service_id','services.price','services.type','services.desc','services.is_price_show','services.currency','products.images','products.slug as pro_slug')
        ->take(6)->get();

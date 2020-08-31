@@ -23,10 +23,9 @@ class serviceController extends Controller
        ->join('products','products.id','=','services.product_id')
        ->join('categories','categories.id','services.category_id')
        ->join('sub_categories','sub_categories.id','services.subcategory_id')
+       ->where('services.type','=',0)
        ->select('countries.country','states.state','districts.district','products.product','areas.area','categories.category','sub_categories.subcategory','services.id as service_id','services.price','services.type','services.desc','services.is_price_show','services.currency')
-       ->get();
-       
-
+       ->paginate(10);
     	return view('service.manage',['services'=>$services]);
     }
     public function add()

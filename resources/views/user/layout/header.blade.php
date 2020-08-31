@@ -144,7 +144,7 @@
                                                 <div class="js-scrollbar u-sidebar__body">
                                                     <div id="headerSidebarContent" class="u-sidebar__content u-header-sidebar__content">
                                                         <!-- Logo -->
-                                                        <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center mb-3" href="index.html" aria-label="Electro">
+                                                        <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center mb-3" href="{{url('/')}}" aria-label="Electro">
                                                             <svg version="1.1" x="0px" y="0px" width="175.748px" height="42.52px" viewBox="0 0 175.748 42.52" enable-background="new 0 0 175.748 42.52" style="margin-bottom: 0;">
                                                                 <ellipse class="ellipse-bg" fill-rule="evenodd" clip-rule="evenodd" fill="#FDD700" cx="170.05" cy="36.341" rx="5.32" ry="5.367"></ellipse>
                                                                 <path fill-rule="evenodd" clip-rule="evenodd" fill="#333E48" d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
@@ -202,9 +202,7 @@
                                                             <!-- End Top 100 Offers -->
 
                                                             <!-- New Arrivals -->
-                                                            <li class="">
-                                                                <a class="u-header-collapse__nav-link font-weight-bold" href="#">New Arrivals</a>
-                                                            </li>
+                                                           
                                                             <!-- End New Arrivals -->
 
                                                             <!-- Computers & Accessories -->
@@ -225,7 +223,25 @@
                                                             </li>
                                                             @endforeach
                                                          
-
+                                                            <li class="">
+                                                                <a class="u-header-collapse__nav-link font-weight-bold" href="{{url('contact')}}">Contact</a>
+                                                            </li>
+                                                            @if(\Auth::check())
+                                                              <li class="">
+                                                                <a class="u-header-collapse__nav-link font-weight-bold" href="{{url('profile')}}">Profile</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="{{ route('logout') }}" title="My Account" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();"><i class="u-header-collapse__nav-link font-weight-bold"></i>Logout</a>
+                           <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                                                            @else
+                                                        </li>
+                                                            
+                                                            <li class="">
+                                                                <a class="u-header-collapse__nav-link font-weight-bold" href="{{url('user/login')}}">Sigup/Login</a>
+                                                            </li>
+                                                            @endif
                                                          
                                                         </ul>
                                                         <!-- End List -->
@@ -237,10 +253,10 @@
                                             <footer id="SVGwaveWithDots" class="svg-preloader u-header-sidebar__footer">
                                                 <ul class="list-inline mb-0">
                                                     <li class="list-inline-item pr-3">
-                                                        <a class="u-header-sidebar__footer-link text-gray-90" href="#">Privacy</a>
+                                                        <a class="u-header-sidebar__footer-link text-gray-90" href="{{route('user-policy')}}">Privacy</a>
                                                     </li>
                                                     <li class="list-inline-item pr-3">
-                                                        <a class="u-header-sidebar__footer-link text-gray-90" href="#">Terms</a>
+                                                        <a class="u-header-sidebar__footer-link text-gray-90" href="{{route('user-terms')}}">Terms</a>
                                                     </li>
                                                     <li class="list-inline-item">
                                                         <a class="u-header-sidebar__footer-link text-gray-90" href="#">
@@ -251,7 +267,7 @@
 
                                                 <!-- SVG Background Shape -->
                                                 <div class="position-absolute right-0 bottom-0 left-0 z-index-n1">
-                                                    <img class="js-svg-injector" src="../../assets/svg/components/wave-bottom-with-dots.svg" alt="Image Description"
+                                                    <img class="js-svg-injector" src="{{asset('users/assets/svg/components/wave-bottom-with-dots.svg')}}" alt="Image Description"
                                                     data-parent="#SVGwaveWithDots">
                                                 </div>
                                                 <!-- End SVG Background Shape -->
@@ -402,7 +418,7 @@
                                                             <li class="nav-item u-header__nav-item"
                                                                 data-event="hover"
                                                                 data-position="left">
-                                                                <a href="#" class="nav-link u-header__nav-link font-weight-bold">Top 100 Offers</a>
+                                                                <a href="{{url('/')}}" class="nav-link u-header__nav-link font-weight-bold">Top 100 Offers</a>
                                                             </li>
                                                            
                                                             <!-- Nav Item MegaMenu -->

@@ -97,16 +97,16 @@
                                                 </a>
                                             </div>
                                            
-                                            <div class="nk-tb-col tb-col-md">
+                                            <div class="nk-tb-col ">
                                                 <span>{{$user->mobile}}</span>
                                             </div>
-                                            <div class="nk-tb-col tb-col-lg">
+                                            <div class="nk-tb-col ">
                                                 <span>{{$user->country}}</span>
                                             </div>
-                                            <div class="nk-tb-col tb-col-lg">
+                                            <div class="nk-tb-col ">
                                                 <span>{{$user->created_at}}</span>
                                             </div>
-                                            <div class="nk-tb-col tb-col-md">
+                                            <div class="nk-tb-col ">
                                                 <span class="tb-status text-success">Active</span>
                                             </div>
                                             <div class="nk-tb-col nk-tb-col-tools">

@@ -77,6 +77,7 @@
                                           $services=App\Models\Service::join('products','products.id','=','services.product_id')
                                           ->select('products.product','products.images','products.slug as pro_slug','products.id as pro_id','services.price')
                                           ->where('services.category_id','=',$categories[2]->id)
+                                          ->where('services.type','=',0)
                                           ->take(3)->get();
                                           ?>
                                         <ul class="product_list_widget">

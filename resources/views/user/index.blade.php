@@ -230,8 +230,10 @@
                                     
                                     </ul>
                                 </div>
+                                <?php $count = 0; ?>
                                 <!-- End Nav Classic -->
                                  @foreach($products as $product)
+                                    <?php if($count == 7) break; ?>
                                 <!-- Tab Content -->
                                 <?php
                                 $active=$product->id==$categories[0]->id ?'show active':'';
@@ -247,6 +249,7 @@
                                               $service=App\Models\Service::join('products','products.id','=','services.product_id')
                                           ->select('products.product','products.images','products.slug as pro_slug','products.id as pro_id')
                                           ->where('services.product_id','=',$pro->product_id)
+                                          ->where('services.type','=',0)
                                           ->first();
 
                                             
@@ -284,7 +287,7 @@
                                             </li>
                                             @endforeach
                                            
-                                           
+                                          <?php $count++; ?> 
                                       
                                         </ul>
                                     </div>
@@ -344,7 +347,9 @@
 
                     <!-- Tab Content -->
                     <div class="tab-content" id="Tpills-tabContent">
+                         <?php $count = 0; ?>
                            @foreach($products as $product)
+                           <?php if($count == 7) break; ?>
                                 <!-- Tab Content -->
                                 <?php
                                 $active=$product->id==$categories[0]->id ?'show active':'';
@@ -360,6 +365,7 @@
                                               $service=App\Models\Service::join('products','products.id','=','services.product_id')
                                           ->select('products.product','products.images','products.slug as pro_slug','products.id as pro_id')
                                           ->where('services.product_id','=',$pro->product_id)
+                                          ->where('services.type','=',0)
                                           ->first();
 
                                             
@@ -401,7 +407,7 @@
                                 </div>
                                 @endforeach
                                
-                                
+                                <?php $count++; ?> 
                                
                             </div>
                         </div>

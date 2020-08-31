@@ -56,15 +56,15 @@
                                   
                                   
                                     <li class="dropdown user-dropdown">
-                                        <a href="" class="dropdown-toggle mr-n1" data-toggle="dropdown">
+                                        <a href="{{url('register')}}" class="dropdown-toggle mr-n1" data-toggle="dropdown">
                                             <div class="user-toggle">
-                                                <div class="user-avatar sm">
-                                                    <em class="icon ni ni-user-alt"></em>
-                                                </div>
+                                                <a href="{{url('register')}}">
+                                              
                                                 <div class="user-info d-none d-xl-block">
                                                    
                                                     <div class="user-name dropdown-indicator">Register</div>
                                                 </div>
+                                            </a>
                                             </div>
                                         </a>
                                     

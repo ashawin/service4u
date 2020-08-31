@@ -37,7 +37,7 @@
                                     <div class="nk-block-head-content">
                                         <h4 class="nk-block-title">Register</h4>
                                         <div class="nk-block-des">
-                                            <p>Create New Dashlite Account</p>
+                                            <p>Create New  Account For Vendor</p>
                                         </div>
                                     </div>
                                 </div>

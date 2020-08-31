@@ -92,9 +92,9 @@
 									                                                </div>
 									                                            </div>
 									                                            <div class="nk-tb-col"><span>Id</span></div>
-									                                            <div class="nk-tb-col tb-col-md"><span>Name</span></div>
+									                                            <div class="nk-tb-col "><span>Name</span></div>
 									                                            
-									                                            <div class="nk-tb-col tb-col-md"><span>Action</span></div>
+									                                            <div class="nk-tb-col"><span>Action</span></div>
 									                                       
 									                                           <!--  <div class="nk-tb-col nk-tb-col-tools">
 									                                                <ul class="nk-tb-actions gx-1 my-n1">
@@ -131,8 +131,8 @@
 									                                            </div>
 									                                          
 									                                             <div class="nk-tb-col ">
-                                               <a href="{{url('admin/country/delete/'.$item->id)}}"> <button class="btn btn-danger">Delete</button></a>
-                                            </div>
+                                                                                    <a href="{{url('admin/country/delete/'.$item->id)}}"> <button class="btn btn-danger">Delete</button></a>
+                                                                                  </div>
 									                                          
 									                                           
 									                                         <!--    <div class="nk-tb-col nk-tb-col-tools">
@@ -274,7 +274,7 @@
 									                                            <div class="nk-tb-col "><span>State</span></div>
 									                                            <div class="nk-tb-col "><span>Action</span></div>
 									                                            
-									                                        </div><!-- .nk-tb-item -->
+									                                        </div>
 									                                        @foreach($states as $item)
 									                                        <div class="nk-tb-item">
 									                                            <div class="nk-tb-col nk-tb-col-check">
@@ -286,20 +286,20 @@
 									                                            <div class="nk-tb-col">
 									                                                <span class="tb-lead"><a href="#">{{$item->id}}</a></span>
 									                                            </div>
-									                                            <div class="nk-tb-col tb-col-md">
+									                                            <div class="nk-tb-col ">
 									                                                <span class="tb-sub">{{$item->country}}</span>
 									                                            </div>
-									                                            <div class="nk-tb-col">
-									                                                <span class="dot bg-warning d-mb-none"></span>
-									                                                <span class="badge badge-sm badge-dot has-bg badge-warning d-none d-mb-inline-flex">{{$item->state}}</span>
+																				<div class="nk-tb-col ">
+									                                                <span class="tb-sub">{{$item->state}}</span>
 									                                            </div>
+									                                            
 
 									                                            <div class="nk-tb-col ">
                                                <a href="{{url('admin/state/delete/'.$item->id)}}"> <button class="btn btn-danger">Delete</button></a>
                                            </div>
 									                                          
 									                                            
-									                                          <!--   <div class="nk-tb-col nk-tb-col-tools">
+									                                          <!--   <div class="nk-tb-col ">
 									                                                <ul class="nk-tb-actions gx-1">
 									                                                    <li class="nk-tb-action-hidden"><a href="#" class="btn btn-icon btn-trigger btn-tooltip" title="Mark as Delivered" data-toggle="dropdown">
 									                                                            <em class="icon ni ni-truck"></em></a></li>
@@ -433,12 +433,12 @@
 									                                                </div>
 									                                            </div>
 									                                            <div class="nk-tb-col"><span>Id</span></div>
-									                                            <div class="nk-tb-col tb-col-md"><span>Country</span></div>
-									                                            <div class="nk-tb-col"><span class="d-none d-mb-block">State</span></div>
-									                                              <div class="nk-tb-col"><span class="d-none d-mb-block">District</span></div>
-									                                                <div class="nk-tb-col"><span class="d-none d-mb-block">Area</span></div>
-									                                                 <div class="nk-tb-col"><span class="d-none d-mb-block">Action</span></div>
-
+									                                            <div class="nk-tb-col "><span>Country</span></div>
+																				<div class="nk-tb-col "><span>State</span></div>
+																				<div class="nk-tb-col "><span>District</span></div>
+																				<div class="nk-tb-col "><span>Area</span></div>
+																				<div class="nk-tb-col "><span>Action</span></div>
+									                                            
 									                                               
 									                                           
 									                                            
@@ -472,16 +472,16 @@
 									                                            <div class="nk-tb-col">
 									                                                <span class="tb-lead"><a href="#">{{$area->area_id}}</a></span>
 									                                            </div>
-									                                            <div class="nk-tb-col tb-col-md">
+									                                            <div class="nk-tb-col ">
 									                                                <span class="tb-sub">{{$area->country}}</span>
 									                                            </div>
-									                                            <div class="nk-tb-col tb-col-md">
+									                                            <div class="nk-tb-col ">
 									                                                <span class="tb-sub">{{$area->state}}</span>
 									                                            </div>
-									                                            <div class="nk-tb-col tb-col-md">
+									                                            <div class="nk-tb-col ">
 									                                                <span class="tb-sub">{{$area->district}}</span>
 									                                            </div>
-									                                            <div class="nk-tb-col tb-col-md">
+									                                            <div class="nk-tb-col ">
 									                                                <span class="tb-sub">{{$area->area}}</span>
 									                                            </div>
 									                                             <div class="nk-tb-col ">
@@ -625,10 +625,10 @@
 									                                            </div>
 									                                            <div class="nk-tb-col"><span>Id</span></div>
 									                                            <div class="nk-tb-col "><span>Country</span></div>
-									                                            <div class="nk-tb-col"><span class="d-none d-mb-block">State</span></div>
-									                                            <div class="nk-tb-col"><span class="d-none d-mb-block">District</span></div>
+									                                            <div class="nk-tb-col"><span >State</span></div>
+									                                            <div class="nk-tb-col"><span>District</span></div>
 
-									                                             <div class="nk-tb-col"><span class="d-none d-mb-block">Action</span></div>
+									                                             <div class="nk-tb-col"><span >Action</span></div>
 									                                            
 									                                            
 									                                           <!--  <div class="nk-tb-col nk-tb-col-tools">
@@ -663,13 +663,13 @@
 									                                            <div class="nk-tb-col">
 									                                                <span class="tb-lead"><a href="#">{{$item->dis_id}}</a></span>
 									                                            </div>
-									                                            <div class="nk-tb-col tb-col-md">
+									                                            <div class="nk-tb-col ">
 									                                                <span class="tb-sub">{{$item->country}}</span>
 									                                            </div>
-									                                             <div class="nk-tb-col tb-col-md">
+									                                             <div class="nk-tb-col ">
 									                                                <span class="tb-sub">{{$item->state}}</span>
 									                                            </div>
-									                                            <div class="nk-tb-col tb-col-md">
+									                                            <div class="nk-tb-col ">
 									                                                <span class="tb-sub">{{$item->district}}</span>
 									                                            </div>
 
@@ -705,49 +705,7 @@
 									                                        @endforeach
 									                                       
 									                                    </div><!-- .nk-tb-list -->
-									                                    <div class="card">
-									                                        <div class="card-inner">
-									                                            <div class="nk-block-between-md g-3">
-									                                                <div class="g">
-									                                                    <ul class="pagination justify-content-center justify-content-md-start">
-									                                                        <li class="page-item"><a class="page-link" href="#"><em class="icon ni ni-chevrons-left"></em></a></li>
-									                                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-									                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-									                                                        <li class="page-item"><span class="page-link"><em class="icon ni ni-more-h"></em></span></li>
-									                                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
-									                                                        <li class="page-item"><a class="page-link" href="#">7</a></li>
-									                                                        <li class="page-item"><a class="page-link" href="#"><em class="icon ni ni-chevrons-right"></em></a></li>
-									                                                    </ul><!-- .pagination -->
-									                                                </div>
-									                                                <div class="g">
-									                                                    <div class="pagination-goto d-flex justify-content-center justify-content-md-start gx-3">
-									                                                        <div>Page</div>
-									                                                        <div>
-									                                                            <select class="form-select form-select-sm" data-search="on" data-dropdown="xs center">
-									                                                                <option value="page-1">1</option>
-									                                                                <option value="page-2">2</option>
-									                                                                <option value="page-4">4</option>
-									                                                                <option value="page-5">5</option>
-									                                                                <option value="page-6">6</option>
-									                                                                <option value="page-7">7</option>
-									                                                                <option value="page-8">8</option>
-									                                                                <option value="page-9">9</option>
-									                                                                <option value="page-10">10</option>
-									                                                                <option value="page-11">11</option>
-									                                                                <option value="page-12">12</option>
-									                                                                <option value="page-13">13</option>
-									                                                                <option value="page-14">14</option>
-									                                                                <option value="page-15">15</option>
-									                                                                <option value="page-16">16</option>
-									                                                                <option value="page-17">17</option>
-									                                                                <option value="page-18">18</option>
-									                                                                <option value="page-19">19</option>
-									                                                                <option value="page-20">20</option>
-									                                                            </select>
-									                                                        </div>
-									                                                        <div>OF 102</div>
-									                                                    </div>
-									                                                </div><!-- .pagination-goto -->
+									                                    
 									                                            </div><!-- .nk-block-between -->
 									                                        </div>
 									                                    </div>
@@ -928,7 +886,8 @@
                                                           <label class="form-label" for="phone-no">Area</label>
 							                              <div class="form-control-wrap">
                                                                <textarea class="form-control" name="area"></textarea>
-                                                          </div><br>							                       
+                                                          </div>
+														  <br>							                       
 							                      
 							                        <div class="form-group">
 							                            <button type="submit" class="btn btn-lg btn-primary">Save </button>

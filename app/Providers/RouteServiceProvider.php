@@ -13,6 +13,7 @@ class RouteServiceProvider extends ServiceProvider
      * In addition, it is set as the URL generator's root namespace.
      *
      * @var string
+     
      */
     protected $namespace = 'App\Http\Controllers';
 

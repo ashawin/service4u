@@ -37,22 +37,22 @@
                                                 <thead class="tb-ticket-head">
                                                     <tr class="tb-ticket-title">
                                                         <th class="tb-ticket-id"><span>Id</span></th>
-                                                        <th class="tb-ticket-desc">
+                                                        <th class="tb-ticket-id">
                                                             <span>Category</span>
                                                         </th>
-                                                        <th class="tb-ticket-date tb-col-md">
+                                                        <th class="tb-ticket-id ">
                                                             <span>SubCategory</span>
                                                         </th>
-                                                        <th class="tb-ticket-seen tb-col-md">
+                                                        <th class="tb-ticket-id ">
                                                             <span>Product</span>
                                                         </th>
-                                                          <th class="tb-ticket-seen tb-col-md">
+                                                          <th class="tb-ticket-id ">
                                                             <span> Price</span>
                                                         </th>
-                                                         <th class="tb-ticket-seen tb-col-md">
+                                                         <th class="tb-ticket-id ">
                                                             <span>Customer Name</span>
                                                         </th>
-                                                        <th class="tb-ticket-status">
+                                                        <th class="tb-ticket-id">
                                                             <span>Area</span>
                                                         </th>
                                                         
@@ -69,16 +69,16 @@
                                                         <td class="tb-ticket-desc">
                                                             <a href="html/subscription/ticket-details.html"><span class="title">{{$service->category}}</span></a>
                                                         </td>
-                                                        <td class="tb-ticket-date tb-col-md">
+                                                        <td class="tb-ticket-date ">
                                                             <span class="date">{{$service->subcategory}}</span>
                                                         </td>
-                                                        <td class="tb-ticket-seen tb-col-md">
+                                                        <td class="tb-ticket-seen ">
                                                             <span class="date-last">{{$service->product}}</span>
                                                         </td>
-                                                         <td class="tb-ticket-seen tb-col-md">
+                                                         <td class="tb-ticket-seen ">
                                                             <span class="date-last">{{$service->price}}</span>
                                                         </td>
-                                                        <td class="tb-ticket-seen tb-col-md">
+                                                        <td class="tb-ticket-seen ">
                                                             <span class="date-last">{{$service->name}}</span>
                                                         </td>
                                                         <td class="tb-ticket-status">
