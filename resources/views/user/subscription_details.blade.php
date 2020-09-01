@@ -1,184 +1,118 @@
 @extends('user.layout.app1')
 @section('content')
  <div id="content" class="site-content" tabindex="-1">
-                <div class="container">
-
+                 
                     <nav class="woocommerce-breadcrumb">
                         <a href="{{url('/')}}">Home</a>
                         <span class="delimiter"><i class="fa fa-angle-right"></i>
                         </span>
-                        <a href="product-category.html">Subscription</a>
+                        <a href="{{route('user-subs-plan')}}">Subscription</a>
                         <span class="delimiter"><i class="fa fa-angle-right"></i>
                         </span>
-                        <a href="product-category.html">Plan</a>
-                        <span class="delimiter"><i class="fa fa-angle-right"></i>
-                        </span>{{$plan->name}}
+                        <a href="#">Plans</a>
+                        
                     </nav>
+            <!-- End breadcrumb -->
 
-                    <div id="primary" class="content-area">
-                        <main id="main" class="site-main">
-                            <div class="product">
-                               
-
-                                <div class="electro-tabs electro-tabs-wrapper wc-tabs-wrapper">
-                                    <div class="electro-tab" id="tab-accessories">
-                                        <div class="container">
-                                            <div class="tab-content">
-                                                <ul class="ec-tabs">
-                                                    <li class="accessories_tab active">
-                                                        <a href="#tab-accessories">Features</a>
-                                                    </li>
-                                                    <li class="description_tab">
-                                                        <a href="#tab-description">Description</a>
-                                                    </li>
-                                                 <!--    <li class="specification_tab">
-                                                        <a href="#tab-specification">Specification</a>
-                                                    </li>
-                                                    <li class="reviews_tab">
-                                                        <a href="#tab-reviews">Reviews</a>
-                                                    </li> -->
-                                                </ul><!-- /.ec-tabs -->
-
-                                                <div class="accessories">
-
-                                                    <div class="electro-wc-message"></div>
-                                                    <div class="row">
-                                                        <div class="col-xs-12 col-sm-9 col-left">
-                                                            <ul class="products columns-3">
-                                                          @foreach($features as $fea)
-                                                          <?php
-                                                          $images=array();
-                                                         $product= App\Models\Product::join('categories','categories.id','products.category_id')->select('categories.category','products.*')->where('products.id','=',$fea->product_id)->first();
-                                                         $images=explode('|',$product->images);
-
-                                                          ?>
-                                                                <li class="product ">
-                                                                    <div class="product-outer">
-                                                                        <div class="product-inner">
-                                                                            <span class="loop-product-categories"><a href="product-category.html" rel="tag">{{$product->category}}</a></span>
-                                                                            <a href="single-product.html">
-                                                                                <h3>{{$product->product}}</h3>
-                                                                                <div class="product-thumbnail">
-                                                                                    <img data-echo="{{asset('products/images/'.$images[0])}}" src="{{asset('products/images/'.$images[0])}}" alt="">
-                                                                                </div>
-                                                                            </a>
-
-                                                                          
-
-                                                                            <div class="hover-area">
-                                                                                <div class="action-buttons">
-                                                                                    <a href="#" rel="nofollow" class="add_to_wishlist">Wishlist</a>
-                                                                                    <a href="#" class="add-to-compare-link">Compare</a>
-                                                                                </div>
-                                                                            </div>
-
-                                                                        </div><!-- /.product-inner -->
-                                                                    </div><!-- /.product-outer -->
-                                                                </li>
-                                                                @endforeach
-                                                             
-
-                                                            </ul><!-- /.products -->
-
-                                                          <!-- /.check-products -->
-
-                                                        </div><!-- /.col -->
-
-                                                        <div class="col-xs-12 col-sm-3 col-right">
-                                                            <div class="total-price">
-                                                                <span class="total-price-html">
-                                                                    <span class="amount">Rs.{{$plan->price}}</span>
-                                                                </span>for <span class="total-products">{{count($features)}}</span>items
-                                                            </div><!-- /.total-price -->
-
-                                                            <div class="accessories-add-all-to-cart">
-                                                                <a href="{{url('subscription/plans/'.$plan->slug.'/book')}}" class="single_add_to_cart_button button">Book Now</a>
-                                                            </div><!-- /.accessories-add-all-to-cart -->
-                                                        </div><!-- /.col -->
-                                                    </div><!-- /.row -->
-
-                                                </div><!-- /.accessories -->
+            <div class="container">
+                <div class="table-responsive table-bordered table-compare-list mb-10 border-0">
+                    <table class="table">
+                        <tbody>
+                             <?php
+                                $plan=DB::table('plans')
+                                ->where('id','=',$plan_id)
+                                ->first();
+                                ?>
+                            <tr>
+                                <th class="min-width-200">Product</th>
+                                @foreach($features as $feature)
+                                <?php
+                                $product=\DB::table('plan_features')
+                                ->join('products','products.id','=','plan_features.product_id')
+                                ->join('plans','plans.id','=','plan_features.plan_id')
+                                ->where('plan_features.id','=',$feature->id)
+                                ->select('products.images','products.desc','plans.price','plans.invoice_period','plans.description')
+                                ->first();
+                                $images=array();
+                                $images=explode('|',$product->images);
+                                ?>
+                                <td>
+                                    <a href="#" class="product d-block">
+                                        <div class="product-compare-image">
+                                            <div class="d-flex mb-3">
+                                                <img class="img-fluid mx-auto" src="{{asset('products/images/'.$images[0])}}" alt="Image Description">
                                             </div>
                                         </div>
-                                    </div><!-- /.electro-tab -->
-
-                                    <div class="electro-tab" id="tab-description">
-                                        <div class="container">
-                                            <div class="tab-content">
-                                                <ul class="ec-tabs">
-                                                    <li class="accessories_tab">
-                                                        <a href="#tab-accessories">Accessories</a>
-                                                    </li>
-                                                    <li class="description_tab active">
-                                                        <a href="#tab-description">Description</a>
-                                                    </li>
-                                                   <!--  <li class="specification_tab">
-                                                        <a href="#tab-specification">Specification</a>
-                                                    </li>
-                                                    <li class="reviews_tab">
-                                                        <a href="#tab-reviews">Reviews</a>
-                                                    </li> -->
-                                                </ul>
-
-                                                <div class="electro-description">
-                                                    {{$plan->description}}
-
-                                                  
-
-                                                   
-                                                </div><!-- /.electro-description -->
-
-                                            </div>
-                                        </div>
-                                    </div><!-- /.electro-tab -->
-
-
+                                        <h3 class="product-item__title text-blue font-weight-bold mb-3">{{$feature->name}}</h3>
+                                    </a>
+                                 
+                                </td>
+                                @endforeach
                                 
-                                </div><!-- /.electro-tabs -->
+                                
+                            </tr>
 
-                                                                <div class="related products">
-                                    <h2>Related Products</h2>
+                            <tr>
+                                <th>Price</th>
+                                <?php
+                                 $product=\DB::table('plan_features')
+                                ->join('products','products.id','=','plan_features.product_id')
+                                ->join('plans','plans.id','=','plan_features.plan_id')
+                                ->where('plan_features.id','=',$feature->id)
+                                ->select('products.images','products.desc','plans.price','plans.invoice_period','plans.description')
+                                ->first();
+                                ?>
+                                <td>
+                                    <div class="product-price">&#8377 {{$plan->price}}</div>
+                                </td>
+                                
+                               
+                            </tr>
 
-                                    <ul class="products columns-5">
+                        
 
-                       @foreach($services as $ser)
-                       <?php
-                          $images=array();
-                          $images=explode('|',$ser->images);
+                            <tr>
+                                <th>Description</th>
+                                <?php
+                                 $product=\DB::table('plan_features')
+                                ->join('products','products.id','=','plan_features.product_id')
+                                ->join('plans','plans.id','=','plan_features.plan_id')
+                                ->where('plan_features.id','=',$feature->id)
+                                ->select('products.images','products.desc','plans.price','plans.invoice_period','plans.description')
+                                ->first();
+                                ?>
+                                @foreach($features as $feature)
+                                <?php
+                                 $product=\DB::table('plan_features')
+                                ->join('products','products.id','=','plan_features.product_id')
+                                ->join('plans','plans.id','=','plan_features.plan_id')
+                                ->where('plan_features.id','=',$feature->id)
+                                ->select('products.images','products.desc','plans.price','plans.invoice_period','plans.description')
+                                ->first();
+                                ?>
+                                <td>
+                                   {{$product->desc}}
+                                </td>
+                                @endforeach
+                               
+                            </tr>
 
-                       ?>
-
-                                        <li class="product">
-                                            <div class="product-outer">
-                                                <div class="product-inner">
-                                                    <span class="loop-product-categories"><a href="{{url('category/subcategory/'.$ser->pro_slug)}}" rel="tag">{{$ser->category}}</a></span>
-                                                    <a href="{{url('category/subcategory/'.$ser->pro_slug)}}">
-                                                        <h3>{{$ser->product}}</h3>
-                                                        <div class="product-thumbnail">
-                                                            <img data-echo="{{asset('products/images/'.$images[0])}}" src="{{asset('products/images/'.$images[0])}}" alt="">
-                                                        </div>
-                                                    </a>
-
-                                                    <div class="price-add-to-cart">
-                                                        <span class="price">
-                                                            <span class="electro-price">
-                                                                <ins><span class="amount">Rs.{{$ser->price}}</span></ins>
-                                                            </span>
-                                                        </span>
-                                                       
-                                                    </div><!-- /.price-add-to-cart -->
-
-                                                    
-                                                </div><!-- /.product-inner -->
-                                            </div><!-- /.product-outer -->
-                                        </li>
-                                        @endforeach
-
-                                    </ul><!-- /.products -->
-                                </div><!-- /.related -->
-                            </div><!-- /.product -->
-                        </main><!-- /.site-main -->
-                    </div><!-- /.content-area -->
-                </div><!-- /.container -->
+                            <tr>
+                                <th>Book Now</th>
+                               
+                                <td>
+                                    <div class="">
+                                    
+                                         <a href="{{url('subscription/plans/'.$plan->slug.'/book')}}" class="btn btn-soft-secondary mb-3 mb-md-0 font-weight-normal px-5 px-md-3 px-xl-5">Book Now</a>
+                                       
+                                        </div>
+                                </td>
+                                
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             </div><!-- /.site-content -->
 @endsection

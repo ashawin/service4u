@@ -13,7 +13,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-   <meta name="_token" content="{{csrf_token()}}" />
+   
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
    
     <!-- Fav Icon  -->
@@ -68,9 +68,9 @@
                    
     <script src="{{asset('assets/js/bundle.js')}}"></script>
     <script src="{{asset('assets/js/scripts.js')}}"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-    <!-- <script src="{{asset('assets/js/charts/chart-ecommerce.js')}}"></script> -->
+   
      @yield('script')
 
       

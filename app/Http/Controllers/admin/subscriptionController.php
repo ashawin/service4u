@@ -50,7 +50,7 @@ class subscriptionController extends Controller
 	    'signup_fee' => 0.00,
 	    'invoice_period' => $request->period,
 	    'invoice_interval' => 'day',
-	    'trial_period' => 0,
+	    'trial_period' => $request->count,
 	    'trial_interval' => 'day',
 	    'sort_order' => 1,
 	    'currency' => 'INR',

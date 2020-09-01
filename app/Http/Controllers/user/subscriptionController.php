@@ -12,7 +12,7 @@ class subscriptionController extends Controller
     public function index(){
     	$categories=Category::with('subcategories')->get();
     	$plans= app('rinvex.subscriptions.plan')->all();
-    	return view('user.subscription',['categories'=>$categories,'plans'=>$plans]);
+      return view('user.subscription',['categories'=>$categories,'plans'=>$plans]);
     }
 
       public function subscriptionDetails($id,$slug){
@@ -27,9 +27,10 @@ class subscriptionController extends Controller
        ->join('sub_categories','sub_categories.id','services.subcategory_id')
        ->where('services.type','=',0)      
        ->select('countries.country','states.state','districts.district','products.product','areas.area','categories.category','sub_categories.subcategory','services.id as service_id','services.price','services.type','services.desc','services.is_price_show','services.currency','products.images','products.slug as pro_slug')
-       ->take(6)->get();    
+       ->take(6)->get();  
+
         return view('user.subscription_details',[
-      	'plan'=>$plan,'features'=>$plan->features,'categories'=>$categories,'services'=>$services]);
+      	'plan'=>$plan,'features'=>$plan->features,'categories'=>$categories,'services'=>$services,'plan_id'=>$id]);
     }
 
 
@@ -39,7 +40,7 @@ class subscriptionController extends Controller
 
        $categories=Category::with('subcategories')->get();
       return  view('user.book',['categories'=>$categories,'service'=>$service,'type'=>1]);
-         	dd($plan);
+         
 
     }
 

@@ -60,7 +60,7 @@
                                                             <div class="form-group">
                                                                 <label class="form-label" for="fva-topics">Currency Type</label>
                                                                 <div class="form-control-wrap ">
-                                                                    <select class="form-control form-select" id="fva-topics" name="currency" data-placeholder="Select a option" required>
+                                                                    <select class="form-control form-select" id="fva-topics1" name="currency" data-placeholder="Select a option" required>
                                                                         <option label="empty" value="">Select</option>
                                                                         <option value="Rs" selected>INR </option>
                                                                         <option value="$"> Dollar</option>
@@ -130,7 +130,7 @@
                                                             <div class="form-group">
                                                                 <label class="form-label" for="fva-topics">Service Type</label>
                                                                 <div class="form-control-wrap ">
-                                                                    <select class="form-control form-select" id="fva-topics" name="type" data-placeholder="Select a option" required>
+                                                                    <select class="form-control form-select" id="" name="type" data-placeholder="Select a option" required>
                                                                         <option label="empty" value="">Select</option>
                                                                         <option value="1">Commercial </option>
                                                                         <option value="0"> Private</option>

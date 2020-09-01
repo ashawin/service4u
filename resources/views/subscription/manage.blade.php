@@ -4,9 +4,7 @@
  <div class="nk-main ">
 <div class="nk-wrap ">
  <div class="nk-block nk-block-lg">
-     <div class="nk-block-head">
-                                           
-                                        </div>
+
                                         <div class="card card-preview">
                                         	@if(session()->has('msg'))
                                         	  <div class="example-alert">
@@ -15,6 +13,10 @@
                                                         </div>
                                         	@endif
                                             <div class="card-inner">
+
+                                                         <a href="{{route('admin-subsc-add')}}" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em><span>Add </span></a>
+                                                            <a href="{{route('admin-subsc-add')}}" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add </span></a>
+                                                        
                                                 <ul class="nav nav-tabs mt-n3">
                                                     <li class="nav-item">
                                                         <a class="nav-link active" data-toggle="tab" href="#tabItem5"><em class="icon ni ni-user"></em><span>Subscrption Request</span></a>
@@ -22,10 +24,7 @@
                                                     <li class="nav-item">
                                                         <a class="nav-link" data-toggle="tab" href="#tabItem6"><em class="icon ni ni-lock-alt"></em><span>Subscription Plans</span></a>
                                                     </li>
-                                                    <li>
-                                                         <a href="{{route('admin-subsc-add')}}" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em><span>Add </span></a>
-                                                            <a href="{{route('admin-service-add')}}" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add </span></a>
-                                                        </li>
+                                                  
                                                    
                                                 </ul>
                                                  <div class="tab-content">
