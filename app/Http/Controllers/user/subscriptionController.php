@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Country;
 use App\Models\Service;
 
 class subscriptionController extends Controller
@@ -35,11 +36,13 @@ class subscriptionController extends Controller
 
 
     public function book($slug){
+      $countries=Country::all();
+    
          $slug=\DB::table('plans')->where('slug','=',$slug)->first();
          $service = app('rinvex.subscriptions.plan')->find($slug->id);
 
        $categories=Category::with('subcategories')->get();
-      return  view('user.book',['categories'=>$categories,'service'=>$service,'type'=>1]);
+      return  view('user.book',['categories'=>$categories,'service'=>$service,'type'=>1,'countries'=>$countries]);
          
 
     }

@@ -8,7 +8,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>ServiceCenter4u</title>
+        <title>Service4u</title>
 
         <link rel="stylesheet" type="text/css" href="{{asset('users/assets1/css/bootstrap.min.css')}}" media="all" />
         <link rel="stylesheet" type="text/css" href="{{asset('users/assets1/css/font-awesome.min.css')}}" media="all" />
@@ -329,8 +329,9 @@
         <!-- For demo purposes – can be removed on production -->
 
         <script src="{{asset('users/switchstylesheet/switchstylesheet.js')}}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
-
+          @yield('script')
            <script>
            (function($) {
                $(document).ready(function(){

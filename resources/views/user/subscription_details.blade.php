@@ -40,7 +40,7 @@
                                     <a href="#" class="product d-block">
                                         <div class="product-compare-image">
                                             <div class="d-flex mb-3">
-                                                <img class="img-fluid mx-auto" src="{{asset('products/images/'.$images[0])}}" alt="Image Description">
+                                                <img class="img-fluid mx-auto" src="{{asset('products/images/'.$images[0])}}" alt="Image Description" height="300px" width="300px">
                                             </div>
                                         </div>
                                         <h3 class="product-item__title text-blue font-weight-bold mb-3">{{$feature->name}}</h3>
@@ -63,7 +63,7 @@
                                 ->first();
                                 ?>
                                 <td>
-                                    <div class="product-price">&#8377 {{$plan->price}}</div>
+                                    <div class="product-price">&#8377 {{$plan->price}} / {{$plan->invoice_period}}</div>
                                 </td>
                                 
                                

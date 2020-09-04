@@ -26,6 +26,7 @@ class serviceController extends Controller
        ->join('categories','categories.id','services.category_id')
        ->join('sub_categories','sub_categories.id','services.subcategory_id')
        ->whereNotIn('services.id',$servceid)
+       ->where('services.type','=',0)
        
        ->select('products.product','countries.country','states.state','areas.area','districts.district','categories.category','sub_categories.subcategory','services.id as service_id','services.price','services.type','services.desc','services.is_price_show','services.currency')
        ->get();

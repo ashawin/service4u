@@ -15,6 +15,7 @@
                                         	@endif
                                             <div class="card-inner">
                                                 <form action="{{route('admin-service-save')}}" class="form-validate is-alter" method="post">
+                                                    <input type="hidden" name="type" value="0">
                                                 	@csrf
                                                     <div class="row g-gs">
                                                           <div class="col-md-6">
@@ -130,7 +131,7 @@
                                                             <div class="form-group">
                                                                 <label class="form-label" for="fva-topics">Service Type</label>
                                                                 <div class="form-control-wrap ">
-                                                                    <select class="form-control form-select" id="" name="type" data-placeholder="Select a option" required>
+                                                                    <select class="form-control form-select" id="" name="servicetype" data-placeholder="Select a option" required>
                                                                         <option label="empty" value="">Select</option>
                                                                         <option value="1">Commercial </option>
                                                                         <option value="0"> Private</option>

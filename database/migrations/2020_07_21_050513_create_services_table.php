@@ -26,9 +26,9 @@ class CreateServicesTable extends Migration
             $table->string('area_id');   
             $table->string('currency');         
             $table->string('price');          
-            $table->string('desc');
+            $table->text('desc');
             $table->string('type');
-            $table->string('is_price_show')->nullable;
+            $table->string('is_price_show')->nullable();
             $table->string('status');
             $table->timestamps();
         });

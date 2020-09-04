@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     
-<!-- Mirrored from transvelo.github.io/electro-html/2.0/html/home/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Aug 2020 07:14:28 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
-        <!-- Title -->
+        
         <title>ServiceCenter4u</title>
 
         <!-- Required Meta Tags Always Come First -->
@@ -107,6 +106,7 @@
         <script src="{{asset('users/assets/js/components/hs.selectpicker.js')}}"></script>
 
         <!-- JS Plugins Init. -->
+        @yield('script')
         <script>
             $(window).on('load', function () {
                 // initialization of HSMegaMenu component

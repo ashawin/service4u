@@ -27,7 +27,7 @@
                                                         </div>
                                                           <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label class="form-label" for="fva-topics"> Enter Period In Month</label>
+                                                                <label class="form-label" for="fva-topics"> Enter Period In Days</label>
                                                                <div class="form-control-wrap">
                                                                     <input type="text" class="form-control" id="fva-subject" name="period" required placeholder="period">
                                                                 </div>
@@ -180,24 +180,22 @@
 @section('script')
 
      <script>
-        alert('fdfdfg');
         
            $("#country").on('change', function(){
               var val=  $(this).val();
-
               var html='';
 
                $.ajax({
-               	dataType: "json",
+                dataType: "json",
                    type:'POST',
                    url:'admin/ajax/states',
                    data:{"_token": "{{ csrf_token() }}",id:val},
                    success:function(data) {
-		                for(var key in data) {		                
-		                	html+='<option value="'+data[key]['id']+'">'+data[key]['state']+'</option>'
-		                		               
-		            }
-		             $('#state').append(html);
+                        for(var key in data) {                      
+                            html+='<option value="'+data[key]['id']+'">'+data[key]['state']+'</option>'
+                                               
+                    }
+                     $('#state').append(html);
                   
                     
                    }
@@ -213,17 +211,17 @@
               var html='';
 
                $.ajax({
-               	dataType: "json",
+                dataType: "json",
                    type:'POST',
                    url:'admin/ajax/districts',
                    data:{"_token": "{{ csrf_token() }}",state:state,country:country},
                    success:function(data) {
                    
-		                for(var key in data) {		                
-		                	html+='<option value="'+data[key]['id']+'">'+data[key]['district']+'</option>'
-		                		               
-		            }
-		             $('#district').append(html);
+                        for(var key in data) {                      
+                            html+='<option value="'+data[key]['id']+'">'+data[key]['district']+'</option>'
+                                               
+                    }
+                     $('#district').append(html);
                   
                     
                    }
@@ -239,17 +237,17 @@
               var html='';
 
                $.ajax({
-               	dataType: "json",
+                dataType: "json",
                    type:'POST',
                    url:'admin/ajax/areas',
                    data:{"_token": "{{ csrf_token() }}",state:state,country:country,district:district},
                    success:function(data) {
                    
-		                for(var key in data) {		                
-		                	html+='<option value="'+data[key]['id']+'">'+data[key]['area']+'</option>'
-		                		               
-		            }
-		             $('#area').append(html);
+                        for(var key in data) {                      
+                            html+='<option value="'+data[key]['id']+'">'+data[key]['area']+'</option>'
+                                               
+                    }
+                     $('#area').append(html);
                   
                     
                    }
@@ -260,21 +258,20 @@
               $("#category").on('change', function(){
                 
               var id=  $(this).val();
-
               var html='';
 
                $.ajax({
-               	dataType: "json",
+                dataType: "json",
                    type:'POST',
                    url:'admin/ajax/subcategory',
                    data:{"_token": "{{ csrf_token() }}",id:id},
                    success:function(data) {
                    
-		                for(var key in data) {		                
-		                	html+='<option value="'+data[key]['id']+'">'+data[key]['subcategory']+'</option>'
-		                		               
-		            }
-		             $('#subcategory').append(html);
+                        for(var key in data) {                      
+                            html+='<option value="'+data[key]['id']+'">'+data[key]['subcategory']+'</option>'
+                                               
+                    }
+                     $('#subcategory').append(html);
                   
                     
                    }
@@ -286,17 +283,17 @@
               var subcategory=  $(this).val();
               var html='';
                $.ajax({
-               	dataType: "json",
+                dataType: "json",
                    type:'POST',
                    url:'admin/ajax/products',
                    data:{"_token": "{{ csrf_token() }}",category:category,subcategory:subcategory},
                    success:function(data) {
                    
-		                for(var key in data) {		                
-		                	html+='<option value="'+data[key]['id']+'">'+data[key]['product']+'</option>'
-		                		               
-		            }
-		             $('#product').append(html);
+                        for(var key in data) {                      
+                            html+='<option value="'+data[key]['id']+'">'+data[key]['product']+'</option>'
+                                               
+                    }
+                     $('#product').append(html);
                   
                     
                    }

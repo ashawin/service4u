@@ -50,7 +50,7 @@
                                                                 <div class="nk-tb-col">
                                                                   <!--  -->
                                                                     <span class="tb-product">
-                                                                        <img src="{{asset('products/images/')}}" alt="" class="thumb">
+                                                                      
                                                                         <span class="title">{{$item->name}}</span>
                                                                     </span>
                                                                 </div>

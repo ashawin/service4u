@@ -5,6 +5,9 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Country;
+use App\Models\District;
+use App\Models\State;
 use App\Models\Service;
 use App\Models\Product;
 use App\Models\Orders;
@@ -26,28 +29,36 @@ class bookController extends Controller
        ->first();
       
     $categories=Category::with('subcategories')->get();
-      return  view('user.book',['categories'=>$categories,'service'=>$service,'type'=>0]);
+      $countries=Country::all();
+      return  view('user.book',['categories'=>$categories,'service'=>$service,'type'=>0,'countries'=>$countries
+    ]);
     }
 
 
     public function save(Request $request){
+
 
       $this->validate($request,['name'=>'required','mobile'=>'required','country'=>'required','email'=>'required','state'=>'required','district'=>'required','pin'=>'required','payment_method'=>'required','address'=>'required','service'=>'required',
     'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
 'password_confirmation' => 'min:6','type'=>'required']);
       if (\Auth::check())
       {
+
+
         $user=User::find(auth()->user()->id);
-      }
-      else{
+      }else{
+
         if(User::where('mobile', '=', $request->mobile)->exists()){
           return redirect('user/login');
         }else{
+
       
         $user=User::create(array('name'=>$request->name,'email'=>$request->email,'mobile'=>$request->mobile,'address'=>$request->address,'country'=>$request->country,'state'=>$request->state,'distric'=>$request->district,'role'=>3,'password'=>\Hash::make($request->password)));
        \Auth::login($user);
        }
      }
+
+    
 
     
     
@@ -70,15 +81,19 @@ if($request->type==0){
 
      }
 
-       $country=strcasecmp($service->country,$request->country);
-       $state=strcasecmp($service->state,$request->state);
+     $country=Country::find($request->country);
+     $state=State::find($request->state);
+     $district=District::find($request->district);
 
-       $district=strcasecmp($service->district,$request->district);
+       $country=strcasecmp($service->country,$country->country);
+       $state=strcasecmp($service->state,$state->state);
+
+       $district=strcasecmp($service->district,$district->district);
 
        if($country==0 && $state==0 && $district==0)
        {
 
-        Orders::create(array('name'=>$request->name,'email'=>$request->email,'mobile'=>$request->mobile,'country'=>$request->country,'state'=>$request->state,'Distrcit'=>$request->district,'pin'=>$request->pin,'address'=>$request->address,'address1'=>$request->address1,'service_id'=>$request->service,'payment_type'=>$request->payment_method,'status'=>0,'user_id'=>$user->id,'type'=>$request->type));
+        Orders::create(array('name'=>$request->name,'email'=>$request->email,'mobile'=>$request->mobile,'country'=>$country,'state'=>$state,'Distrcit'=>$district,'pin'=>$request->pin,'address'=>$request->address,'address1'=>$request->address1,'service_id'=>$request->service,'payment_type'=>$request->payment_method,'status'=>0,'user_id'=>$user->id,'type'=>$request->type));
         session()->flash('msg','Request sent sucessfully.We will contact you soon');
        }
        else
@@ -87,10 +102,25 @@ if($request->type==0){
         session()->flash('msgerror','Sorry !.Service is Not available in the this area.We will reach you soon ');
        } 
 	
-    	return redirect()->back();
+    	return redirect()->back()->withInput();;
 
     }
 
+
+ public function getStates(Request $request){
+
+      $states=State::where('country_id','=',$request->id)->get();
+      return response()->json($states);
+
+    }
+
+     public function getDistricts(Request $request)
+    {
+      $matchThese = ['country_id' =>$request->country, 'state_id' => $request->state];
+      $districts=District::where($matchThese)->get();
+      return response()->json($districts);
+
+    }
 
    
 }

@@ -23,7 +23,7 @@ class CreateEnquiriesTable extends Migration
             $table->string('country')->nullable();
             $table->string('state')->nullable();
             $table->string('area')->nullable();
-            $table->string('desc1')->nullable();
+            $table->text('desc1')->nullable();
             $table->timestamps();
         });
     }

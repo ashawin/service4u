@@ -139,13 +139,7 @@ Route::group([ 'prefix' => 'admin' ,'middleware' => ['App\Http\Middleware\AdminM
 
 
       //Ajax
-      Route::post('ajax/states', 'admin\ajaxController@getStates')->name('admin-ajax-state');
-       Route::post('ajax/districts', 'admin\ajaxController@getDistricts')->name('admin-ajax-district');
-      Route::post('ajax/subcategory', 'admin\ajaxController@getSubCategory')->name('admin-ajax-subcat');
-      Route::post('ajax/products', 'admin\ajaxController@getProduct')->name('admin-ajax-product');
-      Route::post('ajax/areas', 'admin\ajaxController@getArea')->name('admin-ajax-area');
-
-      
+    
 
       
       
@@ -155,6 +149,13 @@ Route::group([ 'prefix' => 'admin' ,'middleware' => ['App\Http\Middleware\AdminM
 
     
 });
+  Route::post('admin/ajax/states', 'admin\ajaxController@getStates')->name('admin-ajax-state');
+       Route::post('admin/ajax/districts', 'admin\ajaxController@getDistricts')->name('admin-ajax-district');
+      Route::post('admin/ajax/subcategory', 'admin\ajaxController@getSubCategory')->name('admin-ajax-subcat');
+      Route::post('admin/ajax/products', 'admin\ajaxController@getProduct')->name('admin-ajax-product');
+      Route::post('admin/ajax/areas', 'admin\ajaxController@getArea')->name('admin-ajax-area');
+
+
 
 
 

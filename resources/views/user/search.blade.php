@@ -59,9 +59,9 @@
                                                     <span class="loop-product-categories"><a href="{{url('category/subcategory/'.$service->pro_slug)}}" rel="tag">{{$service->category}}</a></span>
                                                     <a href="{{url('category/subcategory/'.$service->pro_slug)}}">
                                                         <h3>{{$service->product}}</h3>
-                                                        <div class="product-thumbnail">
+                                                        <div class="product-thumbnail" style="max-height: 200px">
 
-                                                            <img src="{{asset('products/images/'.$images[0])}}"  alt="">
+                                                            <img src="{{asset('products/images/'.$images[0])}}"  alt="" height="200px" width="200px">
 
                                                         </div>
                                                     </a>

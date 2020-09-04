@@ -7,10 +7,8 @@
                         <a href="{{url('/')}}">Home</a>
                         <span class="delimiter"><i class="fa fa-angle-right"></i>
                         </span>
-                        <a href="product-category.html">Subscription</a>
-                        <span class="delimiter"><i class="fa fa-angle-right"></i>
-                        </span>
-                        <a href="product-category.html">Plans</a>
+                       
+                        <a href="#">Subscription Plans</a>
                         
                     </nav>
 
@@ -19,13 +17,13 @@
                              <div class="related products">
                                    
 
-                                    <ul class="products columns-5">
+                                    <ul class="products column-5 ">
                        @foreach($plans as $plan)
                       
 
-                                        <li class="product" style="height:300px;border-style: groove;width:300px">
+                                        <li class="product" style="height:300px;border-style: groove;width:300px;margin-left: 5px;margin-right: 0px">
                                             <div class="product-outer">
-                                                <div class="product-inner" style="padding: 40px">
+                                                <div class="product-inner" >
                                                     <span class="loop-product-categories"><a href="" rel="tag">
                                                         {{$plan->name}}</a></span>
                                                         <h6>{{$plan->name}}</h6>
@@ -37,7 +35,7 @@
 
                                                         <span class="price">
                                                             <span class="electro-price">
-                                                                <ins><span class="amount">Rs.{{$plan->price}}/{{$plan->invoice_period}}&nbsp;&nbsp;Month</span></ins>
+                                                                <ins><span class="amount">Rs.{{$plan->price}}/{{$plan->invoice_period}}&nbsp;&nbsp;Days</span></ins>
                                                             </span>
                                                         </span>
                                                        
