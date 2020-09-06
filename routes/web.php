@@ -46,7 +46,7 @@ Route::middleware('user')->group(function () {
        Route::get('termsandcondition', 'user\HomeController@terms')->name('user-terms');
  
 
-Auth::routes();
+
 Route::group([ 'prefix' => 'vendor' ,'middleware' => ['App\Http\Middleware\VendorMiddleware']], function () {
   Route::get('dashboard', 'vendor\dashboardController@index')->name('vendor-dashboard');
 
@@ -157,5 +157,5 @@ Route::group([ 'prefix' => 'admin' ,'middleware' => ['App\Http\Middleware\AdminM
 
 
 
-
+Auth::routes();
 

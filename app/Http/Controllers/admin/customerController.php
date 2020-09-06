@@ -9,7 +9,7 @@ use App\User;
 class customerController extends Controller
 {
     public function index(){
-        $users=User::where('role','=',3)->get();
+        $users=User::where('role','=',3)->paginate(5);
     	return view('customers',['users'=>$users]);
     }
 }

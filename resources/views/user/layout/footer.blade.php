@@ -10,7 +10,7 @@
                             <div class="row align-items-center">
                                 <div class="col-auto flex-horizontal-center">
                                     <i class="ec ec-newsletter font-size-40"></i>
-                                    <h2 class="font-size-20 mb-0 ml-3">Become a Pratner </h2>
+                                    <h2 class="font-size-20 mb-0 ml-3">Become a Patner </h2>
                                 </div>
                                 <div class="col my-4 my-md-0">
                                     <h5 class="font-size-15 ml-4 mb-0">and join to <strong>consult our services .</strong></h5>

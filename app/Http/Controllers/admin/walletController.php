@@ -19,7 +19,7 @@ class walletController extends Controller
     ->join('users','users.id','=','wallets.holder_id')
     
     ->select('transactions.*','users.*')
-    ->get();
+    ->paginate(5);
 
    
 
@@ -59,7 +59,7 @@ class walletController extends Controller
 
 
         $requests=walletRequest::join('users','users.id','wallet_requests.holder_id')
-        ->select('users.name','users.email','users.mobile','wallet_requests.id as wal_id','wallet_requests.balance','wallet_requests.status','users.id as user_id')->orderBy('wallet_requests.id', 'desc')->get();
+        ->select('users.name','users.email','users.mobile','wallet_requests.id as wal_id','wallet_requests.balance','wallet_requests.status','users.id as user_id')->orderBy('wallet_requests.id', 'desc')->paginate(5);
         
         return  view('wallet.request',['requests'=>$requests]);
 

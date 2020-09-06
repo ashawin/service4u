@@ -9,7 +9,7 @@ use App\User;
 class providerController extends Controller
 {
     public function index(){
-    	$users=User::where('role','=',2)->get();
+    	$users=User::where('role','=',2)->paginate(5);
     	return view('providers',['users'=>$users]);
     }
 }

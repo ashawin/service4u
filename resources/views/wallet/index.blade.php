@@ -79,7 +79,7 @@
                                                      
                                                     </div>
                                                 </div>
-                                               
+                                                {{ $transactions->links() }} 
                                             </div><!-- .card -->
 
                                         </div>

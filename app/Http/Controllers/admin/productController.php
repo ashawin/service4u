@@ -16,7 +16,7 @@ class productController extends Controller
     	$products=Product::join('categories', 'categories.id', '=', 'products.category_id')
     	->join('sub_categories', 'sub_categories.id', '=', 'products.subcategory_id')
             ->select('categories.*','sub_categories.*','products.id as pro_id','products.desc','products.images','products.product')
-            ->get();
+            ->paginate(5);
 
     	return view('product.manage',['category'=>$categories,'subcategory'=>$subcategory,'products'=>$products]);
 

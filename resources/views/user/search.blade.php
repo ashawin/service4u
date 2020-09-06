@@ -53,7 +53,7 @@
                                                 $images= array();
                                                 $images=explode('|',$service->images);
                                                 ?>
-                                        <li class="product first">
+                                        <li class="product ">
                                             <div class="product-outer">
                                                 <div class="product-inner">
                                                     <span class="loop-product-categories"><a href="{{url('category/subcategory/'.$service->pro_slug)}}" rel="tag">{{$service->category}}</a></span>
